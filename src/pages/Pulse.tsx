@@ -68,7 +68,7 @@ const futureProducts = [
   { name: 'Restore', color: '#1B4D5C', colorName: 'Petrol Blue', status: 'Futuro' },
   { name: 'Balance', color: '#9CAF88', colorName: 'Green Sage', status: 'Futuro' },
   { name: 'Glow', color: '#B8964B', colorName: 'Gold', status: 'Futuro' },
-  { name: 'Ground', color: '#C4784A', colorName: 'Terracotta', status: 'Futuro' },
+  { name: 'Ground', color: '#C4714A', colorName: 'Terracotta', status: 'Futuro' },
   { name: 'Core', color: '#3F4F45', colorName: 'Olive Green', status: 'Futuro' },
 ];
 

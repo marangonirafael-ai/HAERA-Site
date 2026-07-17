@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
 
 @layer base {
   :root {
@@ -17,7 +17,7 @@
     --popover-foreground: 160 12% 18%;
 
     /* Primary: Olive Deep */
-    --primary: 150 14% 28%;
+    --primary: 142 11% 28%;
     --primary-foreground: 40 20% 96%;
 
     /* Secondary: Warm Beige */
@@ -29,7 +29,7 @@
     --muted-foreground: 160 8% 45%;
 
     /* Accent: Terracotta Subtle */
-    --accent: 20 20% 75%;
+    --accent: 19 25% 82%;
     --accent-foreground: 160 12% 18%;
 
     --destructive: 0 84.2% 60.2%;
@@ -37,28 +37,32 @@
 
     --border: 40 15% 85%;
     --input: 40 15% 85%;
-    --ring: 150 14% 28%;
+    --ring: 142 11% 28%;
 
     --radius: 0.5rem;
 
-    /* Haëra Custom Tokens */
-    --haera-olive: 150 14% 28%;
-    --haera-olive-light: 150 10% 45%;
+    /* Haëra Custom Tokens — valores exatos do brand kit oficial (src/lib/brand.ts) */
+    --haera-olive: 142 11% 28%;
+    --haera-olive-light: 142 10% 45%;
+    --haera-wine: 353 42% 32%;
+    --haera-sage: 89 20% 61%;
+    --haera-petrol: 194 55% 23%;
+    --haera-gold: 41 43% 51%;
+    --haera-terracotta: 19 51% 53%;
     --haera-mineral: 40 20% 96%;
     --haera-beige: 35 25% 85%;
     --haera-stone: 40 15% 75%;
     --haera-graphite: 160 12% 18%;
-    --haera-gold: 38 40% 55%;
 
     /* Gradients */
     --gradient-hero: linear-gradient(180deg, hsl(40 20% 96%) 0%, hsl(35 25% 92%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(40 15% 94%) 0%, hsl(40 20% 96%) 100%);
-    --gradient-nucleus: radial-gradient(circle, hsl(150 14% 28%) 0%, hsl(150 10% 35%) 50%, hsl(150 8% 45%) 100%);
+    --gradient-nucleus: radial-gradient(circle, hsl(142 11% 28%) 0%, hsl(142 10% 35%) 50%, hsl(142 8% 45%) 100%);
 
     /* Shadows */
     --shadow-soft: 0 4px 20px -4px hsl(160 12% 18% / 0.08);
     --shadow-elegant: 0 8px 40px -8px hsl(160 12% 18% / 0.12);
-    --shadow-glow: 0 0 60px hsl(150 14% 28% / 0.15);
+    --shadow-glow: 0 0 60px hsl(142 11% 28% / 0.15);
 
     /* Typography */
     --font-serif: 'Cormorant Garamond', Georgia, serif;

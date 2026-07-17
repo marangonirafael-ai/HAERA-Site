@@ -54,11 +54,15 @@ export default {
         haera: {
           olive: "hsl(var(--haera-olive))",
           "olive-light": "hsl(var(--haera-olive-light))",
+          wine: "hsl(var(--haera-wine))",
+          sage: "hsl(var(--haera-sage))",
+          petrol: "hsl(var(--haera-petrol))",
+          gold: "hsl(var(--haera-gold))",
+          terracotta: "hsl(var(--haera-terracotta))",
           mineral: "hsl(var(--haera-mineral))",
           beige: "hsl(var(--haera-beige))",
           stone: "hsl(var(--haera-stone))",
           graphite: "hsl(var(--haera-graphite))",
-          gold: "hsl(var(--haera-gold))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
