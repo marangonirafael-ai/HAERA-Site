@@ -1,0 +1,35 @@
+export const BRAND = {
+  WINE: '#722F37',
+  WINE_DEEP: '#5C2430',
+  WINE_DARK: '#3D1820',
+  WINE_NIGHT: '#1C0D10',
+  GOLD: '#B8964B',
+  GOLD_LIGHT: '#D4B775',
+  CREAM: '#F5F2EB',
+  CREAM_SOFT: '#EDE7D9',
+  GRAPHITE: '#1C1C1C',
+} as const;
+
+export const PULSE_PRODUCT = {
+  id: 'pulse-150g',
+  name: 'Pulse',
+  tagline: 'Energia limpa que sustenta performance',
+  weight: '150g',
+  doses: 30,
+  dosage: '5g',
+  price: 149.9,
+  priceFormatted: 'R$ 149,90',
+  priceOriginal: 169.9,
+  priceOriginalFormatted: 'R$ 169,90',
+  priceVip: 129.9,
+  priceVipFormatted: 'R$ 129,90',
+  pricePerDose: 'R$ 5,00 / dose',
+  pricePerDoseOriginal: 'R$ 5,66 / dose',
+  pricePerDoseVip: 'R$ 4,33 / dose',
+  launchBadge: 'Preço promocional de lançamento',
+};
+
+export const VIP_COUPON = 'VIPHAERA';
+
+export const STORE_URL = 'https://www.haera.life';
+
