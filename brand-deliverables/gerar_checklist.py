@@ -27,11 +27,11 @@ def main():
     lines.append("# Checklist de Entregáveis de Branding — Haëra")
     lines.append("")
     lines.append(
-        "Marque `- [ ]` para `- [x]` conforme for recebendo e conferindo "
-        "cada item da agência. Este arquivo é mantido por você manualmente; "
-        "para uma checagem automática do que já está nas pastas, rode "
-        "`python3 validar_entregaveis.py` (gera um relatório à parte, sem "
-        "mexer neste arquivo)."
+        "Marque `- [ ]` para `- [x]` conforme cada item for produzido e "
+        "colocado na pasta correspondente. Este arquivo é mantido "
+        "manualmente; para uma checagem automática do que já está nas "
+        "pastas, rode `python3 validar_entregaveis.py` (gera um relatório "
+        "à parte, sem mexer neste arquivo)."
     )
     lines.append("")
     lines.append(f"> {data['negocio']}")

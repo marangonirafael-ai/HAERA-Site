@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Haëra — Logotipo</title>
+  <g>
+    <circle cx="200.0" cy="200.0" r="160.00" fill="#FFFFFF" fill-opacity="0.1020"/>
+    <circle cx="200.0" cy="200.0" r="133.63" fill="#FFFFFF" fill-opacity="0.0980"/>
+    <circle cx="200.0" cy="200.0" r="101.98" fill="#FFFFFF" fill-opacity="0.2510"/>
+    <circle cx="200.0" cy="200.0" r="67.69" fill="#FFFFFF" fill-opacity="0.5490"/>
+    <circle cx="200.0" cy="200.0" r="32.53" fill="#FFFFFF" fill-opacity="1.0000"/>
+  </g>
+  <text x="440" y="200.0" dominant-baseline="middle" text-anchor="start"
+        font-family="'Cormorant Garamond Light', 'Cormorant Garamond', Georgia, serif" font-weight="300" font-size="150"
+        letter-spacing="6" fill="#FFFFFF">Haëra</text>
+</svg>

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Valida quais entregaveis de branding ja foram recebidos da agencia.
+"""Valida quais entregaveis de branding ja foram produzidos e colocados
+nas pastas deste diretorio.
 
 Uso:
     python3 validar_entregaveis.py
@@ -11,9 +12,8 @@ O que faz:
        - FALTANDO        -> pasta vazia (ignorando .gitkeep/arquivos ocultos)
        - FORMATO INCORRETO -> tem arquivo(s), mas nenhum no formato esperado
   3. Imprime um resumo no terminal.
-  4. Grava relatorio_validacao.md (relatorio completo).
-  5. Se houver pendencias, grava email_cobranca_pendencias.md (rascunho de
-     e-mail para a agencia, ja com os nomes de arquivo/pasta pendentes).
+  4. Grava relatorio_validacao.md (relatorio completo, com o que falta
+     produzir ainda).
 
 Nao precisa de nenhuma biblioteca alem da instalacao padrao do Python 3.
 """
@@ -24,7 +24,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 ITEMS_FILE = BASE_DIR / "checklist_items.json"
 REPORT_FILE = BASE_DIR / "relatorio_validacao.md"
-EMAIL_FILE = BASE_DIR / "email_cobranca_pendencias.md"
 
 IGNORAR = {".gitkeep", ".ds_store"}
 
@@ -104,7 +103,7 @@ def main():
         f"{contagem[STATUS_FORMATO_INCORRETO]} em formato incorreto"
     )
     if pendencias_essenciais:
-        print(f"ATENCAO: {len(pendencias_essenciais)} item(ns) ESSENCIAL(is) pendente(s).")
+        print(f"ATENCAO: {len(pendencias_essenciais)} item(ns) ESSENCIAL(is) pendente(s) de produzir.")
     print(f"\nRelatorio completo em: {REPORT_FILE.name}")
 
     # ---- relatorio_validacao.md ----
@@ -131,74 +130,14 @@ def main():
         linhas.append(f"  - pasta: `{item['pasta']}/`")
         linhas.append(f"  - formato esperado: `{', '.join(item['formatos'])}`")
         if status == STATUS_OK:
-            linhas.append(f"  - recebido: {', '.join(f.name for f in arquivos)}")
+            linhas.append(f"  - encontrado: {', '.join(f.name for f in arquivos)}")
         elif status == STATUS_FORMATO_INCORRETO:
-            linhas.append(f"  - recebido (formato errado): {', '.join(f.name for f in arquivos)}")
+            linhas.append(f"  - encontrado (formato errado): {', '.join(f.name for f in arquivos)}")
         if item.get("observacao"):
             linhas.append(f"  - obs: {item['observacao']}")
         linhas.append("")
 
     REPORT_FILE.write_text("\n".join(linhas), encoding="utf-8")
-
-    # ---- email de cobranca ----
-    if pendencias:
-        linhas_email = []
-        linhas_email.append(
-            "Assunto: Pendências de entrega — arquivos de branding Haëra"
-        )
-        linhas_email.append("")
-        linhas_email.append("Olá,")
-        linhas_email.append("")
-        linhas_email.append(
-            "Estou validando os arquivos de identidade visual recebidos e "
-            "ainda faltam os itens abaixo. Poderiam enviar o quanto antes?"
-        )
-        linhas_email.append("")
-
-        if pendencias_essenciais:
-            linhas_email.append("**Prioridade (essenciais para uso da marca):**")
-            linhas_email.append("")
-            for categoria, item, status, arquivos in pendencias_essenciais:
-                formatos = ", ".join(item["formatos"])
-                if status == STATUS_FALTANDO:
-                    linhas_email.append(f"- {item['item']} — formato {formatos} (não recebido)")
-                else:
-                    recebido = ", ".join(f.name for f in arquivos)
-                    linhas_email.append(
-                        f"- {item['item']} — recebi apenas {recebido}, "
-                        f"mas preciso também em {formatos}"
-                    )
-            linhas_email.append("")
-
-        outras_pendencias = [r for r in pendencias if r[1]["prioridade"] != "essencial"]
-        if outras_pendencias:
-            linhas_email.append("**Demais itens pendentes:**")
-            linhas_email.append("")
-            for categoria, item, status, arquivos in outras_pendencias:
-                formatos = ", ".join(item["formatos"])
-                if status == STATUS_FALTANDO:
-                    linhas_email.append(f"- {item['item']} — formato {formatos} (não recebido)")
-                else:
-                    recebido = ", ".join(f.name for f in arquivos)
-                    linhas_email.append(
-                        f"- {item['item']} — recebi apenas {recebido}, "
-                        f"mas preciso também em {formatos}"
-                    )
-            linhas_email.append("")
-
-        linhas_email.append(
-            "Fico no aguardo. Qualquer dúvida sobre o formato pedido, me avisem."
-        )
-        linhas_email.append("")
-        linhas_email.append("Obrigado,")
-        linhas_email.append("Rafael")
-
-        EMAIL_FILE.write_text("\n".join(linhas_email), encoding="utf-8")
-        print(f"Rascunho de e-mail de cobranca em: {EMAIL_FILE.name}")
-    else:
-        if EMAIL_FILE.exists():
-            EMAIL_FILE.unlink()
-        print("Nenhuma pendencia -- todos os itens do checklist foram recebidos.")
 
 
 if __name__ == "__main__":

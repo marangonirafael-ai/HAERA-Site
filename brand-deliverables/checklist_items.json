@@ -10,7 +10,10 @@
           "id": "logo_mestre",
           "item": "Logo — arquivo mestre editável",
           "pasta": "01_Logo/01_arquivo_mestre",
-          "formatos": [".ai", ".eps"],
+          "formatos": [
+            ".ai",
+            ".eps"
+          ],
           "prioridade": "essencial",
           "observacao": "Fonte vetorial original. Sem ele você depende para sempre da agência para qualquer ajuste."
         },
@@ -18,7 +21,9 @@
           "id": "logo_svg",
           "item": "Logo — versão vetorial final",
           "pasta": "01_Logo/02_vetorial_svg",
-          "formatos": [".svg"],
+          "formatos": [
+            ".svg"
+          ],
           "prioridade": "essencial",
           "observacao": "Uso em web e redimensionamento sem perda de qualidade."
         },
@@ -26,7 +31,9 @@
           "id": "logo_png",
           "item": "Logo — alta resolução (fundo transparente)",
           "pasta": "01_Logo/03_alta_resolucao_png",
-          "formatos": [".png"],
+          "formatos": [
+            ".png"
+          ],
           "prioridade": "essencial",
           "observacao": "Uso do dia a dia sem precisar abrir o Illustrator."
         },
@@ -34,7 +41,9 @@
           "id": "logo_pdf_impressao",
           "item": "Logo — versão para impressão (vetorial, CMYK)",
           "pasta": "01_Logo/04_impressao_pdf",
-          "formatos": [".pdf"],
+          "formatos": [
+            ".pdf"
+          ],
           "prioridade": "recomendado",
           "observacao": "Gráficas exigem CMYK, não RGB."
         },
@@ -42,7 +51,11 @@
           "id": "logo_mono_preto",
           "item": "Logo — versão monocromática (preto)",
           "pasta": "01_Logo/05_monocromatico_preto",
-          "formatos": [".ai", ".svg", ".png"],
+          "formatos": [
+            ".ai",
+            ".svg",
+            ".png"
+          ],
           "prioridade": "essencial",
           "observacao": "Para uso sobre fundos claros ou impressão em 1 cor."
         },
@@ -50,7 +63,11 @@
           "id": "logo_mono_branco",
           "item": "Logo — versão monocromática (branco/negativo)",
           "pasta": "01_Logo/06_monocromatico_branco",
-          "formatos": [".ai", ".svg", ".png"],
+          "formatos": [
+            ".ai",
+            ".svg",
+            ".png"
+          ],
           "prioridade": "essencial",
           "observacao": "Para uso sobre fundos escuros ou coloridos."
         },
@@ -58,7 +75,10 @@
           "id": "favicon",
           "item": "Favicon (16x16, 32x32, 512x512)",
           "pasta": "01_Logo/07_favicon",
-          "formatos": [".ico", ".png"],
+          "formatos": [
+            ".ico",
+            ".png"
+          ],
           "prioridade": "recomendado",
           "observacao": "Frequentemente esquecido, mas necessário para o site."
         },
@@ -66,7 +86,11 @@
           "id": "simbolo_isolado",
           "item": "Ícone/símbolo isolado (núcleo)",
           "pasta": "01_Logo/08_simbolo_isolado",
-          "formatos": [".ai", ".svg", ".png"],
+          "formatos": [
+            ".ai",
+            ".svg",
+            ".png"
+          ],
           "prioridade": "recomendado",
           "observacao": "Uso em espaços reduzidos (redes sociais, apps, favicons)."
         },
@@ -74,7 +98,11 @@
           "id": "variacoes_logo",
           "item": "Variações de logo (horizontal, vertical, reduzida)",
           "pasta": "01_Logo/09_variacoes_layout",
-          "formatos": [".ai", ".svg", ".png"],
+          "formatos": [
+            ".ai",
+            ".svg",
+            ".png"
+          ],
           "prioridade": "essencial",
           "observacao": "Garante consistência em qualquer formato de espaço (header, redes sociais, e-mail)."
         }
@@ -88,7 +116,13 @@
           "id": "codigos_cor",
           "item": "Códigos de cor completos (HEX, RGB, CMYK, Pantone)",
           "pasta": "02_Cores/01_codigos_cor",
-          "formatos": [".pdf", ".ai", ".txt", ".docx"],
+          "formatos": [
+            ".pdf",
+            ".ai",
+            ".txt",
+            ".docx",
+            ".md"
+          ],
           "prioridade": "essencial",
           "observacao": "Sem os 3-4 códigos você não reproduz a cor exata em todo contexto (digital, impressão, produção gráfica)."
         },
@@ -96,7 +130,10 @@
           "id": "paleta_ase",
           "item": "Arquivo de paleta (.ase ou PDF)",
           "pasta": "02_Cores/02_paleta_ase",
-          "formatos": [".ase", ".pdf"],
+          "formatos": [
+            ".ase",
+            ".pdf"
+          ],
           "prioridade": "recomendado",
           "observacao": "Importa direto no Illustrator/Photoshop/Figma, evita erro manual de digitação."
         }
@@ -110,7 +147,12 @@
           "id": "nome_fontes",
           "item": "Nome das fontes oficiais (título e texto)",
           "pasta": "03_Tipografia/01_especificacao_fontes",
-          "formatos": [".pdf", ".docx", ".txt"],
+          "formatos": [
+            ".pdf",
+            ".docx",
+            ".txt",
+            ".md"
+          ],
           "prioridade": "essencial",
           "observacao": "Fontes têm nomes parecidos entre si; sem o nome exato, erro é comum."
         },
@@ -118,7 +160,12 @@
           "id": "arquivos_fontes",
           "item": "Arquivos das fontes (se licenciadas/customizadas)",
           "pasta": "03_Tipografia/02_arquivos_fontes",
-          "formatos": [".otf", ".ttf", ".woff", ".woff2"],
+          "formatos": [
+            ".otf",
+            ".ttf",
+            ".woff",
+            ".woff2"
+          ],
           "prioridade": "essencial",
           "observacao": "Confirme se a licença permite uso comercial e por quantos usuários/domínios."
         },
@@ -126,7 +173,12 @@
           "id": "fonte_alternativa",
           "item": "Informação de fonte alternativa (gratuita)",
           "pasta": "03_Tipografia/03_fonte_alternativa",
-          "formatos": [".pdf", ".docx", ".txt"],
+          "formatos": [
+            ".pdf",
+            ".docx",
+            ".txt",
+            ".md"
+          ],
           "prioridade": "recomendado",
           "observacao": "Substituto caso a licença da fonte original não tenha sido adquirida por você."
         }
@@ -140,7 +192,9 @@
           "id": "manual_pdf",
           "item": "Manual de identidade visual completo",
           "pasta": "04_Manual_de_Marca/01_manual_pdf",
-          "formatos": [".pdf"],
+          "formatos": [
+            ".pdf"
+          ],
           "prioridade": "essencial",
           "observacao": "Regras de uso do logo, área de proteção, tamanho mínimo, paleta, tipografia, tom de voz, exemplos certos/errados."
         },
@@ -148,7 +202,12 @@
           "id": "manual_editavel",
           "item": "Manual em formato editável",
           "pasta": "04_Manual_de_Marca/02_manual_editavel",
-          "formatos": [".indd", ".ai"],
+          "formatos": [
+            ".indd",
+            ".ai",
+            ".md",
+            ".html"
+          ],
           "prioridade": "recomendado",
           "observacao": "Assim você atualiza o manual no futuro sem depender da agência original."
         },
@@ -156,7 +215,11 @@
           "id": "guia_tom_de_voz",
           "item": "Guia de tom de voz e linguagem",
           "pasta": "04_Manual_de_Marca/03_guia_tom_de_voz",
-          "formatos": [".pdf", ".docx"],
+          "formatos": [
+            ".pdf",
+            ".docx",
+            ".md"
+          ],
           "prioridade": "recomendado",
           "observacao": "Fundamental para redes sociais, atendimento e conteúdo consistente."
         }
@@ -170,7 +233,15 @@
           "id": "templates_redes_sociais",
           "item": "Templates de redes sociais (posts, stories, capa)",
           "pasta": "05_Aplicacoes/01_redes_sociais",
-          "formatos": [".psd", ".ai", ".pdf", ".txt", ".url"],
+          "formatos": [
+            ".psd",
+            ".ai",
+            ".pdf",
+            ".txt",
+            ".url",
+            ".png",
+            ".html"
+          ],
           "prioridade": "recomendado",
           "observacao": "Se for link do Canva, salve um .txt com o link dentro da pasta."
         },
@@ -178,7 +249,10 @@
           "id": "assinatura_email",
           "item": "Assinatura de e-mail",
           "pasta": "05_Aplicacoes/02_assinatura_email",
-          "formatos": [".html", ".png"],
+          "formatos": [
+            ".html",
+            ".png"
+          ],
           "prioridade": "recomendado",
           "observacao": "Padroniza a comunicação por e-mail."
         },
@@ -186,7 +260,10 @@
           "id": "papelaria",
           "item": "Papelaria (cartão de visita, papel timbrado, envelope)",
           "pasta": "05_Aplicacoes/03_papelaria",
-          "formatos": [".ai", ".pdf"],
+          "formatos": [
+            ".ai",
+            ".pdf"
+          ],
           "prioridade": "recomendado",
           "observacao": "Necessário sempre que for reimprimir."
         },
@@ -194,7 +271,11 @@
           "id": "apresentacao_institucional",
           "item": "Apresentação institucional (template)",
           "pasta": "05_Aplicacoes/04_apresentacao",
-          "formatos": [".pptx", ".key", ".ai"],
+          "formatos": [
+            ".pptx",
+            ".key",
+            ".ai"
+          ],
           "prioridade": "recomendado",
           "observacao": "Padroniza reuniões comerciais, pitches, institucional."
         },
@@ -202,7 +283,12 @@
           "id": "mockups",
           "item": "Mockups de aplicação da marca",
           "pasta": "05_Aplicacoes/05_mockups",
-          "formatos": [".psd", ".png", ".jpg", ".jpeg"],
+          "formatos": [
+            ".psd",
+            ".png",
+            ".jpg",
+            ".jpeg"
+          ],
           "prioridade": "recomendado",
           "observacao": "Útil para aprovações internas e material de divulgação."
         },
@@ -210,7 +296,10 @@
           "id": "embalagem",
           "item": "Template de embalagem (com corte e sangria)",
           "pasta": "05_Aplicacoes/06_ecommerce/embalagem",
-          "formatos": [".ai", ".pdf"],
+          "formatos": [
+            ".ai",
+            ".pdf"
+          ],
           "prioridade": "essencial",
           "observacao": "Aparece como opcional no checklist genérico, mas é essencial para produto físico como o Pulse."
         },
@@ -218,7 +307,10 @@
           "id": "etiqueta",
           "item": "Selo/etiqueta de produto",
           "pasta": "05_Aplicacoes/06_ecommerce/etiqueta",
-          "formatos": [".ai", ".pdf"],
+          "formatos": [
+            ".ai",
+            ".pdf"
+          ],
           "prioridade": "essencial",
           "observacao": "Rótulo com informação nutricional, lote, validade — exigido para venda do Pulse."
         },
@@ -226,7 +318,11 @@
           "id": "banner_marketplace",
           "item": "Banner para marketplace/loja virtual",
           "pasta": "05_Aplicacoes/06_ecommerce/banners_marketplace",
-          "formatos": [".png", ".jpg", ".jpeg"],
+          "formatos": [
+            ".png",
+            ".jpg",
+            ".jpeg"
+          ],
           "prioridade": "recomendado",
           "observacao": "Tamanhos específicos por plataforma (Mercado Livre, Amazon, Shopee etc.)."
         }
@@ -240,7 +336,9 @@
           "id": "termo_cessao",
           "item": "Termo de cessão de direitos autorais (assinado)",
           "pasta": "06_Documentos_Legais/01_termo_cessao_direitos",
-          "formatos": [".pdf"],
+          "formatos": [
+            ".pdf"
+          ],
           "prioridade": "essencial",
           "observacao": "Crítico: sem isso a agência pode reter direitos sobre a criação mesmo após pagamento."
         },
@@ -248,7 +346,10 @@
           "id": "licenca_fontes",
           "item": "Comprovante/licença de fontes pagas usadas",
           "pasta": "06_Documentos_Legais/02_licenca_fontes",
-          "formatos": [".pdf"],
+          "formatos": [
+            ".pdf",
+            ".md"
+          ],
           "prioridade": "recomendado",
           "observacao": "Evita problema legal de uso de fonte sem licença válida."
         },
@@ -256,7 +357,9 @@
           "id": "registro_inpi",
           "item": "Comprovante de registro no INPI",
           "pasta": "06_Documentos_Legais/03_registro_inpi",
-          "formatos": [".pdf"],
+          "formatos": [
+            ".pdf"
+          ],
           "prioridade": "opcional",
           "observacao": "Só se o registro estiver no escopo contratado com a agência."
         },
@@ -264,7 +367,11 @@
           "id": "racional_criativo",
           "item": "Racional criativo / apresentação do conceito da marca",
           "pasta": "06_Documentos_Legais/04_racional_criativo",
-          "formatos": [".pdf", ".pptx"],
+          "formatos": [
+            ".pdf",
+            ".pptx",
+            ".md"
+          ],
           "prioridade": "recomendado",
           "observacao": "O 'porquê' das escolhas de design — útil para onboarding e para justificar decisões futuras."
         }

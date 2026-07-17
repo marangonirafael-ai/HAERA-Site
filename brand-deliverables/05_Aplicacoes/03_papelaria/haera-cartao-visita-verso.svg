@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96mm" height="56mm" viewBox="0 0 96 56" xmlns="http://www.w3.org/2000/svg">
+  <rect width="96" height="56" fill="#1C1C1C"/>
+  <text x="11" y="17" font-family="Inter, sans-serif" font-weight="600" font-size="4.6" fill="#F5F2EB">NOME SOBRENOME</text>
+  <text x="11" y="22" font-family="Inter, sans-serif" font-size="3" fill="#B8964B" letter-spacing="0.3">CARGO / FUNCAO</text>
+
+  <line x1="11" y1="27" x2="85" y2="27" stroke="#722F37" stroke-width="0.3"/>
+
+  <text x="11" y="34" font-family="Inter, sans-serif" font-size="3" fill="#F5F2EB">nome@haera.life</text>
+  <text x="11" y="39" font-family="Inter, sans-serif" font-size="3" fill="#F5F2EB">+55 11 00000-0000</text>
+  <text x="11" y="44" font-family="Inter, sans-serif" font-size="3" fill="#F5F2EB">haera.life</text>
+  <text x="11" y="49" font-family="Inter, sans-serif" font-size="3" fill="#F5F2EB">@viva.haera</text>
+
+  <rect x="3" y="3" width="90" height="50" fill="none" stroke="#00AEEF" stroke-width="0.1" stroke-dasharray="1,1"/>
+</svg>
