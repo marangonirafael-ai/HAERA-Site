@@ -70,8 +70,13 @@ emocional vira propaganda genérica. A voz da Haëra nunca escolhe um lado.
 
 ### Frase-âncora do Pulse
 
-> "Pulse é um ativador do sistema corporal: 21 ingredientes em sinergia
-> natural, sem cafeína sintética, sem energia crash, sem culpa."
+> "Pulse é um ativador do sistema corporal: 21 ingredientes naturais em
+> sinergia, sem cafeína sintética, sem queda de energia, sem culpa."
+
+**Atualizado (auditoria de UX/copy):** a versão em uso no site troca
+"sem energia crash" pelo mais claro "sem queda de energia" — evita o
+anglicismo sem perder o sentido. Esta é agora a versão oficial; a
+formulação anterior com "crash" fica descontinuada.
 
 Esta frase resume a tese inteira do produto em uma sentença — pode ser
 reaproveitada como abertura de post, roteiro de vídeo, ou resposta padrão

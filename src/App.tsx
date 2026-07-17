@@ -10,9 +10,6 @@ import Ciencia from "./pages/Ciencia";
 import Manifesto from "./pages/Manifesto";
 import Checkout from "./pages/Checkout";
 import Trocas from "./pages/Trocas";
-import BrandbookIndex from "./pages/Index";
-import BrandAssets from "./pages/BrandAssets";
-import PulsePage from "./pages/Pulse";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,10 +30,10 @@ const App = () => (
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/trocas-devolucoes" element={<Trocas />} />
 
-            {/* Brandbook interno */}
-            <Route path="/brandbook" element={<BrandbookIndex />} />
-            <Route path="/assets" element={<BrandAssets />} />
-            <Route path="/pulse" element={<PulsePage />} />
+            {/* /brandbook, /assets e /pulse (brandbook interno) foram removidos das
+                rotas públicas — expunham o roadmap de produtos futuros e material de
+                design interno sem autenticação. Os arquivos-fonte continuam em
+                src/pages/Index.tsx, BrandAssets.tsx e Pulse.tsx como referência. */}
 
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Minus, Plus, Trash2 } from 'lucide-react';
-import { BRAND, STORE_URL } from '@/lib/brand';
+import { BRAND } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
 
 const CartDrawer: React.FC = () => {
@@ -79,18 +79,15 @@ const CartDrawer: React.FC = () => {
               <span className="font-serif text-2xl" style={{ color: BRAND.WINE }}>R$ {totalPrice.toFixed(2).replace('.', ',')}</span>
             </div>
             <p className="font-sans text-[11px]" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
-              Compras finalizadas na loja oficial (haera.life). Frete calculado no checkout.
+              Pix, cartão ou boleto · Frete grátis acima de R$150
             </p>
-            <a
-              href={STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
+            <button
+              onClick={() => { setIsOpen(false); navigate('/checkout'); }}
               className="w-full block text-center font-sans text-xs tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-opacity hover:opacity-90"
               style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
             >
-              Finalizar na Loja Oficial
-            </a>
+              Finalizar Compra
+            </button>
             <button
               onClick={() => setIsOpen(false)}
               className="w-full font-sans text-xs tracking-[0.2em] uppercase py-2 hover:opacity-70"

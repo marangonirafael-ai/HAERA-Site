@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ShoppingBag, Menu, X } from 'lucide-react';
-import { BRAND } from '@/lib/brand';
+import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
 import logoSymbol from '@/assets/haera-logo-symbol.jpeg';
+import pulsePouch from '@/assets/pulse-pouch.jpeg';
 
 const links = [
   { to: '/', label: 'Início' },
@@ -13,10 +14,17 @@ const links = [
 ];
 
 const SiteNav: React.FC = () => {
-  const { totalItems, setIsOpen } = useCart();
+  const { totalItems, setIsOpen, addItem } = useCart();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleQuickAdd = () => addItem({
+    id: PULSE_PRODUCT.id,
+    name: `Haëra ${PULSE_PRODUCT.name} ${PULSE_PRODUCT.weight}`,
+    price: PULSE_PRODUCT.price,
+    image: pulsePouch,
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -66,6 +74,15 @@ const SiteNav: React.FC = () => {
         </ul>
 
         <div className="flex items-center gap-3">
+          {scrolled && (
+            <button
+              onClick={handleQuickAdd}
+              className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full transition-opacity hover:opacity-90 animate-fade-in"
+              style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
+            >
+              Comprar · {PULSE_PRODUCT.priceFormatted}
+            </button>
+          )}
           <button
             onClick={() => setIsOpen(true)}
             className="relative p-2 transition-opacity hover:opacity-70"

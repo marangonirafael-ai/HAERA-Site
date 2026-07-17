@@ -35,5 +35,3 @@ export const PULSE_PRODUCT = {
 
 export const VIP_COUPON = 'VIPHAERA';
 
-export const STORE_URL = 'https://www.haera.life';
-

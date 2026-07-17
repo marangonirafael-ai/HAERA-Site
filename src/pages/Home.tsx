@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Leaf, Zap, Heart, Sparkles, Activity } from 'lucide-react';
+import { ArrowRight, Check, MessageCircleQuestion } from 'lucide-react';
 import SiteLayout from '@/components/site/SiteLayout';
-import { BRAND, PULSE_PRODUCT, STORE_URL } from '@/lib/brand';
+import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
 import { useScrollParallax } from '@/hooks/useScrollParallax';
 import logoSymbol from '@/assets/haera-logo-symbol.jpeg';
@@ -12,27 +12,11 @@ import pulseSachets from '@/assets/pulse-sachets.jpeg';
 import nucleusLoop from '@/assets/nucleus-loop.mp4.asset.json';
 import lemonCore from '@/assets/lemon-core.jpg';
 
-const pillars = [
-  { icon: Leaf, title: 'Clean Label', text: '21 ingredientes em sinergia. Zero aditivos, corantes ou adoçantes artificiais.' },
-  { icon: Zap, title: 'Energia Contínua', text: 'Cafeína natural + Complexo B. Energia estável, sem picos nem quedas.' },
-  { icon: Activity, title: 'Oxigenação Real', text: 'Beterraba, uva e cacau elevam óxido nítrico naturalmente.' },
-  { icon: Heart, title: 'Recuperação & Imunidade', text: 'Magnésio, zinco, vitaminas C e D para o corpo se reconstruir.' },
-  { icon: Sparkles, title: 'Saúde Intestinal', text: 'Inulina e farinha de banana nutrem a microbiota — onde tudo começa.' },
-];
-
-const ingredients = [
-  'Vitamina B1', 'Vitamina B2', 'Vitamina B3', 'Vitamina B6', 'Vitamina B12',
-  'Vitamina C', 'Vitamina D', 'Magnésio', 'Cálcio', 'Ferro',
-  'Zinco', 'Banana', 'Aveia', 'Uva', 'Guaraná',
-  'Chá verde', 'Beterraba', 'Cacau', 'Stevia', 'Inulina', 'Clorella',
-];
-
 const Home: React.FC = () => {
   const { addItem } = useCart();
   const heroProductRef = useScrollParallax<HTMLImageElement>({ translateY: -90, scale: 0.08, rotate: -2 });
   const heroVideoRef = useScrollParallax<HTMLDivElement>({ translateY: 70 });
   const showcaseRef = useScrollParallax<HTMLImageElement>({ translateY: -80, scale: 0.07, rotate: 2 });
-  const ingredientsBgRef = useScrollParallax<HTMLImageElement>({ translateY: 0, rotate: 8, scale: 0.05 });
   const ctaSymbolRef = useScrollParallax<HTMLImageElement>({ translateY: -20, scale: 0.04 });
   const manifestoSymbolRef = useScrollParallax<HTMLImageElement>({ translateY: -25, scale: 0.03 });
 
@@ -72,17 +56,18 @@ const Home: React.FC = () => {
             >
               Conhecer o Pulse <ArrowRight size={14} />
             </Link>
-            <a
-              href={STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleAdd}
               className="inline-flex items-center justify-center gap-2 font-sans text-xs tracking-[0.25em] uppercase px-9 py-4 rounded-full border transition-all hover:bg-black/5 min-h-[52px] whitespace-nowrap"
               style={{ borderColor: BRAND.GRAPHITE, color: BRAND.GRAPHITE }}
             >
-              Comprar · <span className="line-through opacity-50">{PULSE_PRODUCT.priceOriginalFormatted}</span> {PULSE_PRODUCT.priceFormatted}
-            </a>
+              Comprar o Pulse · <span className="line-through opacity-50">{PULSE_PRODUCT.priceOriginalFormatted}</span> {PULSE_PRODUCT.priceFormatted}
+            </button>
             </div>
-            <div className="flex items-center gap-6 mt-12 pt-8 border-t" style={{ borderColor: `${BRAND.GRAPHITE}15` }}>
+            <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
+              Pix, cartão ou boleto · Frete grátis acima de R$150
+            </p>
+            <div className="flex items-center gap-6 mt-8 pt-8 border-t" style={{ borderColor: `${BRAND.GRAPHITE}15` }}>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full animate-pulse-slow" style={{ backgroundColor: BRAND.GOLD }} />
                 <span className="font-sans text-xs leading-tight" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
@@ -137,25 +122,19 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* FLAVOR: LEMON */}
-      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
-          <img
-            src={lemonCore}
-            alt="Núcleo de limão cortado"
-            loading="lazy"
-            width={520}
-            height={520}
-            className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full shadow-xl"
-            style={{ boxShadow: `0 30px 80px -20px ${BRAND.GOLD}80` }}
-          />
-          <div>
-            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.WINE, opacity: 0.7 }}>Sabor único</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
-              No coração do Pulse, <em className="italic" style={{ color: BRAND.WINE }}>limão</em>.
-            </h2>
-            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
-              Um frescor cítrico natural, leve e sutil — que ativa o paladar sem mascarar a pureza dos ingredientes. Sem aromas artificiais, apenas o brilho do limão.
+      {/* STORY — adiantada pra logo após a provocação, constrói confiança antes do mecanismo */}
+      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE_DEEP }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.GOLD }}>Por que Haëra existe</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-10" style={{ color: BRAND.CREAM }}>
+            Nasceu da frustração de uma nutricionista esportiva.
+          </h2>
+          <div className="space-y-6 font-sans text-base md:text-lg leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.8 }}>
+            <p>
+              Anos atendendo atletas, vendo o mesmo padrão: rótulos cheios de aditivos, marketing gritando "explosão", corpos esgotados pela exigência de estímulos cada vez mais agressivos.
+            </p>
+            <p>
+              Haëra é a resposta para quem entendeu que <em style={{ color: BRAND.GOLD, fontStyle: 'italic' }}>longevidade vale mais que pico</em> — e que clean label não é tendência, é responsabilidade.
             </p>
           </div>
         </div>
@@ -186,6 +165,29 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* FLAVOR: LEMON */}
+      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
+          <img
+            src={lemonCore}
+            alt="Núcleo de limão cortado"
+            loading="lazy"
+            width={520}
+            height={520}
+            className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full shadow-xl"
+            style={{ boxShadow: `0 30px 80px -20px ${BRAND.GOLD}80` }}
+          />
+          <div>
+            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.WINE, opacity: 0.7 }}>Sabor único</p>
+            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
+              No coração do Pulse, <em className="italic" style={{ color: BRAND.WINE }}>limão</em>.
+            </h2>
+            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
+              Um frescor cítrico natural, leve e sutil — que ativa o paladar sem mascarar a pureza dos ingredientes. Sem aromas artificiais, apenas o brilho do limão.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* PRODUCT SHOWCASE */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
@@ -205,7 +207,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className="mb-8">
-              <span className="inline-block font-sans text-[10px] tracking-[0.3em] uppercase px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${BRAND.GOLD}25`, color: BRAND.WINE }}>
+              <span className="inline-block font-sans text-[10px] tracking-[0.3em] uppercase px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${BRAND.TERRACOTTA}25`, color: BRAND.TERRACOTTA }}>
                 Lançamento · Edição Limitada
               </span>
               <div className="flex items-baseline gap-3 flex-wrap">
@@ -228,15 +230,13 @@ const Home: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleAdd}
                 className="font-sans text-xs tracking-[0.25em] uppercase px-9 py-4 rounded-full transition-opacity hover:opacity-90 text-center"
                 style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
               >
-                Comprar na Loja
-              </a>
+                Comprar o Pulse
+              </button>
               <Link
                 to="/pulse-produto"
                 className="font-sans text-xs tracking-[0.25em] uppercase px-9 py-4 rounded-full border text-center"
@@ -245,6 +245,9 @@ const Home: React.FC = () => {
                 Ver Detalhes
               </Link>
             </div>
+            <p className="font-sans text-[11px] mt-3" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
+              Pix, cartão ou boleto · Frete grátis acima de R$150
+            </p>
           </div>
           <div className="order-1 md:order-2 overflow-hidden">
             <img
@@ -258,34 +261,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* PILLARS */}
-      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <span className="font-sans text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>5 Pilares Funcionais</span>
-            <h2 className="font-serif text-4xl md:text-5xl font-light" style={{ color: BRAND.GRAPHITE }}>
-              Como o Pulse atua no seu corpo
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {pillars.map(({ icon: Icon, title, text }, i) => (
-              <div
-                key={title}
-                className="p-8 rounded-2xl transition-all hover:translate-y-[-4px]"
-                style={{ backgroundColor: i === 0 ? BRAND.WINE : BRAND.CREAM_SOFT, color: i === 0 ? BRAND.CREAM : BRAND.GRAPHITE }}
-              >
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: i === 0 ? `${BRAND.GOLD}30` : `${BRAND.WINE}15` }}>
-                  <Icon size={20} style={{ color: i === 0 ? BRAND.GOLD : BRAND.WINE }} />
-                </div>
-                <h3 className="font-serif text-xl mb-3">{title}</h3>
-                <p className="font-sans text-sm leading-relaxed" style={{ opacity: i === 0 ? 0.85 : 0.7 }}>{text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DIFERENCIAIS — minimal, à la Apple */}
+      {/* DIFERENCIAIS — minimal, à la Apple. Único bloco de números mantido na Home; */}
+      {/* Pilares e o Anel de ingredientes vivem na página do produto (aba Ingredientes + Highlights) */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
@@ -320,58 +297,24 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* INGREDIENTS RING */}
-      <section className="py-32 px-6 md:px-10 overflow-hidden" style={{ backgroundColor: BRAND.CREAM }}>
-        <div className="max-w-6xl mx-auto text-center">
-          <span className="font-sans text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>Sinergia</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-light mb-4" style={{ color: BRAND.GRAPHITE }}>
-            21 ingredientes em equilíbrio
-          </h2>
-          <p className="font-sans text-sm max-w-xl mx-auto mb-16" style={{ color: BRAND.GRAPHITE, opacity: 0.65 }}>
-            Cada componente do Pulse foi escolhido por uma razão clínica — e por como conversa com os outros 20.
+      {/* TEASER — Respostas Honestas (conteúdo completo mora em /pulse-produto) */}
+      <section className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
+        <div className="max-w-2xl mx-auto text-center">
+          <MessageCircleQuestion size={28} className="mx-auto mb-6" style={{ color: BRAND.WINE }} />
+          <span className="font-sans text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>Respostas Honestas</span>
+          <p className="font-serif text-2xl md:text-3xl italic leading-snug mb-6" style={{ color: BRAND.GRAPHITE }}>
+            "Não sinto o kick."
           </p>
-
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <img
-                ref={ingredientsBgRef}
-                src={logoSymbol}
-                alt=""
-                aria-hidden
-                className="w-[600px] h-[600px] max-w-full object-contain"
-                style={{ opacity: 0.2, mixBlendMode: 'multiply' }}
-              />
-            </div>
-            <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-              {ingredients.map(ing => (
-                <div
-                  key={ing}
-                  className="px-4 py-3 rounded-full font-sans text-xs tracking-wide border transition-all hover:bg-black/5 backdrop-blur-sm"
-                  style={{ borderColor: `${BRAND.WINE}30`, color: BRAND.GRAPHITE, backgroundColor: `${BRAND.CREAM}cc` }}
-                >
-                  {ing}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* STORY */}
-      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE_DEEP }}>
-        <div className="max-w-3xl mx-auto text-center">
-          <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.GOLD }}>Por que Haëra existe</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-10" style={{ color: BRAND.CREAM }}>
-            Nasceu da frustração de uma nutricionista esportiva.
-          </h2>
-          <div className="space-y-6 font-sans text-base md:text-lg leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.8 }}>
-            <p>
-              Anos atendendo atletas, vendo o mesmo padrão: rótulos cheios de aditivos, marketing gritando "explosão", corpos esgotados pela exigência de estímulos cada vez mais agressivos.
-            </p>
-            <p>
-              Haëra é a resposta para quem entendeu que <em style={{ color: BRAND.GOLD, fontStyle: 'italic' }}>longevidade vale mais que pico</em> — e que clean label não é tendência, é responsabilidade.
-            </p>
-          </div>
+          <p className="font-sans text-sm md:text-base leading-relaxed mb-8" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
+            O kick sintético é estresse do organismo. Haëra entrega eficiência mitocondrial — e essa é só uma das respostas diretas que temos pras suas objeções mais honestas.
+          </p>
+          <Link
+            to="/pulse-produto#respostas-honestas"
+            className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] uppercase"
+            style={{ color: BRAND.WINE }}
+          >
+            Ver todas as respostas <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
 
@@ -391,15 +334,16 @@ const Home: React.FC = () => {
           <p className="font-sans text-base md:text-lg max-w-xl mx-auto mb-10" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
             150g · 30 doses · entrega em todo o Brasil. <span className="line-through opacity-50">{PULSE_PRODUCT.priceOriginalFormatted}</span> {PULSE_PRODUCT.priceFormatted}.
           </p>
-          <a
-            href={STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={handleAdd}
             className="inline-flex items-center gap-3 font-sans text-xs tracking-[0.3em] uppercase px-12 py-5 rounded-full transition-all hover:gap-5"
             style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
           >
-            Comprar na Loja <ArrowRight size={14} />
-          </a>
+            Comprar o Pulse <ArrowRight size={14} />
+          </button>
+          <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
+            Pix, cartão ou boleto · Frete grátis acima de R$150
+          </p>
         </div>
       </section>
     </SiteLayout>

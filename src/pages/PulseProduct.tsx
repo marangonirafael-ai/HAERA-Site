@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { ArrowRight, Check, Minus, Plus, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { ArrowRight, Check, Minus, Plus, ChevronDown, ShieldCheck } from 'lucide-react';
 import SiteLayout from '@/components/site/SiteLayout';
-import { BRAND, PULSE_PRODUCT, STORE_URL } from '@/lib/brand';
+import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
 import pulsePouch from '@/assets/pulse-pouch.jpeg';
 import pulseSachets from '@/assets/pulse-sachets.jpeg';
@@ -80,19 +81,29 @@ const tabContent: Record<Tab, React.ReactNode> = {
 };
 
 const objections = [
+  { q: '"R$149,90 não é caro pra pré-treino?"', a: 'É caro se comparar com estimulante sintético. É o oposto se comparar com o que entrega: 21 ingredientes reais pelo preço de um isolado. Você paga pela fórmula, não pela marca.' },
   { q: '"Não sinto o kick."', a: 'O kick sintético é estresse do organismo. Haëra entrega eficiência mitocondrial — você treina mais, com menos esforço cardíaco.' },
   { q: '"Quero formigamento."', a: 'Formigamento é distração. Foco é o que te faz completar a última repetição com técnica perfeita.' },
   { q: '"Mineral é tudo igual."', a: 'Minerais comuns competem entre si e têm baixa absorção. Quelatos são "VIPs" no seu sistema digestivo.' },
+  { q: '"Isso é regulamentado? Tem registro?"', a: 'Sim. Fabricado por indústria licenciada, com Responsável Técnica acompanhando cada lote. Clean label não significa sem controle — significa controle sem excesso.' },
   { q: '"Nunca ouvi falar."', a: 'As melhores descobertas são as que priorizam ciência e pureza antes do marketing de massa.' },
   { q: '"Só tomo para treinar."', a: 'A sinergia de bioativos do Pulse é um excelente nootrópico natural para qualquer desafio cognitivo.' },
 ];
 
 const PulseProduct: React.FC = () => {
   const { addItem } = useCart();
+  const location = useLocation();
   const [qty, setQty] = useState(1);
   const [tab, setTab] = useState<Tab>('Descrição');
   const [activeImg, setActiveImg] = useState(0);
   const [openObj, setOpenObj] = useState<number | null>(0);
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location.hash]);
 
   const images = [pulseSachets, pulsePouch];
 
@@ -135,7 +146,7 @@ const PulseProduct: React.FC = () => {
             <p className="font-serif text-xl italic mb-6" style={{ color: BRAND.WINE }}>{PULSE_PRODUCT.tagline}</p>
 
             <div className="mb-2">
-              <span className="inline-block font-sans text-[10px] tracking-[0.3em] uppercase px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${BRAND.GOLD}25`, color: BRAND.WINE }}>
+              <span className="inline-block font-sans text-[10px] tracking-[0.3em] uppercase px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${BRAND.TERRACOTTA}25`, color: BRAND.TERRACOTTA }}>
                 Lançamento · Edição Limitada
               </span>
             </div>
@@ -188,15 +199,16 @@ const PulseProduct: React.FC = () => {
             </div>
 
             <div className="flex flex-col gap-3 mb-10">
-              <a
-                href={STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleAdd}
                 className="font-sans text-xs tracking-[0.3em] uppercase px-9 py-4 rounded-full transition-opacity hover:opacity-90 inline-flex items-center justify-center gap-2"
                 style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
               >
-                Comprar na Loja Oficial <ArrowRight size={14} />
-              </a>
+                Comprar o Pulse <ArrowRight size={14} />
+              </button>
+              <p className="font-sans text-[11px] text-center" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
+                Pix, cartão ou boleto · Frete grátis acima de R$150
+              </p>
             </div>
 
             {/* Tabs */}
@@ -245,13 +257,13 @@ const PulseProduct: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { eyebrow: 'Foco', title: 'Clareza mental sem ansiedade.', text: 'L-Teanina + cafeína natural + Complexo B trabalham em conjunto para sustentar atenção sem agitação.' },
-              { eyebrow: 'Oxigenação', title: 'Mais sangue. Mais oxigênio.', text: 'Beterraba e uva elevam óxido nítrico naturalmente — promovendo fluxo sanguíneo e oxigenação de forma equilibrada.' },
-              { eyebrow: 'Recuperação', title: 'O treino acaba. O cuidado continua.', text: 'Magnésio quelato e zinco apoiam reparo muscular e síntese hormonal entre sessões.' },
-              { eyebrow: 'Intestino', title: 'Energia começa onde nasce.', text: 'Inulina e farinha de banana verde nutrem a microbiota — base de absorção, imunidade e disposição.' },
+              { eyebrow: 'Foco', title: 'Clareza mental sem ansiedade.', text: 'L-Teanina + cafeína natural + Complexo B trabalham em conjunto para sustentar atenção sem agitação.', natural: false },
+              { eyebrow: 'Oxigenação', title: 'Mais sangue. Mais oxigênio.', text: 'Beterraba e uva elevam óxido nítrico naturalmente — promovendo fluxo sanguíneo e oxigenação de forma equilibrada.', natural: true },
+              { eyebrow: 'Recuperação', title: 'O treino acaba. O cuidado continua.', text: 'Magnésio quelato e zinco apoiam reparo muscular e síntese hormonal entre sessões.', natural: false },
+              { eyebrow: 'Intestino', title: 'Energia começa onde nasce.', text: 'Inulina e farinha de banana verde nutrem a microbiota — base de absorção, imunidade e disposição.', natural: true },
             ].map(card => (
-              <div key={card.title} className="rounded-3xl p-10 md:p-14 transition-transform hover:scale-[1.01]" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
-                <span className="font-sans text-[10px] tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>
+              <div key={card.title} className="rounded-3xl p-10 md:p-14 transition-transform hover:scale-[1.01]" style={{ backgroundColor: card.natural ? `${BRAND.SAGE}20` : BRAND.CREAM_SOFT }}>
+                <span className="font-sans text-[10px] tracking-[0.4em] uppercase mb-6 block" style={{ color: card.natural ? BRAND.OLIVE : BRAND.WINE, opacity: 0.8 }}>
                   {card.eyebrow}
                 </span>
                 <h3 className="font-serif text-3xl md:text-4xl font-light leading-tight mb-5" style={{ color: BRAND.GRAPHITE }}>
@@ -294,7 +306,7 @@ const PulseProduct: React.FC = () => {
       </section>
 
       {/* Respostas honestas */}
-      <section className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE }}>
+      <section id="respostas-honestas" className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <img src={logoSymbol} alt="" className="w-20 h-20 mx-auto mb-6" style={{ mixBlendMode: 'screen', opacity: 0.9 }} />
@@ -318,6 +330,23 @@ const PulseProduct: React.FC = () => {
                 )}
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 rounded-2xl p-8 text-center flex flex-col items-center gap-4" style={{ backgroundColor: BRAND.WINE_DEEP }}>
+            <ShieldCheck size={22} style={{ color: BRAND.GOLD }} />
+            <p className="font-serif text-xl italic" style={{ color: BRAND.CREAM }}>
+              Ainda com dúvida?
+            </p>
+            <p className="font-sans text-sm max-w-md" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
+              Compre agora com garantia de troca — se não sentir a diferença, resolvemos.
+            </p>
+            <button
+              onClick={handleAdd}
+              className="font-sans text-xs tracking-[0.25em] uppercase px-8 py-3 rounded-full transition-opacity hover:opacity-90"
+              style={{ backgroundColor: BRAND.GOLD, color: BRAND.WINE_NIGHT }}
+            >
+              Comprar o Pulse
+            </button>
           </div>
         </div>
       </section>

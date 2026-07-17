@@ -71,9 +71,15 @@ const Ciencia: React.FC = () => {
           <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block text-center" style={{ color: BRAND.GOLD }}>Mecanismo de Ação</span>
           <h2 className="font-serif text-4xl md:text-5xl font-light text-center mb-10" style={{ color: BRAND.CREAM }}>Equilíbrio Natural do Corpo</h2>
           <p className="font-serif text-xl font-light text-center leading-relaxed italic" style={{ color: BRAND.CREAM, opacity: 0.9 }}>
-            "Diferente dos sintéticos, que forçam cansaço intenso do organismo, Haëra atua na otimização do fluxo sanguíneo e na disponibilidade de substratos — permitindo que o atleta atinja o pico de performance mantendo a integridade metabólica e facilitando a recuperação."
+            "Diferente dos sintéticos, que impõem cansaço intenso ao organismo, Haëra otimiza o fluxo sanguíneo e a disponibilidade de energia — permitindo pico de performance sem sacrificar a integridade metabólica, e facilitando a recuperação."
           </p>
         </div>
+      </section>
+
+      <section className="py-20 px-6 md:px-10 text-center" style={{ backgroundColor: BRAND.CREAM }}>
+        <p className="font-serif text-2xl md:text-3xl font-light" style={{ color: BRAND.GRAPHITE }}>
+          Alimento real. Razão científica. <em className="italic" style={{ color: BRAND.WINE }}>Nenhum atalho.</em>
+        </p>
       </section>
     </SiteLayout>
   );
