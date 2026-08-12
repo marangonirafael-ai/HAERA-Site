@@ -114,3 +114,64 @@ FORMATO DE SAÍDA: [descreva o formato — ex: tabela tempo/visual/texto para
 roteiro de vídeo; lista numerada de lâminas para carrossel; texto corrido
 para legenda]
 ```
+
+## Frases de impacto (hooks de abertura)
+
+Cada pergunta mira uma dor específica de um contexto de uso diferente —
+isso é o que sustenta o argumento "não é produto de um momento só". A
+lógica: 2-4 perguntas específicas constroem tensão (a pessoa se
+reconhecendo em pelo menos uma), a última pergunta nomeia o inimigo
+(estimulante artificial / energético / café em excesso), e a virada
+apresenta o Pulse como a saída. Nunca as quatro sozinhas sem a virada —
+pergunta sem resposta é ansiedade, não direcionamento.
+
+### Modelo em cascata (para abertura de Reels ou primeiras lâminas do carrossel)
+
+Uma pergunta por corte/lâmina, ritmo curto, sem ponto de exclamação:
+
+> Buscando mais energia pro treino?
+> Foco e energia pra aquele dia intenso de trabalho?
+> Energia pra concluir o dia — e ainda estudar?
+> Cansado dos estimulantes artificiais, dos energéticos, dos baldes de café?
+>
+> Existe um jeito diferente de chegar lá. Conhece o Pulse.
+
+Variação mais curta (15s, só 3 perguntas):
+
+> Energia pro treino. Foco pro trabalho. Fôlego pro resto do dia.
+> Cansado de precisar de estimulante artificial pra dar conta de tudo isso?
+>
+> Pulse é o ativador do sistema corporal da Haëra.
+
+### Hooks avulsos por contexto (uma peça isolada cada)
+
+**Treino**
+- "Energia pro treino que não vira dívida amanhã."
+- "Quer treinar com mais foco sem pagar o preço da queda depois?"
+- "E se o pré-treino que te dá o pico também fosse o que rouba sua energia de amanhã?"
+
+**Trabalho**
+- "Reunião às 15h e a energia já foi embora?"
+- "Foco pro trabalho sem o nervosismo do quarto café do dia."
+- "Energia estável o dia inteiro — sem pico, sem queda."
+
+**Estudos**
+- "Energia pra estudar até o fim sem depender do quinto café."
+- "Foco pra terminar o que você começou — sem ansiedade no meio do caminho."
+
+**Rotina / filhos**
+- "Energia pra dar conta do dia inteiro — do trabalho à correria com os filhos."
+- "Disposição que sustenta até a última tarefa do dia, não só a primeira."
+
+**Fuga de estimulantes artificiais**
+- "Cansado de estimulante artificial, energético e balde de café?"
+- "Existe energia que não depende de cafeína anidra em dose alta."
+- "Você não precisa escolher entre sentir alguma coisa e se sentir bem depois."
+
+### Linhas de virada (encerram o hook, conectam ao Pulse)
+
+Usar uma destas logo após qualquer pergunta/cascata acima:
+
+- "Pulse é o ativador do sistema corporal da Haëra." (abre a explicação)
+- "Existe um jeito diferente de chegar lá." (mais aberto, gera curiosidade antes de nomear o produto)
+- Frase-âncora completa, quando houver espaço: "Pulse é um ativador do sistema corporal: 21 ingredientes naturais em sinergia, sem cafeína sintética, sem queda de energia, sem culpa."
