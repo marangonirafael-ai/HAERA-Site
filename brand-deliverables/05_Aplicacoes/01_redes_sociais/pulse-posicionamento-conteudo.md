@@ -294,3 +294,98 @@ regra da marca — a proibição é especificamente sobre representar o
 produto físico, a embalagem ou o ato de usá-lo. Qualquer plano em que o
 Pulse apareça (sachê, pó dissolvendo, embalagem, a pessoa bebendo o
 produto) precisa ser filmagem real.
+
+## Roteiro detalhado do carrossel — lâmina a lâmina
+
+Especificações gerais: 8 lâminas, 1080x1350px (formato 4:5 — mais espaço
+vertical e maior retenção que o quadrado 1080x1080 dos templates
+institucionais existentes; usar 1:1 apenas se o padrão de feed exigir
+consistência estrita com os outros templates já produzidos). Fundo alterna
+entre Wine e Cream para marcar as três fases do argumento (gancho → 
+diagnóstico → resposta) — a mudança de cor é o principal recurso de ritmo,
+já que não há vídeo/movimento carregando a transição. Por regra de marca,
+o símbolo Núcleo (Gold) aparece em alguma escala em todas as 8 lâminas.
+
+**Lâmina 1 — Capa**
+- Objetivo: parar o scroll; ecoar o gancho já validado do Reels.
+- Fundo: Wine (#722F37). Núcleo Gold grande (~40% da largura),
+  centralizado, levemente atrás do texto.
+- Texto principal: "Pulse não é o que você imagina." — Cormorant
+  Garamond, Cream, centralizado, tamanho grande.
+- Texto secundário: "Arraste e descubra." — Inter uppercase, tracking
+  largo, Gold, pequeno, canto inferior, com seta/indicador de swipe.
+
+**Lâmina 2 — Negação #1**
+- Objetivo: nomear e descartar a primeira categoria errada.
+- Fundo: Cream Soft (#EDE7D9) — a mudança de paleta sinaliza "modo
+  diagnóstico", diferente do gancho.
+- Ícone: X pequeno em Wine, canto superior esquerdo.
+- Headline: "NÃO é pré-treino." — Inter, uppercase, bold, Wine.
+- Corpo: "Cafeína anidra em dose alta. Pico de energia — e queda daqui a
+  duas horas." — Inter regular, Graphite a 70% de opacidade.
+- Núcleo Gold pequeno, canto inferior direito (constante em toda lâmina).
+
+**Lâmina 3 — Negação #2**
+- Objetivo: nomear e descartar a segunda categoria errada. Mesma
+  estrutura visual da lâmina 2 (repetição intencional = ritmo de "lista").
+- Headline: "NÃO é multivitamínico."
+- Corpo: "Cápsula que você toma e esquece. Zero energia perceptível no
+  dia a dia."
+
+**Lâmina 4 — Revelação (lâmina-chave)**
+- Objetivo: a virada — resposta à tensão criada nas lâminas 2 e 3.
+- Fundo: volta ao Wine — o retorno de cor sinaliza "aqui está a
+  resposta". Núcleo Gold grande, centralizado, com leve glow.
+- Headline: "É um ativador do sistema corporal." — Cormorant Garamond
+  itálico, Cream, grande.
+- Corpo: frase-âncora completa — "21 ingredientes naturais em sinergia.
+  Sem cafeína sintética. Sem queda de energia. Sem culpa." — Inter,
+  Cream a 85%.
+
+**Lâmina 5 — Como funciona**
+- Objetivo: sustentar a virada com prova científica resumida (educação,
+  não bula — máximo 4 itens).
+- Fundo: Cream. Eyebrow: "Como funciona" — Wine, uppercase, tracking
+  largo.
+- Grid 2x2, um ícone de linha simples por item:
+  1. Guaraná → cafeína natural de liberação gradual
+  2. Complexo B → energia e foco sem estimulação artificial
+  3. Beterraba + uva → oxigenação, fluxo sanguíneo
+  4. Inulina → intestino, base da absorção
+- Tipografia Inter, Graphite; ícones alternando Gold/Sage (mesma lógica
+  de "destaque natural" usada nos cards do site).
+
+**Lâmina 6 — Onde usar**
+- Objetivo: prova estática do argumento "não é produto de um momento só"
+  (o mesmo que o Reels prova em vídeo).
+- Fundo: Cream Soft. Headline: "Um sachê, três momentos do seu dia."
+- 3 linhas, ícone de linha + label, Wine:
+  1. Ícone haltere — "Antes do treino"
+  2. Ícone laptop/xícara — "No meio do trabalho"
+  3. Ícone família — "Na correria com os filhos"
+
+**Lâmina 7 — Comparativo**
+- Objetivo: fechamento racional para quem quer o argumento completo antes
+  de comprar (público mais cético/pesquisador).
+- Fundo: Cream, borda Wine (replica o estilo da tabela comparativa já
+  usada em `PulseProduct.tsx`).
+- Headline: "Pulse vs. Estimulante Convencional."
+- 4 linhas reduzidas da tabela do site (Composição, Pureza, Energia,
+  Resultado), texto curto dos dois lados, Inter pequeno.
+
+**Lâmina 8 — CTA**
+- Objetivo: fechar com produto, preço e chamada de ação.
+- Fundo: Wine. Núcleo Gold.
+- Headline: "Energia limpa que sustenta performance." (tagline do
+  produto) — Cormorant Garamond, Cream.
+- Preço: "R$ 149,90 · Lançamento" — Gold, destaque.
+- CTA: "Arraste pro link na bio."
+- Tagline institucional pequena, rodapé: "Nutrir antes de estimular."
+
+### Legenda do post (texto de acompanhamento)
+
+> Pulse não é pré-treino. Não é multivitamínico. É o ativador do sistema
+> corporal da Haëra — feito pra sustentar energia no treino, no trabalho
+> e na correria do dia a dia. Arraste pra entender de vez. Link na bio.
+>
+> #haërapulse #nutrirantesdeestimular
