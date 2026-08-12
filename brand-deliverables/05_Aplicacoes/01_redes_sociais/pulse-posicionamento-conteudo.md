@@ -175,3 +175,122 @@ Usar uma destas logo após qualquer pergunta/cascata acima:
 - "Pulse é o ativador do sistema corporal da Haëra." (abre a explicação)
 - "Existe um jeito diferente de chegar lá." (mais aberto, gera curiosidade antes de nomear o produto)
 - Frase-âncora completa, quando houver espaço: "Pulse é um ativador do sistema corporal: 21 ingredientes naturais em sinergia, sem cafeína sintética, sem queda de energia, sem culpa."
+
+## Prompt detalhado de produção — Reels "E se seu pré-treino..."
+
+Briefing pronto para entregar a um videomaker/editor (ou usar como prompt
+de direção de arte). Cobre os planos com pessoas reais — os planos com o
+produto físico são fotografia/filmagem real por regra de marca, nunca
+geração por IA.
+
+```
+FORMATO
+- Vertical 9:16, 1080x1920px, 30fps.
+- Duração total: 28-30s.
+- Zona segura de texto: 250px de margem superior e inferior (área de UI
+  do Reels/TikTok/Stories cobre essas bordas).
+- Corte rápido: nenhum plano dura mais de 6s.
+
+CASTING E DIREÇÃO DE ARTE
+- Talento: 1 pessoa, 28-40 anos, aparência "atlética real" (não fisiculturista
+  de capa de revista) — precisa ser crível como alguém que treina, trabalha
+  e cuida de filhos na mesma semana.
+- Guarda-roupa: roupa de treino neutra (preto/grafite/off-white) na cena de
+  academia; roupa casual de trabalho (nunca terno/executivo — a marca é
+  "premium acessível", não corporativo) na cena de escritório; roupa de
+  fim de tarde/casual na cena com criança.
+- Expressão: contida, direta, sem sorriso forçado nem cara de "sofrimento
+  de suplemento". O guia de tom da marca proíbe qualquer tom "explosão"
+  ou "hardcore" — isso vale para a atuação também, não só pro texto.
+- Locações: academia real (não estúdio com fundo infinito), mesa de
+  trabalho com luz natural de janela, ambiente doméstico/externo leve para
+  a cena com a criança (playground, cozinha, saída de casa).
+
+GRADE DE COR
+- Levar a imagem para o mesmo território cromático do site: tons quentes,
+  contraste suave, nada de grade "azulado/frio" de academia comercial.
+  Wine #722F37 e Gold #B8964B devem aparecer organicamente em pelo menos
+  um elemento de cena (roupa, objeto, luz) sempre que possível — sem forçar.
+- Evitar: super-saturação, flare artificial, qualquer estética "energy
+  drink"/neon.
+
+ROTEIRO CENA A CENA
+
+[0:00–0:03] HOOK
+Plano: médio, talento olha direto pra câmera, parado, shaker/sachê na mão
+(fotografia/filmagem real do produto).
+Áudio/VO (tom seco, sem inflexão de venda): "E se o seu pré-treino
+estivesse roubando a energia do seu amanhã?"
+Texto na tela: mesma frase, fonte Cormorant Garamond itálico, cor Cream
+(#F5F2EB) sobre fundo escurecido, entra com fade simples (sem bounce/zoom
+agressivo).
+
+[0:03–0:08] TENSÃO / RECONHECIMENTO
+Plano: 2-3 cortes rápidos (b-roll) — pessoa "no talo" na mesa às 15h,
+esfregando o rosto; xícara de café vazia nº3; olhar cansado pro celular.
+Sem talento falando, só respiração/ambiente.
+Texto na tela: "Você já sentiu isso." — fonte Inter, uppercase, tracking
+largo, pequena, canto inferior.
+Áudio: sem VO nesse trecho — deixar o silêncio/ambiente carregar a tensão.
+
+[0:08–0:14] QUEBRA DE CATEGORIA
+Plano: still/macro do sachê Pulse dissolvendo em água — câmera parada,
+sem corte no meio do movimento do líquido (fotografia/filmagem real,
+nunca geração por IA).
+VO: "Pulse não é pré-treino. Não é multivitamínico."
+Texto na tela: as duas frases entram uma de cada vez, fonte Inter
+uppercase, cor Wine sobre fundo Cream — a paleta muda aqui de propósito
+pra marcar a virada de tom.
+
+[0:14–0:20] PROVA MULTI-CONTEXTO (o coração da peça)
+3 cortes de 2s cada, mesma pessoa, mesmo gesto (bebendo o Pulse),
+locações diferentes:
+  1. Academia — antes de pegar a barra.
+  2. Mesa de trabalho — antes de entrar numa call, luz de janela.
+  3. Saída de casa / playground — antes de sair com a criança.
+Texto na tela (um por corte, sincronizado ao corte): "Antes do treino." /
+"No meio do trabalho." / "Na correria do dia."
+VO por cima da montagem (contínuo, não por corte): "É um ativador do
+sistema corporal. Energia que sustenta — no treino, no trabalho, na vida."
+
+[0:20–0:26] PAYOFF RACIONAL
+Plano: close no produto, fotografia real, luz suave, sem movimento de
+câmera brusco.
+VO: "21 ingredientes reais. Sem cafeína sintética. Sem queda de energia."
+Texto na tela: frase-âncora resumida, fonte Cormorant Garamond, Gold sobre
+fundo Wine.
+
+[0:26–0:30] CTA / ENCERRAMENTO
+Plano: logo Haëra (símbolo Núcleo em Gold) sobre fundo Wine, still, 4s.
+Texto: "Nutrir antes de estimular." (tagline institucional) + "Pulse —
+link na bio."
+Sem VO — só música subindo levemente no volume para fechar.
+
+SOM
+- Trilha: instrumental, andamento moderado (90-110 BPM), sem batida
+  "hype"/trap de academia — pensar em algo mais próximo de lo-fi
+  orgânico/piano-ambiente do que EDM. A trilha não pode competir com o
+  guia de voz "sem hype".
+- SFX: som real do líquido dissolvendo no plano macro (0:08–0:14) —
+  gravar no set, não usar banco de efeitos genérico.
+
+LEGENDA BURNADA (para quem assiste sem áudio)
+Legendar 100% da VO, mesmo estilo tipográfico do texto na tela descrito
+acima, nunca a fonte padrão de legenda automática do app — perde a
+identidade de marca.
+
+ENTREGÁVEIS DE EXPORT
+- 1 arquivo mestre 1080x1920 MP4 H.264, com texto embutido, para
+  Reels/TikTok/Shorts.
+- 1 versão sem texto embutido (para caso a plataforma exija
+  legenda nativa separada).
+- Thumbnail de capa: frame do plano 0:20–0:26 (produto em destaque).
+```
+
+**Nota sobre ferramentas de geração por IA:** se parte do b-roll de apoio
+(cenas 0:03–0:08, sem produto e sem falas específicas de marca) for
+produzida com IA de vídeo por questão de custo/tempo, isso não viola a
+regra da marca — a proibição é especificamente sobre representar o
+produto físico, a embalagem ou o ato de usá-lo. Qualquer plano em que o
+Pulse apareça (sachê, pó dissolvendo, embalagem, a pessoa bebendo o
+produto) precisa ser filmagem real.
