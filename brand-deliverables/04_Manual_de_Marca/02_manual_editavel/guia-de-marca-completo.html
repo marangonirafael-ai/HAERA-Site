@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haëra — Manual de Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   HAËRA — GUIA DE MARCA COMPLETO
+   Tokens de marca reais, extraídos de brand-deliverables/ e src/lib/brand.ts
+   ============================================================ */
+:root{
+  /* Paleta oficial Haëra (brand-deliverables/02_Cores/01_codigos_cor/codigos-de-cor.md) */
+  --sage:#9CAF88;        /* primária */
+  --olive:#3F4F45;       /* secundária */
+  --wine:#722F37;        /* apoio 1 — produto Pulse */
+  --petrol:#1B4D5C;      /* apoio 2 */
+  --gold:#B8964B;        /* apoio institucional — logo */
+  --terracotta:#C4714A;  /* apoio */
+  --cream:#F5F2EB;       /* neutro claro — fundo padrão */
+  --cream-soft:#EDE7D9;  /* neutro claro alternativo */
+  --graphite:#1C1C1C;    /* neutro escuro — texto */
+  --amber-flag:#F4B740;  /* cor de sinalização [A DEFINIR] — não é cor de marca */
+  --amber-flag-bg:#FCF3D9;
+
+  --font-display:'Cormorant Garamond', Georgia, serif;
+  --font-body:'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Espaçamento em múltiplos de 8px */
+  --sp-1:8px; --sp-2:16px; --sp-3:24px; --sp-4:32px; --sp-5:40px;
+  --sp-6:48px; --sp-7:56px; --sp-8:64px; --sp-9:72px; --sp-10:80px;
+  --sp-12:96px; --sp-14:112px; --sp-16:128px;
+
+  --radius-lg:24px; --radius-md:14px; --radius-sm:8px;
+  --shadow-soft:0 4px 20px -4px rgba(28,28,28,.10);
+  --shadow-elegant:0 12px 48px -12px rgba(28,28,28,.20);
+  --sidebar-w:272px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:#E8E2D3;
+  color:var(--graphite);
+  font-family:var(--font-body);
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block;}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;margin:0;color:var(--olive);}
+p{margin:0;}
+a{color:inherit;}
+button{font-family:var(--font-body);cursor:pointer;}
+
+/* ---------- Layout raiz ---------- */
+.app{display:flex;min-height:100vh;}
+
+/* ---------- Sidebar ---------- */
+.sidebar{
+  width:var(--sidebar-w);
+  flex-shrink:0;
+  position:fixed;
+  top:0;left:0;bottom:0;
+  background:var(--olive);
+  color:var(--cream);
+  padding:var(--sp-5) var(--sp-4) var(--sp-4);
+  overflow-y:auto;
+  z-index:40;
+}
+.sidebar-brand{display:flex;align-items:center;gap:12px;margin-bottom:var(--sp-6);}
+.sidebar-brand .mark{width:34px;height:34px;color:var(--gold);}
+.sidebar-brand .word{font-family:var(--font-display);font-size:22px;letter-spacing:.08em;color:var(--cream);}
+.sidebar nav{display:flex;flex-direction:column;gap:2px;}
+.sidebar a{
+  display:flex;gap:10px;align-items:baseline;
+  padding:9px 10px;border-radius:var(--radius-sm);
+  text-decoration:none;color:rgba(245,242,235,.62);
+  font-size:12.5px;letter-spacing:.02em;
+  transition:background .2s,color .2s;
+}
+.sidebar a .n{font-family:var(--font-body);font-variant-numeric:tabular-nums;font-size:10.5px;opacity:.7;width:16px;flex-shrink:0;}
+.sidebar a:hover{color:var(--cream);background:rgba(245,242,235,.06);}
+.sidebar a.active{color:var(--cream);background:rgba(184,150,75,.22);font-weight:500;}
+.sidebar a.active .n{color:var(--gold);opacity:1;}
+.sidebar-foot{margin-top:var(--sp-6);padding-top:var(--sp-3);border-top:1px solid rgba(245,242,235,.14);}
+.export-btn{
+  width:100%;display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--gold);color:var(--olive);border:none;
+  padding:12px 14px;border-radius:999px;font-size:11.5px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+}
+.export-btn:hover{background:#cba85e;}
+.export-btn svg{width:14px;height:14px;}
+.sidebar-toast{
+  margin-top:10px;font-size:11px;color:var(--sage);opacity:0;transition:opacity .3s;text-align:center;
+}
+.sidebar-toast.show{opacity:1;}
+
+/* ---------- Main / páginas ---------- */
+.main{margin-left:var(--sidebar-w);flex:1;padding:var(--sp-8) var(--sp-6) var(--sp-16);}
+.page{
+  width:100%;max-width:1200px;margin:0 auto var(--sp-8);
+  aspect-ratio:16/9;min-height:675px;height:auto;
+  background:var(--cream);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-elegant);
+  position:relative;
+  padding:0;
+  display:flex;flex-direction:column;
+  scroll-margin-top:var(--sp-4);
+}
+.page-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:var(--sp-3) var(--sp-5);
+  border-bottom:1px solid rgba(28,28,28,.08);
+  flex-shrink:0;
+}
+.page-header .brand{display:flex;align-items:center;gap:8px;}
+.page-header .brand svg{width:20px;height:20px;color:var(--olive);}
+.page-header .brand span{font-family:var(--font-display);font-size:15px;letter-spacing:.1em;color:var(--olive);}
+.page-header .meta{display:flex;align-items:baseline;gap:8px;}
+.page-header .meta .num{font-size:11px;color:var(--wine);font-weight:600;letter-spacing:.1em;}
+.page-header .meta .title{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite);opacity:.55;}
+.page-body{padding:var(--sp-6) var(--sp-6) var(--sp-7);flex:1;overflow:visible;}
+.page.dark .page-header{border-bottom-color:rgba(245,242,235,.14);}
+.page.dark .page-header .brand span{color:var(--cream);}
+.page.dark .page-header .brand svg{color:var(--gold);}
+.page.dark .page-header .meta .title{color:var(--cream);opacity:.55;}
+
+.kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--wine);font-weight:600;margin-bottom:10px;}
+.page.dark .kicker{color:var(--gold);}
+h2.sect-title{font-size:38px;font-weight:300;margin-bottom:var(--sp-4);color:var(--olive);}
+.page.dark h2.sect-title{color:var(--cream);}
+.lede{font-size:16px;line-height:1.7;color:var(--graphite);opacity:.85;max-width:64ch;}
+.page.dark .lede{color:var(--cream);opacity:.82;}
+
+/* ---------- Flag [A DEFINIR] ---------- */
+.flag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--amber-flag-bg);color:#7A5B00;
+  border:1px solid var(--amber-flag);
+  padding:3px 10px 3px 8px;border-radius:999px;
+  font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  white-space:nowrap;
+}
+.flag::before{content:"●";color:var(--amber-flag);font-size:8px;}
+.flag-block{
+  background:var(--amber-flag-bg);border:1px dashed var(--amber-flag);
+  border-radius:var(--radius-sm);padding:var(--sp-2) var(--sp-3);
+  font-size:12.5px;color:#7A5B00;line-height:1.55;
+}
+.flag-block b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+
+/* ---------- Grids utilitários ---------- */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5);}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3);}
+.grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--sp-2);}
+
+/* ---------- Placeholder de imagem ---------- */
+.ph{
+  border-radius:var(--radius-md);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:6px;padding:var(--sp-3);
+  color:rgba(255,255,255,.92);position:relative;overflow:hidden;
+  min-height:120px;
+}
+.ph .ph-icon{width:26px;height:26px;opacity:.8;}
+.ph .ph-cap{font-size:11px;line-height:1.5;max-width:26ch;opacity:.92;}
+.ph .ph-tag{position:absolute;top:8px;left:8px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.22);padding:3px 8px;border-radius:999px;}
+
+/* ---------- Swatch ---------- */
+.swatch{
+  border-radius:var(--radius-md);overflow:hidden;background:#fff;
+  box-shadow:var(--shadow-soft);display:flex;flex-direction:column;
+}
+.swatch .fill{height:110px;position:relative;}
+.swatch .info{padding:var(--sp-2) var(--sp-3) var(--sp-3);}
+.swatch .cname{font-family:var(--font-display);font-size:19px;color:var(--olive);}
+.swatch .cuse{font-size:11px;opacity:.6;margin-top:2px;line-height:1.4;}
+.copy-btn{
+  position:absolute;bottom:8px;right:8px;
+  background:rgba(255,255,255,.92);border:none;border-radius:999px;
+  font-size:10px;font-weight:600;letter-spacing:.04em;
+  padding:5px 10px;color:var(--graphite);display:flex;align-items:center;gap:5px;
+  transition:background .2s;
+}
+.copy-btn:hover{background:#fff;}
+.copy-btn.copied{background:var(--sage);color:#fff;}
+.copy-btn svg{width:11px;height:11px;}
+
+/* ---------- Tabelas ---------- */
+table.spec{width:100%;border-collapse:collapse;font-size:12.5px;}
+table.spec th{text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.55;padding:6px 10px;border-bottom:1px solid rgba(28,28,28,.14);}
+table.spec td{padding:8px 10px;border-bottom:1px solid rgba(28,28,28,.07);}
+table.spec tr:last-child td{border-bottom:none;}
+
+/* ---------- Símbolos ---------- */
+.symbol-card{background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-soft);padding:var(--sp-4);text-align:center;}
+.symbol-card .sy{width:76px;height:76px;margin:0 auto var(--sp-2);color:var(--olive);}
+.symbol-card h4{font-size:19px;margin-bottom:6px;}
+.symbol-card p{font-size:11.5px;opacity:.7;line-height:1.5;}
+.symbol-card .where{font-size:10.5px;color:var(--wine);margin-top:8px;font-weight:600;letter-spacing:.03em;}
+
+.divider-territory{display:flex;align-items:center;gap:var(--sp-2);margin:var(--sp-5) 0 var(--sp-3);}
+.divider-territory .line{flex:1;height:1px;background:rgba(28,28,28,.15);}
+.divider-territory span{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--graphite);opacity:.55;}
+
+/* ---------- Certo / Errado ---------- */
+.ok-card,.no-card{border-radius:var(--radius-md);padding:var(--sp-3);position:relative;background:#fff;box-shadow:var(--shadow-soft);}
+.ok-card{border:2px solid var(--sage);}
+.no-card{border:2px solid #C0392B;}
+.badge-ok,.badge-no{position:absolute;top:-11px;left:14px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;}
+.badge-ok{background:var(--sage);}
+.badge-no{background:#C0392B;}
+.demo{height:90px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;background:var(--olive);margin-bottom:10px;overflow:hidden;}
+.demo .wm{font-family:var(--font-display);font-size:26px;letter-spacing:.14em;color:var(--cream);}
+.caption-sm{font-size:11px;opacity:.65;line-height:1.4;}
+
+/* ---------- Rodapé de página ---------- */
+.pg-num{position:absolute;bottom:var(--sp-2);right:var(--sp-4);font-size:10px;color:var(--graphite);opacity:.35;letter-spacing:.08em;}
+
+/* ---------- Utilitários de cor por bloco ---------- */
+.bg-olive{background:var(--olive);color:var(--cream);}
+.bg-wine{background:var(--wine);color:var(--cream);}
+.bg-petrol{background:var(--petrol);color:var(--cream);}
+.bg-cream-soft{background:var(--cream-soft);}
+.text-wine{color:var(--wine);}
+.text-gold{color:var(--gold);}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:900px){
+  .sidebar{
+    position:static;width:100%;height:auto;
+    display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3);
+  }
+  .sidebar-brand{margin:0;}
+  .sidebar nav{flex-direction:row;overflow-x:auto;gap:2px;flex:1;}
+  .sidebar a{white-space:nowrap;}
+  .sidebar-foot{display:none;}
+  .main{margin-left:0;padding:var(--sp-4) var(--sp-3) var(--sp-10);}
+  .page{aspect-ratio:auto;min-height:0;}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}
+  .grid-6{grid-template-columns:repeat(3,1fr);}
+  .page-body{padding:var(--sp-4);}
+  h2.sect-title{font-size:28px;}
+}
+
+/* ---------- Impressão ---------- */
+@media print{
+  .sidebar,.export-btn,.copy-btn,.sidebar-toast{display:none !important;}
+  .main{margin-left:0;padding:0;}
+  body{background:#fff;}
+  .page{box-shadow:none;border-radius:0;page-break-after:always;aspect-ratio:auto;width:100%;max-width:none;margin:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <svg class="mark" viewBox="0 0 100 100" fill="none"><g id="mini-mark"></g></svg>
+      <span class="word">Haëra</span>
+    </div>
+    <nav id="toc-nav">
+      <a href="#capa"><span class="n">01</span>Capa</a>
+      <a href="#sumario"><span class="n">02</span>Sumário</a>
+      <a href="#a-marca"><span class="n">03</span>A marca</a>
+      <a href="#arquitetura"><span class="n">04</span>Arquitetura de produto</a>
+      <a href="#logo"><span class="n">05</span>Logo</a>
+      <a href="#simbolos"><span class="n">06</span>Sistema de símbolos</a>
+      <a href="#respiro"><span class="n">07</span>Respiro e tamanho mínimo</a>
+      <a href="#usos-incorretos"><span class="n">08</span>Usos incorretos</a>
+      <a href="#paleta"><span class="n">09</span>Paleta de cores</a>
+      <a href="#tipografia"><span class="n">10</span>Tipografia</a>
+      <a href="#fotografia"><span class="n">11</span>Fotografia e imagem</a>
+      <a href="#linguagem"><span class="n">12</span>Linguagem e claims</a>
+      <a href="#embalagem"><span class="n">13</span>Embalagem</a>
+      <a href="#digital"><span class="n">14</span>Aplicações digitais</a>
+      <a href="#fechamento"><span class="n">15</span>Fechamento</a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="export-btn" id="export-tokens">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+        Exportar tokens
+      </button>
+      <div class="sidebar-toast" id="export-toast">tokens.json baixado</div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <!-- ============================================================
+         01 · CAPA
+    ============================================================ -->
+    <section class="page dark" id="capa" data-title="Capa" data-num="01" style="background:var(--olive);overflow:hidden;">
+      <div style="position:absolute;inset:0;z-index:0;">
+        <div style="position:absolute;width:520px;height:520px;border-radius:60% 40% 55% 45% / 50% 55% 45% 50%;background:var(--wine);opacity:.35;top:-160px;right:-140px;"></div>
+        <div style="position:absolute;width:360px;height:360px;border-radius:45% 55% 40% 60% / 55% 45% 60% 40%;background:var(--sage);opacity:.16;bottom:-120px;left:-90px;"></div>
+        <div style="position:absolute;width:220px;height:220px;border-radius:50%;background:var(--gold);opacity:.14;bottom:60px;right:220px;"></div>
+      </div>
+      <div class="page-body" style="position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;height:100%;">
+        <svg viewBox="0 0 100 100" style="width:96px;height:96px;color:var(--gold);margin-bottom:var(--sp-4);"><g class="nucleo-target" data-opacity="1"></g></svg>
+        <span class="kicker" style="color:var(--gold);">Identidade de marca</span>
+        <h1 style="font-family:var(--font-display);font-weight:300;font-size:76px;letter-spacing:.1em;color:var(--cream);line-height:1;">MANUAL DE MARCA</h1>
+        <p style="font-family:var(--font-display);font-size:24px;font-style:italic;color:var(--cream);opacity:.85;margin-top:var(--sp-3);">
+          Entre superfood e suplemento — ciência aplicada, tratamento editorial.
+        </p>
+        <p style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--cream);opacity:.5;margin-top:var(--sp-6);">
+          Haëra · Superalimentos e suplementos funcionais · Lançamento setembro/2026 · Brasil
+        </p>
+        <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:var(--sp-2);">v1.0 — 2026</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02 · SUMÁRIO
+    ============================================================ -->
+    <section class="page" id="sumario" data-title="Sumário" data-num="02">
+      <div class="page-body">
+        <div class="kicker">Índice</div>
+        <h2 class="sect-title" style="margin-bottom:var(--sp-6);">Sumário</h2>
+        <div class="grid-2" style="gap:var(--sp-6);">
+          <div>
+            <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);font-weight:600;margin-bottom:12px;">Bloco 1 — Fundamentos</p>
+            <ul style="list-style:none;padding:0;margin:0 0 var(--sp-4);display:flex;flex-direction:column;gap:9px;">
+              <li><b>01</b> Capa</li>
+              <li><b>02</b> Sumário</li>
+              <li><b>03</b> A marca <span class="sub">— origem, propósito, personalidade, valores</span></li>
+              <li><b>04</b> Arquitetura de produto <span class="sub">— nomenclatura e sistema de SKUs</span></li>
+            </ul>
+            <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);font-weight:600;margin:var(--sp-3) 0 12px;">Bloco 2 — Identidade visual</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;">
+              <li><b>05</b> Logo <span class="sub">— versões e variações</span></li>
+              <li><b>06</b> Sistema de símbolos <span class="sub">— semânticos e grafismos de apoio</span></li>
+              <li><b>07</b> Respiro e tamanho mínimo</li>
+              <li><b>08</b> Usos incorretos do logo</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);font-weight:600;margin-bottom:12px;">Bloco 3 — Cor, tipo e imagem</p>
+            <ul style="list-style:none;padding:0;margin:0 0 var(--sp-4);display:flex;flex-direction:column;gap:9px;">
+              <li><b>09</b> Paleta de cores</li>
+              <li><b>10</b> Tipografia <span class="sub">— escala e uso em rótulo</span></li>
+              <li><b>11</b> Fotografia e imagem <span class="sub">— produto e lifestyle</span></li>
+            </ul>
+            <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);font-weight:600;margin:var(--sp-3) 0 12px;">Bloco 4 — Linguagem e aplicação</p>
+            <ul style="list-style:none;padding:0;margin:0 0 var(--sp-4);display:flex;flex-direction:column;gap:9px;">
+              <li><b>12</b> Linguagem e claims <span class="sub">— tom de voz e regulatório</span></li>
+              <li><b>13</b> Embalagem</li>
+              <li><b>14</b> Aplicações digitais</li>
+            </ul>
+            <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);font-weight:600;margin:var(--sp-3) 0 12px;">Bloco 5 — Fechamento</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;">
+              <li><b>15</b> Fechamento <span class="sub">— síntese e contato</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <style>#sumario ul li{font-size:14px;color:var(--graphite);}#sumario ul li b{font-family:var(--font-display);font-weight:500;color:var(--olive);margin-right:8px;font-size:15px;}#sumario .sub{display:block;font-size:11px;opacity:.55;font-weight:300;margin-top:1px;}</style>
+    </section>
+
+    <!-- ============================================================
+         03 · A MARCA
+    ============================================================ -->
+    <section class="page" id="a-marca" data-title="A marca" data-num="03">
+      <div class="page-body" style="display:flex;flex-direction:column;height:100%;">
+        <div style="flex:1;">
+          <div class="kicker">Origem &amp; propósito</div>
+          <h2 class="sect-title">A marca</h2>
+          <div class="grid-2" style="margin-top:var(--sp-3);">
+            <div>
+              <h4 style="font-size:15px;color:var(--wine);margin-bottom:6px;">Origem</h4>
+              <p class="lede" style="font-size:13.5px;">
+                Haëra nasce da frustração de uma nutricionista esportiva com o binarismo do mercado de pré-treino:
+                de um lado, suplementos sintéticos agressivos; do outro, superfoods genéricos sem foco em performance.
+                A marca ocupa deliberadamente o meio-termo — rigor de suplemento com a consciência de ingrediente
+                de um superfood.
+              </p>
+            </div>
+            <div>
+              <h4 style="font-size:15px;color:var(--wine);margin-bottom:6px;">Promessa central</h4>
+              <p class="lede" style="font-size:13.5px;font-family:var(--font-display);font-style:italic;color:var(--olive);">
+                “Nutrir antes de estimular.”
+              </p>
+              <p class="lede" style="font-size:12px;margin-top:8px;">
+                Posicionamento: entre superfood e suplemento — rigor científico com consciência de ingrediente,
+                em preço premium acessível. Público primário: 25–45 anos, treina com regularidade, lê rótulo,
+                desconfia de marketing vazio e de jargão técnico impenetrável.
+                <span class="flag" style="margin-left:6px;">Público secundário: a definir</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-petrol" style="margin:0 calc(-1 * var(--sp-6)) calc(-1 * var(--sp-7));padding:var(--sp-4) var(--sp-6);border-radius:0 0 var(--radius-lg) var(--radius-lg);">
+          <div class="grid-2" style="gap:var(--sp-6);">
+            <div>
+              <p style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:8px;">Personalidade</p>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span class="pill">Científica</span><span class="pill">Humana</span><span class="pill">Premium</span>
+                <span class="pill">Elegante</span><span class="pill">Acessível</span><span class="pill">Confiável</span>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:8px;">Valores</p>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span class="pill">Ciência</span><span class="pill">Sensibilidade</span><span class="pill">Constância</span>
+                <span class="pill">Elegância</span><span class="pill">Leveza</span><span class="pill">Longevidade</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>#a-marca .pill{font-size:11.5px;color:var(--cream);border:1px solid rgba(245,242,235,.35);padding:5px 12px;border-radius:999px;}</style>
+    </section>
+
+    <!-- ============================================================
+         04 · ARQUITETURA DE PRODUTO
+    ============================================================ -->
+    <section class="page" id="arquitetura" data-title="Arquitetura de produto" data-num="04">
+      <div class="page-body">
+        <div class="kicker">Sistema de nomenclatura</div>
+        <h2 class="sect-title">Arquitetura de produto</h2>
+        <p class="lede" style="margin-bottom:var(--sp-4);">
+          Todo produto Haëra se nomeia por três camadas: <b>marca-mãe</b> + <b>nome autoral do produto</b> +
+          <b>formato/peso</b>. O nome autoral (ex.: “Pulse”) nunca é genérico ou descritivo — carrega personalidade
+          própria dentro do universo Haëra, como um capítulo dentro do manifesto da marca.
+        </p>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-5);flex-wrap:wrap;">
+          <span class="chip bg-olive">Haëra</span><span class="plus">+</span>
+          <span class="chip" style="background:var(--wine);color:var(--cream);">Pulse</span><span class="plus">+</span>
+          <span class="chip" style="background:var(--cream-soft);color:var(--graphite);border:1px solid rgba(28,28,28,.15);">150g / sachê 5g</span>
+          <span class="plus">=</span>
+          <span style="font-family:var(--font-display);font-size:20px;color:var(--olive);">“Haëra Pulse 150g”</span>
+        </div>
+        <div class="grid-2">
+          <div class="symbol-card" style="text-align:left;">
+            <h4 style="margin-bottom:8px;">Linha atual</h4>
+            <table class="spec">
+              <tr><th>Produto</th><th>Formato</th><th>Cor de produto</th></tr>
+              <tr><td>Pulse</td><td>Pó — pote 150g (30 doses de 5g) e sachês individuais</td><td style="color:var(--wine);">Wine ●</td></tr>
+            </table>
+          </div>
+          <div class="flag-block">
+            <b>Como novos produtos entram no sistema — a definir</b>
+            A regra de nomenclatura (marca-mãe + nome autoral + formato) já está fixada e vale para qualquer
+            SKU futuro. O que ainda não foi definido: quais categorias/linhas vêm a seguir, se cada linha nova
+            recebe cor de produto própria (como o Wine do Pulse) e o critério de atribuição dessa cor.
+          </div>
+        </div>
+      </div>
+      <style>#arquitetura .chip{padding:8px 16px;border-radius:999px;font-family:var(--font-display);font-size:16px;letter-spacing:.04em;}#arquitetura .plus{font-size:16px;opacity:.4;}</style>
+    </section>
+
+    <!-- ============================================================
+         05 · LOGO
+    ============================================================ -->
+    <section class="page" id="logo" data-title="Logo" data-num="05">
+      <div class="page-body">
+        <div class="kicker">Marca principal</div>
+        <h2 class="sect-title">Logo</h2>
+        <div class="grid-2" style="margin-bottom:var(--sp-4);">
+          <div class="ph" style="background:var(--cream-soft);min-height:150px;">
+            <div class="ph-tag" style="background:rgba(28,28,28,.12);color:var(--graphite);">Versão primária</div>
+            <svg class="ph-icon nucleo-target" data-color="var(--gold)" viewBox="0 0 100 100" style="width:56px;height:56px;color:var(--gold);"></svg>
+            <p style="font-family:var(--font-display);font-size:30px;letter-spacing:.14em;color:var(--olive);margin-top:6px;">Haëra</p>
+            <p class="ph-cap" style="color:var(--graphite);opacity:.55;">Lockup horizontal dourado sobre creme — arquivo real: haera-logo-horizontal-dourado.svg</p>
+          </div>
+          <div class="ph bg-olive" style="min-height:150px;">
+            <div class="ph-tag">Versão negativa</div>
+            <svg class="ph-icon nucleo-target" viewBox="0 0 100 100" style="width:56px;height:56px;color:var(--cream);"></svg>
+            <p style="font-family:var(--font-display);font-size:30px;letter-spacing:.14em;color:var(--cream);margin-top:6px;">Haëra</p>
+            <p class="ph-cap">Monocromático branco sobre fundo escuro — arquivo real: haera-logo-horizontal-branco.svg</p>
+          </div>
+        </div>
+        <div class="grid-4">
+          <div class="symbol-card">
+            <svg class="sy nucleo-target" viewBox="0 0 100 100"></svg>
+            <h4 style="font-size:14px;">Símbolo isolado</h4>
+            <p>Favicon, avatar de rede social, espaços reduzidos.</p>
+          </div>
+          <div class="symbol-card" style="background:var(--graphite);">
+            <svg class="sy nucleo-target" viewBox="0 0 100 100" style="color:var(--cream);"></svg>
+            <h4 style="font-size:14px;color:var(--cream);">Monocromático preto</h4>
+            <p style="color:var(--cream);opacity:.6;">Impressão 1 cor, fundos claros neutros.</p>
+          </div>
+          <div class="symbol-card">
+            <div style="font-family:var(--font-display);font-size:15px;color:var(--olive);writing-mode:vertical-rl;text-orientation:mixed;height:76px;display:flex;align-items:center;justify-content:center;letter-spacing:.1em;">Haëra</div>
+            <h4 style="font-size:14px;">Lockup vertical</h4>
+            <p>Formatos quadrados/verticais — stories, embalagem estreita.</p>
+          </div>
+          <div class="symbol-card">
+            <div style="height:76px;display:flex;align-items:center;justify-content:center;gap:8px;">
+              <svg viewBox="0 0 100 100" class="nucleo-target" style="width:26px;height:26px;color:var(--olive);"></svg>
+              <span style="font-family:var(--font-display);font-size:17px;color:var(--olive);letter-spacing:.1em;">Haëra</span>
+            </div>
+            <h4 style="font-size:14px;">Lockup horizontal</h4>
+            <p>Header de site, papelaria, aplicação padrão.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06 · SISTEMA DE SÍMBOLOS
+    ============================================================ -->
+    <section class="page" id="simbolos" data-title="Sistema de símbolos" data-num="06" style="aspect-ratio:auto;">
+      <div class="page-body">
+        <div class="kicker">Identidade visual</div>
+        <h2 class="sect-title">Sistema de símbolos</h2>
+
+        <div class="divider-territory"><div class="line"></div><span>(a) Símbolos semânticos — significado fixo</span><div class="line"></div></div>
+        <div class="grid-3" style="margin-bottom:var(--sp-2);">
+          <div class="symbol-card">
+            <svg class="sy nucleo-target" viewBox="0 0 100 100"></svg>
+            <h4>Núcleo Nutritivo</h4>
+            <p>Camadas concêntricas mais densas em direção ao centro: energia que nasce de dentro, construída
+              em etapas (nutrientes, absorção, metabolismo), não aplicada de fora como um choque. Forma orgânica,
+              não geometricamente perfeita — remete a célula saudável, grão nutrido, tecido vivo.</p>
+            <p class="where">Onde aparece: símbolo do logo, favicon, avatar social, zona de marca na embalagem</p>
+          </div>
+          <div class="flag-block" style="display:flex;flex-direction:column;justify-content:center;">
+            <b>Símbolo adicional — a definir</b>
+            Apenas um símbolo semântico está documentado no material oficial da marca (o Núcleo Nutritivo).
+            Nenhum outro símbolo semântico foi criado por conta própria para este guia.
+          </div>
+          <div class="flag-block" style="display:flex;flex-direction:column;justify-content:center;">
+            <b>Símbolo adicional — a definir</b>
+            Caso a marca venha a precisar de símbolos para conceitos específicos (ex.: ingrediente,
+            ciência, energia), eles devem ser desenhados a partir da mesma grade e peso de traço do
+            Núcleo Nutritivo — nunca improvisados fora deste sistema.
+          </div>
+        </div>
+        <p style="font-size:11.5px;color:var(--wine);font-weight:600;margin:var(--sp-2) 0 var(--sp-4);">
+          Regra: significado fixo — nunca reutilizar um símbolo semântico para outro sentido, nunca usar como ornamento.
+        </p>
+
+        <div class="divider-territory"><div class="line"></div><span>(b) Grafismos de apoio — decorativos, sem significado</span><div class="line"></div></div>
+        <div class="flag-block" style="margin-bottom:var(--sp-4);">
+          <b>Grafismos de apoio — a definir</b>
+          Nenhum grafismo decorativo (textura, padrão, recorte) está documentado no material oficial da marca
+          até o momento. Esta seção não foi preenchida por conta própria — quando o conjunto de grafismos for
+          definido, ele entra aqui como uma faixa de aplicações (recorte, repetição, escala), sempre com a regra:
+          decorativos, sem significado atribuído, nunca posicionados onde o consumidor possa lê-los como selo
+          ou certificação.
+        </div>
+
+        <div class="grid-2" style="margin-bottom:var(--sp-4);">
+          <div class="symbol-card" style="text-align:left;">
+            <h4 style="margin-bottom:8px;">Grade de construção</h4>
+            <div style="display:flex;align-items:center;gap:var(--sp-3);">
+              <svg viewBox="0 0 100 100" style="width:110px;height:110px;flex-shrink:0;">
+                <g stroke="rgba(28,28,28,.18)" stroke-width="0.5">
+                  <line x1="0" y1="12.5" x2="100" y2="12.5"/><line x1="0" y1="25" x2="100" y2="25"/>
+                  <line x1="0" y1="37.5" x2="100" y2="37.5"/><line x1="0" y1="50" x2="100" y2="50"/>
+                  <line x1="0" y1="62.5" x2="100" y2="62.5"/><line x1="0" y1="75" x2="100" y2="75"/>
+                  <line x1="0" y1="87.5" x2="100" y2="87.5"/>
+                  <line x1="12.5" y1="0" x2="12.5" y2="100"/><line x1="25" y1="0" x2="25" y2="100"/>
+                  <line x1="37.5" y1="0" x2="37.5" y2="100"/><line x1="50" y1="0" x2="50" y2="100"/>
+                  <line x1="62.5" y1="0" x2="62.5" y2="100"/><line x1="75" y1="0" x2="75" y2="100"/>
+                  <line x1="87.5" y1="0" x2="87.5" y2="100"/>
+                </g>
+                <g class="nucleo-target" style="color:var(--olive);"></g>
+              </svg>
+              <p style="font-size:11.5px;opacity:.7;text-align:left;">
+                Grade modular 8×8. Cada camada reduz para ~62% do raio da camada anterior a partir do centro
+                (50,50), mantendo a mesma forma-base — garante consistência entre as quatro camadas do símbolo.
+              </p>
+            </div>
+          </div>
+          <div class="flag-block">
+            <b>Peso de traço oficial — a definir</b>
+            O material oficial da marca só existe em raster (PNG/JPEG) e como forma sólida — não há uma
+            especificação publicada de peso de linha em px/mm nem de raio de canto exato. A construção acima
+            é uma leitura esquemática para fins deste guia; antes de produção em grande escala, valide contra
+            o arquivo vetorial mestre em <code>brand-deliverables/01_Logo/08_simbolo_isolado/</code>.
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="symbol-card" style="text-align:left;">
+            <h4 style="font-size:15px;margin-bottom:6px;">Escala e tamanho mínimo</h4>
+            <p style="font-size:11.5px;">Digital: não menor que 24px de altura. Impresso: não menor que 8mm.
+              <span class="flag" style="display:block;width:fit-content;margin-top:6px;">Rótulo físico: a definir</span></p>
+          </div>
+          <div class="symbol-card" style="text-align:left;">
+            <h4 style="font-size:15px;margin-bottom:6px;">Relação com o logo</h4>
+            <p style="font-size:11.5px;">Distância mínima entre símbolo e logotipo = altura do “H” de “Haëra”.
+              O símbolo isolado nunca substitui o logotipo em contextos que exigem leitura do nome da marca.</p>
+          </div>
+          <div class="symbol-card" style="text-align:left;">
+            <h4 style="font-size:15px;margin-bottom:6px;">Comportamento em cor</h4>
+            <p style="font-size:11.5px;">Positivo (olive/wine/sage/petrol/gold/terracotta sobre creme), negativo
+              (creme/branco sobre fundo escuro) e monocromático (preto ou branco). Sempre uma cor sólida da paleta oficial.</p>
+          </div>
+        </div>
+
+        <div class="flag-block" style="margin-top:var(--sp-4);">
+          <b>Usos incorretos do símbolo</b>
+          Preencher as formas vazadas · alterar o peso do traço · girar o símbolo · combinar dois símbolos em
+          um único desenho · aplicar sobre foto sem contraste suficiente.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         07 · RESPIRO E TAMANHO MÍNIMO
+    ============================================================ -->
+    <section class="page" id="respiro" data-title="Respiro e tamanho mínimo" data-num="07">
+      <div class="page-body">
+        <div class="kicker">Área de proteção</div>
+        <h2 class="sect-title">Respiro e tamanho mínimo</h2>
+        <div class="grid-2">
+          <div class="ph bg-cream-soft" style="min-height:220px;position:relative;border:1px dashed rgba(28,28,28,.25);">
+            <div style="position:absolute;inset:26px;border:1px dashed var(--wine);border-radius:8px;"></div>
+            <div style="display:flex;align-items:center;gap:8px;position:relative;z-index:1;">
+              <svg viewBox="0 0 100 100" class="nucleo-target" style="width:30px;height:30px;color:var(--olive);"></svg>
+              <span style="font-family:var(--font-display);font-size:21px;color:var(--olive);letter-spacing:.1em;">Haëra</span>
+            </div>
+            <p class="ph-cap" style="color:var(--graphite);opacity:.6;margin-top:10px;">
+              Clear space = altura do “H” de “Haëra” (X), aplicada em todos os lados do lockup.
+            </p>
+          </div>
+          <div>
+            <table class="spec">
+              <tr><th>Contexto</th><th>Tamanho mínimo</th></tr>
+              <tr><td>Impresso</td><td>8mm de altura</td></tr>
+              <tr><td>Digital</td><td>24px de altura</td></tr>
+              <tr><td>Favicon</td><td>16×16 / 32×32 / 512×512px <span class="caption-sm">(já produzidos)</span></td></tr>
+              <tr><td>Rótulo de embalagem</td><td><span class="flag">A definir — validar impressão física</span></td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         08 · USOS INCORRETOS DO LOGO
+    ============================================================ -->
+    <section class="page" id="usos-incorretos" data-title="Usos incorretos do logo" data-num="08">
+      <div class="page-body">
+        <div class="kicker">O que não fazer</div>
+        <h2 class="sect-title">Usos incorretos do logo</h2>
+        <div class="grid-3">
+          <div class="ok-card"><span class="badge-ok">✓</span>
+            <div class="demo"><span class="wm">Haëra</span></div>
+            <p class="caption-sm"><b>Correto</b> — proporção original, cor da paleta, fundo limpo.</p>
+          </div>
+          <div class="ok-card"><span class="badge-ok">✓</span>
+            <div class="demo" style="background:var(--cream);border:1px solid rgba(28,28,28,.1);"><span class="wm" style="color:var(--olive);">Haëra</span></div>
+            <p class="caption-sm"><b>Correto</b> — contraste adequado sobre fundo claro.</p>
+          </div>
+          <div class="ok-card"><span class="badge-ok">✓</span>
+            <div class="demo" style="background:var(--wine);"><span class="wm">Haëra</span></div>
+            <p class="caption-sm"><b>Correto</b> — cor oficial da paleta sobre fundo sólido.</p>
+          </div>
+          <div class="no-card"><span class="badge-no">✕</span>
+            <div class="demo"><span class="wm" style="transform:scaleX(1.6) scaleY(.7);">Haëra</span></div>
+            <p class="caption-sm"><b>Distorção</b> — nunca esticar ou comprimir o logotipo.</p>
+          </div>
+          <div class="no-card"><span class="badge-no">✕</span>
+            <div class="demo"><span class="wm" style="color:#E63946;">Haëra</span></div>
+            <p class="caption-sm"><b>Cor fora da paleta</b> — nunca usar cores que não constam na seção 09.</p>
+          </div>
+          <div class="no-card"><span class="badge-no">✕</span>
+            <div class="demo" style="background:repeating-linear-gradient(45deg,#333,#333 4px,#777 4px,#777 8px);">
+              <span class="wm" style="filter:drop-shadow(2px 3px 2px rgba(0,0,0,.6));font-family:Georgia,serif;font-style:italic;">Haëra</span>
+            </div>
+            <p class="caption-sm"><b>Fundo poluído + sombra + recriação tipográfica</b> — nunca aplicar sobre textura sem contraste, adicionar sombra/efeito ou redesenhar a tipografia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         09 · PALETA DE CORES
+    ============================================================ -->
+    <section class="page" id="paleta" data-title="Paleta de cores" data-num="09" style="aspect-ratio:auto;">
+      <div class="page-body">
+        <div class="kicker">Cores oficiais</div>
+        <h2 class="sect-title">Paleta de cores</h2>
+        <div class="grid-4" id="palette-grid" style="margin-bottom:var(--sp-4);"></div>
+        <h4 style="font-size:14px;margin-bottom:8px;color:var(--olive);">Proporção de uso (referência observada na aplicação atual do site)</h4>
+        <div style="display:flex;height:34px;border-radius:999px;overflow:hidden;box-shadow:var(--shadow-soft);">
+          <div style="width:45%;background:var(--cream-soft);"></div>
+          <div style="width:24%;background:var(--olive);"></div>
+          <div style="width:15%;background:var(--wine);"></div>
+          <div style="width:8%;background:var(--gold);"></div>
+          <div style="width:5%;background:var(--petrol);"></div>
+          <div style="width:3%;background:var(--terracotta);"></div>
+        </div>
+        <div style="display:flex;gap:var(--sp-3);margin-top:8px;font-size:10.5px;opacity:.65;flex-wrap:wrap;">
+          <span>45% Cream (fundo)</span><span>24% Olive (texto/UI)</span><span>15% Wine (produto/CTA)</span>
+          <span>8% Gold (institucional)</span><span>5% Petrol (apoio)</span><span>3% Terracotta (apoio)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10 · TIPOGRAFIA
+    ============================================================ -->
+    <section class="page" id="tipografia" data-title="Tipografia" data-num="10" style="aspect-ratio:auto;">
+      <div class="page-body">
+        <div class="kicker">Fontes oficiais</div>
+        <h2 class="sect-title">Tipografia</h2>
+        <div class="grid-2" style="margin-bottom:var(--sp-5);">
+          <div>
+            <p style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;margin-bottom:6px;">Display / títulos</p>
+            <p style="font-family:var(--font-display);font-size:56px;font-weight:300;color:var(--olive);line-height:1;">Cormorant<br>Garamond</p>
+            <p style="font-size:11.5px;opacity:.65;margin-top:8px;">Pesos 300 · 400 · 500 · 600 — itálico 300 e 400. Uso: títulos, headlines, wordmark. Nunca em corpo de texto.</p>
+          </div>
+          <div>
+            <p style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;margin-bottom:6px;">Corpo / interface</p>
+            <p style="font-family:var(--font-body);font-size:44px;font-weight:300;color:var(--olive);line-height:1;">Inter</p>
+            <p style="font-size:11.5px;opacity:.65;margin-top:8px;">Pesos 300 · 400 · 500. Uso: corpo de texto, navegação, botões, rótulos, UI.</p>
+          </div>
+        </div>
+        <table class="spec" style="margin-bottom:var(--sp-4);">
+          <tr><th>Nível</th><th>Fonte / peso</th><th>Tamanho</th><th>Entrelinha</th><th>Tracking</th></tr>
+          <tr><td>H1</td><td>Cormorant Garamond 300</td><td>56–76px</td><td>1.05</td><td>.02em</td></tr>
+          <tr><td>H2</td><td>Cormorant Garamond 300</td><td>38–44px</td><td>1.1</td><td>.02em</td></tr>
+          <tr><td>H3</td><td>Cormorant Garamond 400</td><td>24–28px</td><td>1.2</td><td>0</td></tr>
+          <tr><td>Corpo</td><td>Inter 400</td><td>15–16px</td><td>1.65</td><td>0</td></tr>
+          <tr><td>Rótulo / label</td><td>Inter 500–600</td><td>10–11px</td><td>1.4</td><td>.2–.3em (versalete)</td></tr>
+          <tr><td>Legenda</td><td>Inter 400</td><td>11px</td><td>1.5</td><td>.02em</td></tr>
+        </table>
+        <div class="flag-block">
+          <b>Tipografia em rótulo — piso regulatório</b>
+          A ANVISA (RDC 259/2002) exige tamanho mínimo de fonte na informação nutricional conforme a área do
+          rótulo — não é uma escolha de marca, é piso legal. O tamanho exato aplicável a cada formato do Pulse
+          (pote 150g / sachê 5g) ainda precisa ser confirmado com a gráfica antes da impressão final.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         11 · FOTOGRAFIA E IMAGEM
+    ============================================================ -->
+    <section class="page" id="fotografia" data-title="Fotografia e imagem" data-num="11" style="aspect-ratio:auto;">
+      <div class="page-body">
+        <div class="kicker">Direção de imagem</div>
+        <h2 class="sect-title">Fotografia e imagem</h2>
+        <div class="divider-territory"><div class="line"></div><span>Produto</span><div class="line"></div></div>
+        <div class="grid-3" style="margin-bottom:var(--sp-3);">
+          <div class="ph bg-cream-soft" style="color:var(--graphite);"><p class="ph-cap">Packshot frontal, fundo Cream Soft, sombra suave (shadow-elegant), sem reflexo duro.</p></div>
+          <div class="ph" style="background:var(--wine);"><p class="ph-cap">Ângulo ¾, foco no wine da embalagem Pulse — cor de produto.</p></div>
+          <div class="ph bg-cream-soft" style="color:var(--graphite);"><p class="ph-cap">Detalhe/textura do pó ou sachê aberto, luz suave lateral.</p></div>
+        </div>
+        <p style="font-size:11.5px;opacity:.65;margin-bottom:var(--sp-4);"><b>Evitar em produto:</b> fundo branco puro (lê como farmacêutico), sombra dura projetada, ângulo picado de cima, texto do rótulo cortado no enquadramento.</p>
+
+        <div class="divider-territory"><div class="line"></div><span>Lifestyle</span><div class="line"></div></div>
+        <div class="grid-3" style="margin-bottom:var(--sp-3);">
+          <div class="ph" style="background:var(--olive);"><p class="ph-cap">Luz natural difusa, ambiente clean (estúdio ou academia minimalista, referência Aesop/Moon Juice).</p></div>
+          <div class="ph" style="background:var(--terracotta);"><p class="ph-cap">Pele real sem filtro pesado, expressão contida — nunca "explosão" ou esforço extremo dramatizado.</p></div>
+          <div class="ph" style="background:var(--sage);"><p class="ph-cap">Paleta de cena limitada às cores oficiais (roupas, props, fundo).</p></div>
+        </div>
+        <p style="font-size:11.5px;opacity:.65;margin-bottom:var(--sp-3);"><b>Evitar em lifestyle:</b> iluminação artificial dura, ambiente visualmente poluído, pose de "banco de imagens" genérica de academia.</p>
+        <div class="flag-block">
+          <b>Regra inegociável</b>
+          Nenhuma imagem gerada por IA representando o produto físico, a embalagem ou o uso do produto — somente
+          fotografia real, em qualquer um dos dois territórios acima.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         12 · LINGUAGEM E CLAIMS
+    ============================================================ -->
+    <section class="page" id="linguagem" data-title="Linguagem e claims" data-num="12" style="aspect-ratio:auto;">
+      <div class="page-body">
+        <div class="kicker">Tom de voz &amp; regulatório</div>
+        <h2 class="sect-title">Linguagem e claims</h2>
+        <table class="spec" style="margin-bottom:var(--sp-4);">
+          <tr><th>Dizemos assim</th><th>Não dizemos assim</th></tr>
+          <tr><td>ativação fisiológica, energia fisiológica</td><td>bomba de energia, explosão</td></tr>
+          <tr><td>suporte metabólico, clean label</td><td>insanidade, pré-treino extremo</td></tr>
+          <tr><td>ingredientes reais, ciência aplicada</td><td>pump extremo, treino insano</td></tr>
+          <tr><td>performance sustentável, energia contínua / sem crash</td><td>"o mais forte", "nunca visto", "revolucionário"</td></tr>
+          <tr><td>ativador (do sistema corporal)</td><td>energético (bagagem de estimulante sintético)</td></tr>
+        </table>
+        <div class="grid-2">
+          <div>
+            <h4 style="font-size:14px;margin-bottom:8px;">Hierarquia de claims na embalagem</h4>
+            <table class="spec">
+              <tr><td><b>Principal</b></td><td>“Energia limpa que sustenta performance”</td></tr>
+              <tr><td><b>Apoio</b></td><td>Sem cafeína sintética · Sem corantes artificiais · Sem adoçantes artificiais · Alimentos reais</td></tr>
+              <tr><td><b>Selos</b></td><td>Vegano / sem glúten / sem lactose / sem açúcar <span class="flag" style="display:block;width:fit-content;margin-top:4px;">Certificação formal: a definir</span></td></tr>
+              <tr><td><b>Regulatório</b></td><td>Tabela nutricional completa, modo de uso, SAC, código de barras</td></tr>
+            </table>
+          </div>
+          <div class="flag-block" style="display:flex;flex-direction:column;justify-content:center;">
+            <b>Símbolos × selos regulatórios</b>
+            O Núcleo Nutritivo (símbolo semântico, seção 06) vive na zona de marca e nunca deve ficar próximo o
+            suficiente dos selos regulatórios a ponto de ser confundido com uma certificação. Grafismos de apoio
+            — quando definidos — seguem a mesma restrição: nunca na zona de informação obrigatória.
+          </div>
+        </div>
+        <p style="font-size:11px;opacity:.6;margin-top:var(--sp-3);">
+          Nenhum claim terapêutico ou de cura. Linguagem em conformidade com a RDC 27/2010 e a RDC 243/2018 da ANVISA —
+          o vocabulário oficial da marca (“ativador”, “suporte metabólico”) já foi construído para evitar termos
+          que sugiram tratamento ou cura de doença.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         13 · EMBALAGEM
+    ============================================================ -->
+    <section class="page" id="embalagem" data-title="Embalagem" data-num="13" style="aspect-ratio:auto;">
+      <div class="page-body">
+        <div class="kicker">Estrutura de rótulo</div>
+        <h2 class="sect-title">Embalagem</h2>
+        <div class="grid-3" style="margin-bottom:var(--sp-4);">
+          <div class="ph" style="background:var(--wine);min-height:170px;">
+            <div class="ph-tag">Frente</div>
+            <p class="ph-cap">Zona de marca (logo + símbolo) · nome do produto · claim principal · peso líquido</p>
+          </div>
+          <div class="ph bg-cream-soft" style="color:var(--graphite);min-height:170px;">
+            <div class="ph-tag" style="background:rgba(28,28,28,.12);color:var(--graphite);">Verso</div>
+            <p class="ph-cap">Tabela nutricional · modo de uso · ingredientes · SAC · código de barras</p>
+          </div>
+          <div class="ph bg-olive" style="min-height:170px;">
+            <div class="ph-tag">Lateral</div>
+            <p class="ph-cap">Selos (vegano/sem glúten/sem lactose/sem açúcar) · lote e validade</p>
+          </div>
+        </div>
+        <table class="spec" style="margin-bottom:var(--sp-4);">
+          <tr><th>Zona</th><th>Conteúdo</th><th>Símbolos permitidos</th></tr>
+          <tr><td>Marca</td><td>Logo (lockup) + Núcleo Nutritivo</td><td>Símbolo semântico — sim</td></tr>
+          <tr><td>Produto</td><td>Nome, claim principal, peso líquido</td><td>Grafismos de apoio (quando definidos)</td></tr>
+          <tr><td>Informação obrigatória</td><td>Tabela nutricional, modo de uso, SAC, código de barras</td><td>Nenhum — apenas selos regulatórios</td></tr>
+        </table>
+        <div class="grid-2">
+          <table class="spec">
+            <tr><th>Formato</th><th>Adaptação</th></tr>
+            <tr><td>Pote (150g)</td><td>Layout vertical, zona de marca no terço superior</td></tr>
+            <tr><td>Sachê individual (5g)</td><td>Versão compacta — marca + nome + claim curto</td></tr>
+            <tr><td>Caixa</td><td><span class="flag">A definir — formato não produzido</span></td></tr>
+          </table>
+          <div class="flag-block">
+            <b>SAC e código de barras</b>
+            SAC real: contato.haera@gmail.com. CNPJ, endereço físico e código de barras (EAN) ainda não estão
+            documentados no material da marca — obrigatórios por lei antes da impressão final do rótulo.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         14 · APLICAÇÕES DIGITAIS
+    ============================================================ -->
+    <section class="page" id="digital" data-title="Aplicações digitais" data-num="14" style="aspect-ratio:auto;">
+      <div class="page-body">
+        <div class="kicker">Mockups</div>
+        <h2 class="sect-title">Aplicações digitais</h2>
+        <div class="grid-3" style="margin-bottom:var(--sp-3);">
+          <div class="ph" style="background:var(--cream-soft);color:var(--graphite);min-height:150px;">
+            <div class="ph-tag" style="background:rgba(28,28,28,.12);color:var(--graphite);">Site</div>
+            <p class="ph-cap">Página de produto Pulse — layout real em src/pages/PulseProduct.tsx</p>
+          </div>
+          <div class="ph bg-olive" style="min-height:150px;">
+            <div class="ph-tag">E-mail</div>
+            <p class="ph-cap">Boas-vindas — template real em brand-deliverables/05_Aplicacoes/02_assinatura_email/</p>
+          </div>
+          <div class="ph" style="background:var(--wine);min-height:150px;">
+            <div class="ph-tag">Anúncio pago</div>
+            <p class="ph-cap">Banner de campanha — claim principal + packshot + CTA</p>
+          </div>
+        </div>
+        <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:8px;">Grid Instagram — 9 posts</p>
+        <div class="grid-6" style="grid-template-columns:repeat(9,1fr);"></div>
+        <div id="ig-grid" class="grid-6" style="grid-template-columns:repeat(9,1fr);margin-bottom:var(--sp-3);"></div>
+        <div class="grid-2">
+          <div class="ph bg-petrol" style="min-height:110px;"><p class="ph-cap">Story — formato vertical, blob orgânico + claim curto</p></div>
+          <div class="ph" style="background:var(--gold);min-height:110px;"><p class="ph-cap">Capa/anúncio institucional — lockup dourado sobre creme</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         15 · FECHAMENTO
+    ============================================================ -->
+    <section class="page dark" id="fechamento" data-title="Fechamento" data-num="15" style="background:var(--olive);">
+      <div class="page-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;">
+        <svg viewBox="0 0 100 100" class="nucleo-target" style="width:52px;height:52px;color:var(--gold);margin-bottom:var(--sp-3);"></svg>
+        <p style="font-family:var(--font-display);font-style:italic;font-size:26px;color:var(--cream);max-width:44ch;line-height:1.35;">
+          “Eu sei o que estou fazendo. Não preciso gritar. Meu corpo responde porque eu respeito.”
+        </p>
+        <p style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:var(--sp-4);">Nutrir antes de estimular</p>
+        <div style="display:flex;gap:var(--sp-5);margin-top:var(--sp-6);font-size:12.5px;color:var(--cream);opacity:.85;">
+          <span>contato.haera@gmail.com</span><span>·</span><span>@viva.haera</span>
+        </div>
+        <p style="font-size:11px;color:var(--cream);opacity:.5;margin-top:var(--sp-4);max-width:46ch;">
+          Dúvida sobre uso da identidade? Escreva para contato.haera@gmail.com antes de publicar qualquer
+          aplicação nova da marca — este guia é vivo e deve ser atualizado junto com o crescimento da Haëra.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- Dados de marca (fonte única para render + export) ---------------- */
+  var COLORS = [
+    {name:'Sage Green', hex:'#9CAF88', rgb:'156, 175, 136', cmyk:'11, 0, 22, 31', role:'Primária', use:'Cor de marca principal'},
+    {name:'Olive Green', hex:'#3F4F45', rgb:'63, 79, 69', cmyk:'20, 0, 13, 69', role:'Secundária', use:'Base institucional, texto/UI primário'},
+    {name:'Wine', hex:'#722F37', rgb:'114, 47, 55', cmyk:'0, 59, 52, 55', role:'Apoio 1', use:'Produto Pulse, destaque/CTA'},
+    {name:'Petrol Blue', hex:'#1B4D5C', rgb:'27, 77, 92', cmyk:'71, 16, 0, 64', role:'Apoio 2', use:'Cor de apoio, comunicação/campanha'},
+    {name:'Gold', hex:'#B8964B', rgb:'184, 150, 75', cmyk:'0, 18, 59, 28', role:'Apoio institucional', use:'Logo institucional, aplicação premium'},
+    {name:'Terracotta', hex:'#C4714A', rgb:'196, 113, 74', cmyk:'0, 42, 62, 23', role:'Apoio', use:'Cor de apoio, variação de comunicação'},
+    {name:'Cream', hex:'#F5F2EB', rgb:'245, 242, 235', cmyk:'0, 1, 4, 4', role:'Neutro', use:'Fundo padrão'},
+    {name:'Graphite', hex:'#1C1C1C', rgb:'28, 28, 28', cmyk:'0, 0, 0, 89', role:'Neutro escuro', use:'Texto sobre fundo claro'}
+  ];
+  var FONTS = {display:{name:'Cormorant Garamond', weights:[300,400,500,600], style:'normal/italic'}, body:{name:'Inter', weights:[300,400,500]}};
+  var SPACING = {sp1:'8px',sp2:'16px',sp3:'24px',sp4:'32px',sp5:'40px',sp6:'48px',sp7:'56px',sp8:'64px',sp9:'72px',sp10:'80px',sp12:'96px'};
+
+  /* ---------------- Símbolo Núcleo Nutritivo (SVG inline, currentColor) ---------------- */
+  var BLOB = "M50,7 C71,5 92,24 93,49 C94,73 74,93 50,92 C27,91 7,72 8,49 C9,26 29,9 50,7 Z";
+  function nucleoSVG(){
+    return '' +
+      '<g fill="currentColor">' +
+        '<path d="'+BLOB+'" fill-opacity="0.16"/>' +
+        '<path d="'+BLOB+'" fill-opacity="0.34" transform="translate(50 50) scale(0.74) translate(-50 -50)"/>' +
+        '<path d="'+BLOB+'" fill-opacity="0.62" transform="translate(50 50) scale(0.48) translate(-50 -50)"/>' +
+        '<path d="'+BLOB+'" fill-opacity="1" transform="translate(50 50) scale(0.24) translate(-50 -50)"/>' +
+      '</g>';
+  }
+  document.querySelectorAll('.nucleo-target').forEach(function(g){ g.innerHTML = nucleoSVG(); });
+  var miniMark = document.getElementById('mini-mark');
+  if (miniMark) miniMark.innerHTML = nucleoSVG();
+
+  /* ---------------- Header persistente por página ---------------- */
+  document.querySelectorAll('.page').forEach(function(page){
+    var num = page.getAttribute('data-num');
+    var title = page.getAttribute('data-title');
+    if(!num) return;
+    var header = document.createElement('div');
+    header.className = 'page-header';
+    header.innerHTML =
+      '<div class="brand"><svg viewBox="0 0 100 100">'+nucleoSVG()+'</svg><span>Haëra</span></div>' +
+      '<div class="meta"><span class="num">'+num+'</span><span class="title">'+title+'</span></div>';
+    page.insertBefore(header, page.firstChild);
+    var pgnum = document.createElement('span');
+    pgnum.className = 'pg-num';
+    pgnum.textContent = num + ' / 15';
+    page.appendChild(pgnum);
+  });
+
+  /* ---------------- Render paleta (seção 09) com botão copiar ---------------- */
+  var paletteGrid = document.getElementById('palette-grid');
+  if (paletteGrid){
+    COLORS.forEach(function(c){
+      var textOnFill = (c.hex === '#F5F2EB' || c.hex === '#9CAF88' || c.hex === '#B8964B') ? '#1C1C1C' : '#F5F2EB';
+      var el = document.createElement('div');
+      el.className = 'swatch';
+      el.innerHTML =
+        '<div class="fill" style="background:'+c.hex+';color:'+textOnFill+';">' +
+          '<button class="copy-btn" data-hex="'+c.hex+'" type="button">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>' +
+            '<span class="lbl">'+c.hex+'</span>' +
+          '</button>' +
+        '</div>' +
+        '<div class="info">' +
+          '<div class="cname">'+c.name+'</div>' +
+          '<div class="cuse">'+c.role+' · RGB '+c.rgb+' · CMYK '+c.cmyk+'</div>' +
+          '<div class="cuse">'+c.use+'</div>' +
+        '</div>';
+      paletteGrid.appendChild(el);
+    });
+  }
+
+  /* ---------------- Grid Instagram (seção 14) — placeholders alternando paleta ---------------- */
+  var igGrid = document.getElementById('ig-grid');
+  if (igGrid){
+    var seq = ['#722F37','#F5F2EB','#3F4F45','#B8964B','#F5F2EB','#1B4D5C','#C4714A','#F5F2EB','#9CAF88'];
+    seq.forEach(function(hex,i){
+      var d = document.createElement('div');
+      var dark = (hex !== '#F5F2EB');
+      d.style.cssText = 'background:'+hex+';aspect-ratio:1;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;color:'+(dark?'rgba(245,242,235,.7)':'rgba(28,28,28,.4)')+';';
+      d.textContent = (i+1);
+      igGrid.appendChild(d);
+    });
+  }
+
+  /* ---------------- Copiar HEX (delegação de evento) ---------------- */
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.copy-btn');
+    if(!btn) return;
+    var hex = btn.getAttribute('data-hex');
+    var restore = btn.querySelector('.lbl') ? btn.querySelector('.lbl').textContent : hex;
+    function feedback(){
+      btn.classList.add('copied');
+      var lbl = btn.querySelector('.lbl');
+      if (lbl) lbl.textContent = 'Copiado!';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        if (lbl) lbl.textContent = restore;
+      }, 1500);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(hex).then(feedback).catch(feedback);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = hex; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(err){}
+      document.body.removeChild(ta);
+      feedback();
+    }
+  });
+
+  /* ---------------- Exportar tokens (.json) ---------------- */
+  var exportBtn = document.getElementById('export-tokens');
+  var exportToast = document.getElementById('export-toast');
+  if (exportBtn){
+    exportBtn.addEventListener('click', function(){
+      var tokens = {
+        marca: 'Haëra',
+        versao: 'v1.0 — 2026',
+        cores: COLORS.reduce(function(acc,c){ acc[c.name] = {hex:c.hex, rgb:c.rgb, cmyk:c.cmyk, papel:c.role, uso:c.use}; return acc; }, {}),
+        tipografia: FONTS,
+        espacamento: SPACING
+      };
+      var blob = new Blob([JSON.stringify(tokens, null, 2)], {type:'application/json'});
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = 'haera-brand-tokens.json';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      if (exportToast){
+        exportToast.classList.add('show');
+        setTimeout(function(){ exportToast.classList.remove('show'); }, 1800);
+      }
+    });
+  }
+
+  /* ---------------- Navegação ativa (IntersectionObserver) ---------------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#toc-nav a'));
+  var sections = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var byId = {};
+  navLinks.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var link = byId[entry.target.id];
+      if(!link) return;
+      if (entry.isIntersecting){
+        navLinks.forEach(function(a){ a.classList.remove('active'); });
+        link.classList.add('active');
+      }
+    });
+  }, {root:null, rootMargin:'-40% 0px -55% 0px', threshold:0});
+
+  sections.forEach(function(s){ if(s) observer.observe(s); });
+
+})();
+</script>
+</body>
+</html>
