@@ -38,7 +38,7 @@ const Home: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-20 grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">
             <span className="font-sans text-[11px] tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>
-              Ativador Corporal · Clean Label · 2026
+              Ativador Corporal · Clean Label
             </span>
             <h1 className="font-serif text-5xl md:text-7xl font-light leading-[1.05] mb-6" style={{ color: BRAND.GRAPHITE }}>
               Energia limpa<br />
@@ -67,11 +67,18 @@ const Home: React.FC = () => {
             <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
               Pix, cartão ou boleto · Frete grátis acima de R$150
             </p>
+            <a
+              href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+              className="inline-flex items-center gap-2 font-sans text-[10px] tracking-[0.25em] uppercase px-4 py-2 rounded-full mt-4 transition-opacity hover:opacity-80"
+              style={{ backgroundColor: `${BRAND.GOLD}20`, color: BRAND.WINE }}
+            >
+              Lista VIP · {PULSE_PRODUCT.priceVipFormatted}
+            </a>
             <div className="flex items-center gap-6 mt-8 pt-8 border-t" style={{ borderColor: `${BRAND.GRAPHITE}15` }}>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full animate-pulse-slow" style={{ backgroundColor: BRAND.GOLD }} />
                 <span className="font-sans text-xs leading-tight" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
-                  Lançamento 2026<br />Edição limitada
+                  Lançamento 2026
                 </span>
               </div>
               <div className="font-sans text-xs leading-tight" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
@@ -165,31 +172,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* FLAVOR: LEMON */}
-      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
-          <img
-            src={lemonCore}
-            alt="Núcleo de limão cortado"
-            loading="lazy"
-            width={520}
-            height={520}
-            className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full shadow-xl"
-            style={{ boxShadow: `0 30px 80px -20px ${BRAND.GOLD}80` }}
-          />
-          <div>
-            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.WINE, opacity: 0.7 }}>Sabor único</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
-              No coração do Pulse, <em className="italic" style={{ color: BRAND.WINE }}>limão</em>.
-            </h2>
-            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
-              Um frescor cítrico natural, leve e sutil — que ativa o paladar sem mascarar a pureza dos ingredientes. Sem aromas artificiais, apenas o brilho do limão.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCT SHOWCASE */}
+      {/* PRODUCT SHOWCASE — Vitrine do produto */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
@@ -261,6 +244,30 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* FLAVOR: LEMON — Sabor único */}
+      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
+          <img
+            src={lemonCore}
+            alt="Núcleo de limão cortado"
+            loading="lazy"
+            width={520}
+            height={520}
+            className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full shadow-xl"
+            style={{ boxShadow: `0 30px 80px -20px ${BRAND.GOLD}80` }}
+          />
+          <div>
+            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.WINE, opacity: 0.7 }}>Sabor único</p>
+            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
+              No coração do Pulse, <em className="italic" style={{ color: BRAND.WINE }}>limão</em>.
+            </h2>
+            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
+              Um frescor cítrico natural, leve e sutil — que ativa o paladar sem mascarar a pureza dos ingredientes. Sem aromas artificiais, apenas o brilho do limão.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* DIFERENCIAIS — minimal, à la Apple. Único bloco de números mantido na Home; */}
       {/* Pilares e o Anel de ingredientes vivem na página do produto (aba Ingredientes + Highlights) */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
@@ -293,6 +300,30 @@ const Home: React.FC = () => {
             <Link to="/ciencia" className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] uppercase" style={{ color: BRAND.GOLD }}>
               Conhecer a ciência por trás <ArrowRight size={14} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SÍMBOLO — SIGNIFICADO */}
+      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
+          <img
+            src={logoSymbol}
+            alt="Símbolo Haëra: núcleo de anéis concêntricos"
+            className="w-56 h-56 md:w-72 md:h-72 object-contain"
+            style={{ mixBlendMode: 'screen', opacity: 0.9 }}
+          />
+          <div>
+            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.GOLD }}>O Símbolo</p>
+            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.CREAM }}>
+              Um núcleo, não uma <em className="italic" style={{ color: BRAND.GOLD }}>explosão</em>.
+            </h2>
+            <p className="font-sans text-base leading-relaxed mb-4" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
+              Não é um raio, nem um punho fechado — os ícones mais comuns em pré-treino. É um núcleo de anéis concêntricos, mais densos em direção ao centro: a representação visual de energia que vem de dentro, construída em camadas — nutrientes, absorção, metabolismo.
+            </p>
+            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
+              A forma circular e simétrica comunica constância. Performance sustentável, não um pico isolado.
+            </p>
           </div>
         </div>
       </section>
