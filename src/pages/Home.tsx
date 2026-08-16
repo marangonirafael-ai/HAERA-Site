@@ -6,6 +6,7 @@ import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
 import { useScrollParallax } from '@/hooks/useScrollParallax';
 import logoSymbol from '@/assets/haera-simbolo-gold.png';
+import logoSymbolAnimated from '@/assets/haera-simbolo-gold-animado.gif';
 import pulsePouch from '@/assets/pulse-pouch.jpeg';
 import pulseSachets from '@/assets/pulse-sachets.jpeg';
 import nucleusLoop from '@/assets/nucleus-loop.mp4.asset.json';
@@ -225,7 +226,7 @@ const Home: React.FC = () => {
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
           <img
-            src={logoSymbol}
+            src={logoSymbolAnimated}
             alt="Símbolo Haëra: núcleo de anéis concêntricos"
             className="w-56 h-56 md:w-72 md:h-72 object-contain"
           />
@@ -273,7 +274,7 @@ const Home: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <img
             ref={ctaSymbolRef}
-            src={logoSymbol}
+            src={logoSymbolAnimated}
             alt=""
             className="w-32 h-32 mx-auto mb-10"
           />

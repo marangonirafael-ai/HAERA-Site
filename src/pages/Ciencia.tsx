@@ -1,7 +1,7 @@
 import React from 'react';
 import SiteLayout from '@/components/site/SiteLayout';
 import { BRAND } from '@/lib/brand';
-import logoSymbol from '@/assets/haera-simbolo-gold.png';
+import logoSymbol from '@/assets/haera-simbolo-gold-animado.gif';
 
 const bioactives = [
   {
