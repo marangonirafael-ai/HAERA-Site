@@ -20,7 +20,8 @@ const Checkout: React.FC = () => {
     : 0;
 
   const subtotalAfterDiscount = Math.max(0, totalPrice - vipDiscount);
-  const shipping = subtotalAfterDiscount > 150 ? 0 : 19.9;
+  // Placeholder até a integração de frete por CEP entrar (Melhor Envio) — não há frete grátis.
+  const shipping = 19.9;
   const total = subtotalAfterDiscount + shipping;
 
   const handleApplyCoupon = () => {
@@ -145,7 +146,7 @@ const Checkout: React.FC = () => {
                     <span>− R$ {vipDiscount.toFixed(2).replace('.', ',')}</span>
                   </div>
                 )}
-                <div className="flex justify-between"><span style={{ opacity: 0.7 }}>Frete</span><span>{shipping === 0 ? 'Grátis' : `R$ ${shipping.toFixed(2).replace('.', ',')}`}</span></div>
+                <div className="flex justify-between"><span style={{ opacity: 0.7 }}>Frete</span><span>R$ {shipping.toFixed(2).replace('.', ',')}</span></div>
               </div>
 
               <div className="flex justify-between items-baseline pt-4 border-t" style={{ borderColor: `${BRAND.GOLD}30` }}>
@@ -156,7 +157,7 @@ const Checkout: React.FC = () => {
                 Confirmar Pedido
               </button>
               <p className="font-sans text-[11px] text-center" style={{ opacity: 0.6 }}>
-                Pagamento real será habilitado na próxima fase.
+                Pagamento e frete por CEP serão habilitados na próxima fase.
               </p>
             </aside>
           </form>

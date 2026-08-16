@@ -65,7 +65,7 @@ const Home: React.FC = () => {
             </button>
             </div>
             <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
-              Pix, cartão ou boleto · Frete grátis acima de R$150
+              Pix, cartão ou boleto · Frete calculado no checkout
             </p>
             <a
               href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
@@ -207,7 +207,7 @@ const Home: React.FC = () => {
               </Link>
             </div>
             <p className="font-sans text-[11px] mt-3" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
-              Pix, cartão ou boleto · Frete grátis acima de R$150
+              Pix, cartão ou boleto · Frete calculado no checkout
             </p>
           </div>
           <div className="order-1 md:order-2 overflow-hidden">
@@ -292,7 +292,7 @@ const Home: React.FC = () => {
             Comprar o Pulse <ArrowRight size={14} />
           </button>
           <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
-            Pix, cartão ou boleto · Frete grátis acima de R$150
+            Pix, cartão ou boleto · Frete calculado no checkout
           </p>
         </div>
       </section>

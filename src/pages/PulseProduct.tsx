@@ -187,7 +187,7 @@ const PulseProduct: React.FC = () => {
                 Comprar o Pulse <ArrowRight size={14} />
               </button>
               <p className="font-sans text-[11px] text-center" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
-                Pix, cartão ou boleto · Frete grátis acima de R$150
+                Pix, cartão ou boleto · Frete calculado no checkout
               </p>
             </div>
 

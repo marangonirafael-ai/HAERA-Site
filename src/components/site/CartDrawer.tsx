@@ -79,7 +79,7 @@ const CartDrawer: React.FC = () => {
               <span className="font-serif text-2xl" style={{ color: BRAND.WINE }}>R$ {totalPrice.toFixed(2).replace('.', ',')}</span>
             </div>
             <p className="font-sans text-[11px]" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
-              Pix, cartão ou boleto · Frete grátis acima de R$150
+              Pix, cartão ou boleto · Frete calculado no checkout
             </p>
             <button
               onClick={() => { setIsOpen(false); navigate('/checkout'); }}
