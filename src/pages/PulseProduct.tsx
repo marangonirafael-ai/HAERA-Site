@@ -5,7 +5,7 @@ import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
 import pulsePouch from '@/assets/pulse-pouch.jpeg';
 import pulseSachets from '@/assets/pulse-sachets.jpeg';
-import lemonCore from '@/assets/lemon-core.jpg';
+import limeCore from '@/assets/lime-core.jpg';
 
 const tabs = ['Descrição', 'Ingredientes', 'Como tomar', 'Nutricional'] as const;
 type Tab = typeof tabs[number];
@@ -262,8 +262,8 @@ const PulseProduct: React.FC = () => {
       <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
           <img
-            src={lemonCore}
-            alt="Núcleo de limão cortado"
+            src={limeCore}
+            alt="Limão taiti cortado ao meio"
             loading="lazy"
             width={520}
             height={520}
