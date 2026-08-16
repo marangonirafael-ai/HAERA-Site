@@ -6,12 +6,12 @@ import { BRAND } from '@/lib/brand';
 import logoSymbol from '@/assets/haera-simbolo-gold.png';
 
 const pillars = [
-  { name: 'Ciência', desc: 'Fundamentação sem arrogância. Evidência com elegância.', color: BRAND.PETROL },
-  { name: 'Sensibilidade', desc: 'Escuta profunda. Respeito pelo ritmo de cada corpo.', color: BRAND.SAGE },
-  { name: 'Constância', desc: 'Construção sustentável. Performance como consequência.', color: BRAND.OLIVE },
-  { name: 'Elegância', desc: 'Sofisticação silenciosa. Luxo que não precisa gritar.', color: BRAND.GOLD },
-  { name: 'Leveza', desc: 'Profundidade sem peso. Conhecimento sem sobrecarregar.', color: BRAND.TERRACOTTA },
-  { name: 'Longevidade', desc: 'Visão de longo prazo. Saúde como patrimônio.', color: BRAND.WINE },
+  { name: 'Ciência', desc: 'Fundamentação sem arrogância. Evidência com elegância.' },
+  { name: 'Sensibilidade', desc: 'Escuta profunda. Respeito pelo ritmo de cada corpo.' },
+  { name: 'Constância', desc: 'Construção sustentável. Performance como consequência.' },
+  { name: 'Elegância', desc: 'Sofisticação silenciosa. Luxo que não precisa gritar.' },
+  { name: 'Leveza', desc: 'Profundidade sem peso. Conhecimento sem sobrecarregar.' },
+  { name: 'Longevidade', desc: 'Visão de longo prazo. Saúde como patrimônio.' },
 ];
 
 const Origem: React.FC = () => {
@@ -48,7 +48,7 @@ const Origem: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.OLIVE }}>
+      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE_DEEP }}>
         <div className="max-w-3xl mx-auto text-center">
           <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.GOLD }}>Dois anos, não dois meses</span>
           <div className="space-y-6 font-sans text-base md:text-lg leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.85 }}>
@@ -72,11 +72,8 @@ const Origem: React.FC = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {pillars.map(p => (
-              <div key={p.name} className="p-8 rounded-2xl border-t-2" style={{ backgroundColor: BRAND.CREAM_SOFT, borderColor: p.color }}>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color }} />
-                  <h3 className="font-serif text-2xl" style={{ color: BRAND.GRAPHITE }}>{p.name}</h3>
-                </div>
+              <div key={p.name} className="p-8 rounded-2xl" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
+                <h3 className="font-serif text-2xl mb-3" style={{ color: BRAND.WINE }}>{p.name}</h3>
                 <p className="font-sans text-sm leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>{p.desc}</p>
               </div>
             ))}
