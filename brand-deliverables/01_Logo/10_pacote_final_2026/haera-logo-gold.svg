@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Haëra - Logotipo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');
+  </style>
+  <rect width="1200" height="400" fill="#F5F2EB"/>
+  <text x="600" y="220" text-anchor="middle" fill="#B8964B" font-family="'Cormorant Garamond', serif" font-size="140" font-weight="300" letter-spacing="0.1em">Haëra</text>
+</svg>
