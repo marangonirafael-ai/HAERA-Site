@@ -39,7 +39,7 @@ const bioactives = [
 const Ciencia: React.FC = () => {
   return (
     <SiteLayout>
-      <section className="pt-40 pb-20 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
+      <section className="pt-40 pb-20 px-6 md:px-10" style={{ backgroundColor: BRAND.PETROL }}>
         <div className="max-w-5xl mx-auto text-center">
           <img src={logoSymbol} alt="" className="w-32 h-32 mx-auto mb-8" />
           <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.GOLD }}>Ciência Pulse</span>
@@ -66,7 +66,7 @@ const Ciencia: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE }}>
+      <section className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.PETROL }}>
         <div className="max-w-3xl mx-auto">
           <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block text-center" style={{ color: BRAND.GOLD }}>Mecanismo de Ação</span>
           <h2 className="font-serif text-4xl md:text-5xl font-light text-center mb-10" style={{ color: BRAND.CREAM }}>Equilíbrio Natural do Corpo</h2>

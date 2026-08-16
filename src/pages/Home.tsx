@@ -115,7 +115,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* 2. PROVOCAÇÃO */}
-      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE }}>
+      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.PETROL }}>
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-sans text-xs tracking-[0.4em] uppercase mb-8" style={{ color: BRAND.GOLD }}>O Paradoxo dos Estimulantes</p>
           <h2 className="font-serif text-4xl md:text-6xl font-light leading-tight italic" style={{ color: BRAND.CREAM }}>
@@ -129,7 +129,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* 3. POR QUE HAËRA EXISTE (ORIGEM) */}
-      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE_DEEP }}>
+      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.OLIVE }}>
         <div className="max-w-3xl mx-auto text-center">
           <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.GOLD }}>Por que Haëra existe</span>
           <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-10" style={{ color: BRAND.CREAM }}>
@@ -245,24 +245,28 @@ const Home: React.FC = () => {
       </section>
 
       {/* 6. NOVA PROVOCAÇÃO */}
-      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.OLIVE }}>
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="font-sans text-xs tracking-[0.4em] uppercase mb-8" style={{ color: BRAND.SAGE }}>Uma pergunta antes de continuar</p>
-          <h2 className="font-serif text-4xl md:text-6xl font-light leading-tight italic" style={{ color: BRAND.CREAM }}>
+      <section className="relative overflow-hidden py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
+        <div
+          className="absolute inset-0 opacity-60"
+          style={{ background: `radial-gradient(ellipse at 50% 30%, ${BRAND.TERRACOTTA}30 0%, transparent 65%)` }}
+        />
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <p className="font-sans text-xs tracking-[0.4em] uppercase mb-8" style={{ color: BRAND.TERRACOTTA }}>Uma pergunta antes de continuar</p>
+          <h2 className="font-serif text-4xl md:text-6xl font-light leading-tight italic" style={{ color: BRAND.GRAPHITE }}>
             "Você treina pensando nos próximos 30 dias — ou nos próximos 30 anos?"
           </h2>
-          <p className="font-sans text-base md:text-lg mt-10 leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.8 }}>
+          <p className="font-sans text-base md:text-lg mt-10 leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
             É essa pergunta que guia cada decisão da Haëra. Ciência sem arrogância. Sensibilidade pelo ritmo de cada corpo.
             Constância em vez de picos isolados. Elegância que não precisa gritar. Leveza no conhecimento. Longevidade como patrimônio.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mt-8">
             {pillars.map((p, i) => (
-              <span key={p} className="font-sans text-[11px] tracking-[0.25em] uppercase" style={{ color: BRAND.GOLD_LIGHT }}>
+              <span key={p} className="font-sans text-[11px] tracking-[0.25em] uppercase" style={{ color: BRAND.WINE, opacity: 0.75 }}>
                 {p}{i < pillars.length - 1 && <span style={{ opacity: 0.4 }}> · </span>}
               </span>
             ))}
           </div>
-          <Link to="/origem" className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] uppercase mt-10" style={{ color: BRAND.CREAM }}>
+          <Link to="/origem" className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] uppercase mt-10" style={{ color: BRAND.WINE }}>
             Conhecer a origem da Haëra <ArrowRight size={14} />
           </Link>
         </div>

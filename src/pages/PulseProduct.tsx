@@ -259,7 +259,7 @@ const PulseProduct: React.FC = () => {
       </section>
 
       {/* Sabor — limão */}
-      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
+      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: `${BRAND.TERRACOTTA}20` }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
           <img
             src={limeCore}
@@ -283,7 +283,7 @@ const PulseProduct: React.FC = () => {
       </section>
 
       {/* Provocação — convite para o mundo Pulse */}
-      <section className="py-32 md:py-40 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE_NIGHT }}>
+      <section className="py-32 md:py-40 px-6 md:px-10" style={{ backgroundColor: BRAND.PETROL }}>
         <div className="max-w-4xl mx-auto text-center">
           <span className="font-sans text-xs tracking-[0.4em] uppercase mb-8 block" style={{ color: BRAND.GOLD }}>
             Você está pronto?
