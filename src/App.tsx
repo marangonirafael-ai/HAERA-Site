@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import PulseProduct from "./pages/PulseProduct";
 import Ciencia from "./pages/Ciencia";
 import Manifesto from "./pages/Manifesto";
+import Origem from "./pages/Origem";
 import Checkout from "./pages/Checkout";
 import Trocas from "./pages/Trocas";
 import NotFound from "./pages/NotFound";
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/pulse-produto" element={<PulseProduct />} />
             <Route path="/ciencia" element={<Ciencia />} />
             <Route path="/manifesto" element={<Manifesto />} />
+            <Route path="/origem" element={<Origem />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/trocas-devolucoes" element={<Trocas />} />
 

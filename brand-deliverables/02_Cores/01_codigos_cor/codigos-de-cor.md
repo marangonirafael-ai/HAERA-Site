@@ -4,6 +4,10 @@ Valores confirmados a partir dos arquivos oficiais do brand kit (medidos
 diretamente dos PNGs em `brand-reference/social-media-kit/`) e cruzados
 com dois históricos de desenvolvimento da marca independentes.
 
+**Atualização:** o Terracotta foi corrigido de `#C4714A` para `#C4784A`,
+conforme o brand book final (`04_Manual_de_Marca/01_manual_pdf/haera-brandbook-estatico-2026.pdf`),
+que é agora a fonte de verdade para a paleta.
+
 | Cor | HEX | RGB | CMYK | Uso |
 |---|---|---|---|---|
 | **Sage Green** (primária) | `#9CAF88` | `156, 175, 136` | `11, 0, 22, 31` | Cor de marca principal |
@@ -11,7 +15,7 @@ com dois históricos de desenvolvimento da marca independentes.
 | **Wine** | `#722F37` | `114, 47, 55` | `0, 59, 52, 55` | Produto Pulse, destaque |
 | **Petrol Blue** | `#1B4D5C` | `27, 77, 92` | `71, 16, 0, 64` | Cor de apoio |
 | **Gold** | `#B8964B` | `184, 150, 75` | `0, 18, 59, 28` | Logo institucional (aplicação principal) |
-| **Terracotta** | `#C4714A` | `196, 113, 74` | `0, 42, 62, 23` | Cor de apoio |
+| **Terracotta** | `#C4784A` | `196, 120, 74` | `0, 39, 62, 23` | Cor de apoio |
 | **Cream** | `#F5F2EB` | `245, 242, 235` | `0, 1, 4, 4` | Fundo padrão |
 | **Graphite** | `#1C1C1C` | `28, 28, 28` | `0, 0, 0, 89` | Texto sobre fundo claro |
 

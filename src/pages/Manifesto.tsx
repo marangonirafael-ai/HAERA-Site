@@ -1,14 +1,14 @@
 import React from 'react';
 import SiteLayout from '@/components/site/SiteLayout';
 import { BRAND } from '@/lib/brand';
-import logoSymbol from '@/assets/haera-logo-symbol.jpeg';
+import logoSymbol from '@/assets/haera-simbolo-gold.png';
 
 const Manifesto: React.FC = () => {
   return (
     <SiteLayout>
       <section className="pt-40 pb-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
         <div className="max-w-3xl mx-auto text-center">
-          <img src={logoSymbol} alt="" className="w-40 h-40 mx-auto mb-12 animate-pulse-slow" style={{ mixBlendMode: 'multiply' }} />
+          <img src={logoSymbol} alt="" className="w-40 h-40 mx-auto mb-12 animate-pulse-slow" />
           <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>Manifesto</span>
           <h1 className="font-serif text-5xl md:text-7xl font-light leading-[1.05] mb-12" style={{ color: BRAND.GRAPHITE }}>
             Nutrir antes de <em className="italic" style={{ color: BRAND.WINE }}>estimular</em>.

@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Haëra Brand Colors - Mineral & Organic Palette */
-    --background: 40 20% 96%;
+    --background: 42 33% 94%;
     --foreground: 160 12% 18%;
 
     --card: 40 15% 94%;
@@ -48,8 +48,8 @@
     --haera-sage: 89 20% 61%;
     --haera-petrol: 194 55% 23%;
     --haera-gold: 41 43% 51%;
-    --haera-terracotta: 19 51% 53%;
-    --haera-mineral: 40 20% 96%;
+    --haera-terracotta: 23 51% 53%;
+    --haera-mineral: 42 33% 94%;
     --haera-beige: 35 25% 85%;
     --haera-stone: 40 15% 75%;
     --haera-graphite: 160 12% 18%;

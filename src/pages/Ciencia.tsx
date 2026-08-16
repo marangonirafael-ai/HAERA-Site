@@ -1,7 +1,7 @@
 import React from 'react';
 import SiteLayout from '@/components/site/SiteLayout';
 import { BRAND } from '@/lib/brand';
-import logoSymbol from '@/assets/haera-logo-symbol.jpeg';
+import logoSymbol from '@/assets/haera-simbolo-gold.png';
 
 const bioactives = [
   {
@@ -41,8 +41,8 @@ const Ciencia: React.FC = () => {
     <SiteLayout>
       <section className="pt-40 pb-20 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
         <div className="max-w-5xl mx-auto text-center">
-          <img src={logoSymbol} alt="" className="w-32 h-32 mx-auto mb-8" style={{ mixBlendMode: 'screen', opacity: 0.9 }} />
-          <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.GOLD }}>Ciência</span>
+          <img src={logoSymbol} alt="" className="w-32 h-32 mx-auto mb-8" />
+          <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.GOLD }}>Ciência Pulse</span>
           <h1 className="font-serif text-5xl md:text-7xl font-light leading-tight mb-6" style={{ color: BRAND.CREAM }}>
             A bioquímica por trás<br />da performance natural.
           </h1>

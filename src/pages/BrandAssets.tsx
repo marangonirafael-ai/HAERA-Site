@@ -17,7 +17,7 @@ const symbols = [
   { id: 3, name: 'Núcleo Green Sage', fileName: 'haera-simbolo-green-sage', image: nucleusSage, hex: '#9CAF88' },
   { id: 4, name: 'Núcleo Petrol Blue', fileName: 'haera-simbolo-petrol-blue', image: nucleusPetrol, hex: '#1B4D5C' },
   { id: 5, name: 'Núcleo Gold', fileName: 'haera-simbolo-gold', image: nucleusGold, hex: '#B8964B' },
-  { id: 6, name: 'Núcleo Terracotta', fileName: 'haera-simbolo-terracotta', image: nucleusTerracotta, hex: '#C4714A' },
+  { id: 6, name: 'Núcleo Terracotta', fileName: 'haera-simbolo-terracotta', image: nucleusTerracotta, hex: '#C4784A' },
 ];
 
 // 8 Logos com nome Haëra para download
@@ -26,7 +26,7 @@ const logos = [
   { id: 2, name: 'Logo Wine', fileName: 'haera-logo-wine', hex: '#722F37', bgLight: true },
   { id: 3, name: 'Logo Petrol Blue', fileName: 'haera-logo-petrol-blue', hex: '#1B4D5C', bgLight: true },
   { id: 4, name: 'Logo Gold', fileName: 'haera-logo-gold', hex: '#B8964B', bgLight: true },
-  { id: 5, name: 'Logo Terracotta', fileName: 'haera-logo-terracotta', hex: '#C4714A', bgLight: true },
+  { id: 5, name: 'Logo Terracotta', fileName: 'haera-logo-terracotta', hex: '#C4784A', bgLight: true },
   { id: 6, name: 'Logo Green Sage', fileName: 'haera-logo-green-sage', hex: '#9CAF88', bgLight: true },
   { id: 7, name: 'Logo White (fundo escuro)', fileName: 'haera-logo-white', hex: '#FFFFFF', bgLight: false },
   { id: 8, name: 'Logo Black', fileName: 'haera-logo-black', hex: '#1C1C1C', bgLight: true },
@@ -277,7 +277,7 @@ const BrandAssets: React.FC = () => {
               { name: 'Wine', hex: '#722F37' },
               { name: 'Petrol Blue', hex: '#1B4D5C' },
               { name: 'Gold', hex: '#B8964B' },
-              { name: 'Terracotta', hex: '#C4714A' },
+              { name: 'Terracotta', hex: '#C4784A' },
               { name: 'Green Sage', hex: '#9CAF88' },
             ].map((color, i) => (
               <div key={i} className="text-center">

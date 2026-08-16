@@ -1,5 +1,15 @@
 # Guia de Tom de Voz — Haëra
 
+**Nota de escopo:** este documento define como a marca *escreve* (tom de
+voz, vocabulário, taglines). É um conceito distinto dos **Pilares da
+Marca** (Ciência, Sensibilidade, Constância, Elegância, Leveza,
+Longevidade), definidos no brand book final e documentados em
+`06_Documentos_Legais/04_racional_criativo/racional-criativo.md` — os
+pilares descrevem o que a marca *representa e comunica* como valores,
+não como ela redige um texto. Os dois convivem: os seis adjetivos abaixo
+calibram a voz de qualquer peça de copy; os seis pilares aparecem como
+conteúdo institucional (ex.: seção "Origem" do site).
+
 ## A personalidade em uma frase
 
 A Haëra fala como uma nutricionista de confiança, não como um vendedor de

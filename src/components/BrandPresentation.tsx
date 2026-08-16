@@ -41,7 +41,7 @@ const colorVariants = [
   { 
     name: 'Terracotta', 
     image: nucleusTerracotta, 
-    hex: '#C4714A',
+    hex: '#C4784A',
     description: 'Calor e nutrição'
   },
 ];
@@ -205,7 +205,7 @@ const BrandPresentation: React.FC = () => {
               { name: 'Olive Green', hex: '#3F4F45' },
               { name: 'Petrol Blue', hex: '#1B4D5C' },
               { name: 'Gold', hex: '#B8964B' },
-              { name: 'Terracotta', hex: '#C4714A' },
+              { name: 'Terracotta', hex: '#C4784A' },
               { name: 'Cream', hex: '#F5F2EB' },
             ].map((c) => (
               <div key={c.name} className="group">
@@ -381,7 +381,7 @@ const BrandPresentation: React.FC = () => {
               { name: 'Wine', hex: '#722F37', bg: '#F5F2EB' },
               { name: 'Petrol Blue', hex: '#1B4D5C', bg: '#F5F2EB' },
               { name: 'Gold', hex: '#B8964B', bg: '#F5F2EB' },
-              { name: 'Terracotta', hex: '#C4714A', bg: '#F5F2EB' },
+              { name: 'Terracotta', hex: '#C4784A', bg: '#F5F2EB' },
               { name: 'Green Sage', hex: '#9CAF88', bg: '#F5F2EB' },
             ].map((variant) => (
               <div 

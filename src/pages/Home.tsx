@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, MessageCircleQuestion } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import SiteLayout from '@/components/site/SiteLayout';
 import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
 import { useScrollParallax } from '@/hooks/useScrollParallax';
-import logoSymbol from '@/assets/haera-logo-symbol.jpeg';
-import symbolWine from '@/assets/haera-symbol-wine.jpeg';
+import logoSymbol from '@/assets/haera-simbolo-gold.png';
 import pulsePouch from '@/assets/pulse-pouch.jpeg';
 import pulseSachets from '@/assets/pulse-sachets.jpeg';
 import nucleusLoop from '@/assets/nucleus-loop.mp4.asset.json';
-import lemonCore from '@/assets/lemon-core.jpg';
+
+const pillars = ['Ciência', 'Sensibilidade', 'Constância', 'Elegância', 'Leveza', 'Longevidade'];
 
 const Home: React.FC = () => {
   const { addItem } = useCart();
@@ -18,7 +18,6 @@ const Home: React.FC = () => {
   const heroVideoRef = useScrollParallax<HTMLDivElement>({ translateY: 70 });
   const showcaseRef = useScrollParallax<HTMLImageElement>({ translateY: -80, scale: 0.07, rotate: 2 });
   const ctaSymbolRef = useScrollParallax<HTMLImageElement>({ translateY: -20, scale: 0.04 });
-  const manifestoSymbolRef = useScrollParallax<HTMLImageElement>({ translateY: -25, scale: 0.03 });
 
   const handleAdd = () => addItem({
     id: PULSE_PRODUCT.id,
@@ -29,7 +28,7 @@ const Home: React.FC = () => {
 
   return (
     <SiteLayout>
-      {/* HERO */}
+      {/* 1. HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: BRAND.CREAM }}>
         <div
           className="absolute inset-0 opacity-40"
@@ -115,7 +114,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* HOOK / PROVOCATION */}
+      {/* 2. PROVOCAÇÃO */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE }}>
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-sans text-xs tracking-[0.4em] uppercase mb-8" style={{ color: BRAND.GOLD }}>O Paradoxo dos Estimulantes</p>
@@ -129,7 +128,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* STORY — adiantada pra logo após a provocação, constrói confiança antes do mecanismo */}
+      {/* 3. POR QUE HAËRA EXISTE (ORIGEM) */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE_DEEP }}>
         <div className="max-w-3xl mx-auto text-center">
           <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.GOLD }}>Por que Haëra existe</span>
@@ -144,35 +143,13 @@ const Home: React.FC = () => {
               Haëra é a resposta para quem entendeu que <em style={{ color: BRAND.GOLD, fontStyle: 'italic' }}>longevidade vale mais que pico</em> — e que clean label não é tendência, é responsabilidade.
             </p>
           </div>
+          <Link to="/origem" className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] uppercase mt-10" style={{ color: BRAND.GOLD }}>
+            Conhecer a origem completa <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
 
-      {/* MANIFESTO STRIP */}
-      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
-          <img
-            ref={manifestoSymbolRef}
-            src={symbolWine}
-            alt="Núcleo Haëra"
-            className="w-56 h-56 md:w-72 md:h-72 object-contain"
-            style={{ mixBlendMode: 'multiply' }}
-          />
-          <div>
-            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.WINE, opacity: 0.7 }}>Nosso Manifesto</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
-              Nutrir antes de <em className="italic" style={{ color: BRAND.WINE }}>estimular</em>.
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-4" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
-              Acreditamos que a verdadeira performance nasce do equilíbrio natural do corpo, não do cansaço intenso. Que o organismo deve ser nutrido com biodisponibilidade real, e não estimulado por química barata.
-            </p>
-            <Link to="/manifesto" className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] uppercase mt-4" style={{ color: BRAND.WINE }}>
-              Ler manifesto completo <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCT SHOWCASE — Vitrine do produto */}
+      {/* 4. VITRINE DO PRODUTO */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
@@ -244,31 +221,82 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* FLAVOR: LEMON — Sabor único */}
-      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
+      {/* 5. SÍMBOLO — SIGNIFICADO */}
+      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
           <img
-            src={lemonCore}
-            alt="Núcleo de limão cortado"
-            loading="lazy"
-            width={520}
-            height={520}
-            className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full shadow-xl"
-            style={{ boxShadow: `0 30px 80px -20px ${BRAND.GOLD}80` }}
+            src={logoSymbol}
+            alt="Símbolo Haëra: núcleo de anéis concêntricos"
+            className="w-56 h-56 md:w-72 md:h-72 object-contain"
           />
           <div>
-            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.WINE, opacity: 0.7 }}>Sabor único</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
-              No coração do Pulse, <em className="italic" style={{ color: BRAND.WINE }}>limão</em>.
+            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.GOLD }}>O Símbolo</p>
+            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.CREAM }}>
+              Um núcleo, não uma <em className="italic" style={{ color: BRAND.GOLD }}>explosão</em>.
             </h2>
-            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
-              Um frescor cítrico natural, leve e sutil — que ativa o paladar sem mascarar a pureza dos ingredientes. Sem aromas artificiais, apenas o brilho do limão.
+            <p className="font-sans text-base leading-relaxed mb-4" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
+              A energia nasce do centro. A performance é consequência — a nutrição sustenta tudo. Um núcleo central sólido, em camadas concêntricas que crescem progressivamente, numa forma orgânica: biologia real, não geometria perfeita.
+            </p>
+            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
+              Remete a uma célula saudável, um grão nutrido, um tecido vivo — a origem de toda energia verdadeira.
             </p>
           </div>
         </div>
       </section>
 
-      {/* DIFERENCIAIS — minimal, à la Apple. Único bloco de números mantido na Home; */}
+      {/* 6. NOVA PROVOCAÇÃO */}
+      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.OLIVE }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="font-sans text-xs tracking-[0.4em] uppercase mb-8" style={{ color: BRAND.SAGE }}>Uma pergunta antes de continuar</p>
+          <h2 className="font-serif text-4xl md:text-6xl font-light leading-tight italic" style={{ color: BRAND.CREAM }}>
+            "Você treina pensando nos próximos 30 dias — ou nos próximos 30 anos?"
+          </h2>
+          <p className="font-sans text-base md:text-lg mt-10 leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.8 }}>
+            É essa pergunta que guia cada decisão da Haëra. Ciência sem arrogância. Sensibilidade pelo ritmo de cada corpo.
+            Constância em vez de picos isolados. Elegância que não precisa gritar. Leveza no conhecimento. Longevidade como patrimônio.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mt-8">
+            {pillars.map((p, i) => (
+              <span key={p} className="font-sans text-[11px] tracking-[0.25em] uppercase" style={{ color: BRAND.GOLD_LIGHT }}>
+                {p}{i < pillars.length - 1 && <span style={{ opacity: 0.4 }}> · </span>}
+              </span>
+            ))}
+          </div>
+          <Link to="/origem" className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] uppercase mt-10" style={{ color: BRAND.CREAM }}>
+            Conhecer a origem da Haëra <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
+      {/* 7. CTA FINAL */}
+      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <img
+            ref={ctaSymbolRef}
+            src={logoSymbol}
+            alt=""
+            className="w-32 h-32 mx-auto mb-10"
+          />
+          <h2 className="font-serif text-4xl md:text-6xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
+            Comece sua <em className="italic" style={{ color: BRAND.WINE }}>evolução limpa</em>.
+          </h2>
+          <p className="font-sans text-base md:text-lg max-w-xl mx-auto mb-10" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
+            150g · 30 doses · entrega em todo o Brasil. <span className="line-through opacity-50">{PULSE_PRODUCT.priceOriginalFormatted}</span> {PULSE_PRODUCT.priceFormatted}.
+          </p>
+          <button
+            onClick={handleAdd}
+            className="inline-flex items-center gap-3 font-sans text-xs tracking-[0.3em] uppercase px-12 py-5 rounded-full transition-all hover:gap-5"
+            style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
+          >
+            Comprar o Pulse <ArrowRight size={14} />
+          </button>
+          <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
+            Pix, cartão ou boleto · Frete grátis acima de R$150
+          </p>
+        </div>
+      </section>
+
+      {/* 8. DIFERENCIAIS — minimal, à la Apple. Único bloco de números mantido na Home; */}
       {/* Pilares e o Anel de ingredientes vivem na página do produto (aba Ingredientes + Highlights) */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
         <div className="max-w-6xl mx-auto">
@@ -301,80 +329,6 @@ const Home: React.FC = () => {
               Conhecer a ciência por trás <ArrowRight size={14} />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* SÍMBOLO — SIGNIFICADO */}
-      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
-          <img
-            src={logoSymbol}
-            alt="Símbolo Haëra: núcleo de anéis concêntricos"
-            className="w-56 h-56 md:w-72 md:h-72 object-contain"
-            style={{ mixBlendMode: 'screen', opacity: 0.9 }}
-          />
-          <div>
-            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.GOLD }}>O Símbolo</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.CREAM }}>
-              Um núcleo, não uma <em className="italic" style={{ color: BRAND.GOLD }}>explosão</em>.
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-4" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
-              Não é um raio, nem um punho fechado — os ícones mais comuns em pré-treino. É um núcleo de anéis concêntricos, mais densos em direção ao centro: a representação visual de energia que vem de dentro, construída em camadas — nutrientes, absorção, metabolismo.
-            </p>
-            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
-              A forma circular e simétrica comunica constância. Performance sustentável, não um pico isolado.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* TEASER — Respostas Honestas (conteúdo completo mora em /pulse-produto) */}
-      <section className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
-        <div className="max-w-2xl mx-auto text-center">
-          <MessageCircleQuestion size={28} className="mx-auto mb-6" style={{ color: BRAND.WINE }} />
-          <span className="font-sans text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>Respostas Honestas</span>
-          <p className="font-serif text-2xl md:text-3xl italic leading-snug mb-6" style={{ color: BRAND.GRAPHITE }}>
-            "Não sinto o kick."
-          </p>
-          <p className="font-sans text-sm md:text-base leading-relaxed mb-8" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
-            O kick sintético é estresse do organismo. Haëra entrega eficiência mitocondrial — e essa é só uma das respostas diretas que temos pras suas objeções mais honestas.
-          </p>
-          <Link
-            to="/pulse-produto#respostas-honestas"
-            className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] uppercase"
-            style={{ color: BRAND.WINE }}
-          >
-            Ver todas as respostas <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
-        <div className="max-w-4xl mx-auto text-center">
-          <img
-            ref={ctaSymbolRef}
-            src={logoSymbol}
-            alt=""
-            className="w-32 h-32 mx-auto mb-10"
-            style={{ mixBlendMode: 'multiply' }}
-          />
-          <h2 className="font-serif text-4xl md:text-6xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
-            Comece sua <em className="italic" style={{ color: BRAND.WINE }}>evolução limpa</em>.
-          </h2>
-          <p className="font-sans text-base md:text-lg max-w-xl mx-auto mb-10" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
-            150g · 30 doses · entrega em todo o Brasil. <span className="line-through opacity-50">{PULSE_PRODUCT.priceOriginalFormatted}</span> {PULSE_PRODUCT.priceFormatted}.
-          </p>
-          <button
-            onClick={handleAdd}
-            className="inline-flex items-center gap-3 font-sans text-xs tracking-[0.3em] uppercase px-12 py-5 rounded-full transition-all hover:gap-5"
-            style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
-          >
-            Comprar o Pulse <ArrowRight size={14} />
-          </button>
-          <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
-            Pix, cartão ou boleto · Frete grátis acima de R$150
-          </p>
         </div>
       </section>
     </SiteLayout>

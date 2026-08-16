@@ -55,6 +55,23 @@ constância — "performance sustentável", não um pico isolado.
   demais), reforçando o meio-termo natural + premium que é a tese inteira
   da marca.
 
+## Pilares da Marca vs. Guia de Tom de Voz
+
+São dois documentos distintos, não sinônimos:
+
+- **Pilares da Marca** (brand book final, 2026): Ciência, Sensibilidade,
+  Constância, Elegância, Leveza, Longevidade. Respondem "o que a Haëra
+  representa" — são os valores institucionais, usados como conteúdo
+  (ex.: seção "Origem" e a seção de provocação final da Home).
+- **Guia de Tom de Voz** (`04_Manual_de_Marca/03_guia_tom_de_voz/`):
+  Científica, Humana, Premium, Elegante, Acessível, Confiável. Respondem
+  "como a Haëra escreve" — calibram qualquer peça de copy, independente
+  do canal.
+
+"Elegância/Elegante" aparece nos dois por coincidência de tema, não por
+erro — é um valor real da marca e também uma qualidade de escrita
+desejada.
+
 ## Por que este tom de voz
 
 "Científica + humana" é a combinação porque o público-alvo (25-45 anos,

@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { ArrowRight, Check, Minus, Plus, ChevronDown, ShieldCheck } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Check, Minus, Plus } from 'lucide-react';
 import SiteLayout from '@/components/site/SiteLayout';
 import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
 import pulsePouch from '@/assets/pulse-pouch.jpeg';
 import pulseSachets from '@/assets/pulse-sachets.jpeg';
-import logoSymbol from '@/assets/haera-logo-symbol.jpeg';
+import lemonCore from '@/assets/lemon-core.jpg';
 
 const tabs = ['Descrição', 'Ingredientes', 'Como tomar', 'Nutricional'] as const;
 type Tab = typeof tabs[number];
@@ -80,30 +79,11 @@ const tabContent: Record<Tab, React.ReactNode> = {
   ),
 };
 
-const objections = [
-  { q: '"R$149,90 não é caro pra pré-treino?"', a: 'É caro se comparar com estimulante sintético. É o oposto se comparar com o que entrega: 21 ingredientes reais pelo preço de um isolado. Você paga pela fórmula, não pela marca.' },
-  { q: '"Não sinto o kick."', a: 'O kick sintético é estresse do organismo. Haëra entrega eficiência mitocondrial — você treina mais, com menos esforço cardíaco.' },
-  { q: '"Quero formigamento."', a: 'Formigamento é distração. Foco é o que te faz completar a última repetição com técnica perfeita.' },
-  { q: '"Mineral é tudo igual."', a: 'Minerais comuns competem entre si e têm baixa absorção. Quelatos são "VIPs" no seu sistema digestivo.' },
-  { q: '"Isso é regulamentado? Tem registro?"', a: 'Sim. Fabricado por indústria licenciada, com Responsável Técnica acompanhando cada lote. Clean label não significa sem controle — significa controle sem excesso.' },
-  { q: '"Nunca ouvi falar."', a: 'As melhores descobertas são as que priorizam ciência e pureza antes do marketing de massa.' },
-  { q: '"Só tomo para treinar."', a: 'A sinergia de bioativos do Pulse é um excelente nootrópico natural para qualquer desafio cognitivo.' },
-];
-
 const PulseProduct: React.FC = () => {
   const { addItem } = useCart();
-  const location = useLocation();
   const [qty, setQty] = useState(1);
   const [tab, setTab] = useState<Tab>('Descrição');
   const [activeImg, setActiveImg] = useState(0);
-  const [openObj, setOpenObj] = useState<number | null>(0);
-
-  useEffect(() => {
-    if (location.hash) {
-      const el = document.querySelector(location.hash);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [location.hash]);
 
   const images = [pulseSachets, pulsePouch];
 
@@ -278,76 +258,50 @@ const PulseProduct: React.FC = () => {
         </div>
       </section>
 
-      {/* Comparativo */}
-      <section className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="font-sans text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: BRAND.WINE }}>Comparativo</span>
-            <h2 className="font-serif text-4xl font-light" style={{ color: BRAND.GRAPHITE }}>Pulse vs. Estimulantes Convencionais</h2>
-          </div>
-          <div className="rounded-2xl overflow-hidden border" style={{ borderColor: `${BRAND.WINE}20`, backgroundColor: BRAND.CREAM }}>
-            {[
-              ['Filosofia', 'Estímulo isolado e imediato', 'Otimização fisiológica integrada'],
-              ['Composição', 'Ingredientes isolados (cafeína anidra, taurina)', '21 ingredientes naturais em sinergia'],
-              ['Pureza', 'Aditivos, corantes, adoçantes artificiais', '100% Clean Label'],
-              ['Energia', 'Cafeína anidra em altas doses', 'Cafeína natural + Complexo B'],
-              ['Saúde sistêmica', 'Limitado ou ausente', 'Suporte intestino, imunidade, recuperação'],
-              ['Efeitos colaterais', 'Queda de energia, ansiedade, palpitações, insônia', 'Clareza, energia estável'],
-              ['Resultado', 'Pump momentâneo', 'Constância, resistência, foco'],
-            ].map((row, i) => (
-              <div key={row[0]} className="grid grid-cols-3 gap-4 px-6 py-4" style={{ borderTop: i > 0 ? `1px solid ${BRAND.GRAPHITE}10` : 'none' }}>
-                <div className="font-sans text-xs tracking-wider uppercase" style={{ color: BRAND.GRAPHITE, opacity: 0.6 }}>{row[0]}</div>
-                <div className="font-sans text-sm" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>{row[1]}</div>
-                <div className="font-sans text-sm font-medium" style={{ color: BRAND.WINE }}>{row[2]}</div>
-              </div>
-            ))}
+      {/* Sabor — limão */}
+      <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
+          <img
+            src={lemonCore}
+            alt="Núcleo de limão cortado"
+            loading="lazy"
+            width={520}
+            height={520}
+            className="w-56 h-56 md:w-80 md:h-80 object-cover rounded-full shadow-xl"
+            style={{ boxShadow: `0 30px 80px -20px ${BRAND.GOLD}80` }}
+          />
+          <div>
+            <p className="font-sans text-xs tracking-[0.4em] uppercase mb-6" style={{ color: BRAND.WINE, opacity: 0.7 }}>Sabor único</p>
+            <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6" style={{ color: BRAND.GRAPHITE }}>
+              No coração do Pulse, <em className="italic" style={{ color: BRAND.WINE }}>limão</em>.
+            </h2>
+            <p className="font-sans text-base leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
+              Um frescor cítrico natural, leve e sutil — que ativa o paladar sem mascarar a pureza dos ingredientes. Sem aromas artificiais, apenas o brilho do limão.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Respostas honestas */}
-      <section id="respostas-honestas" className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE }}>
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <img src={logoSymbol} alt="" className="w-20 h-20 mx-auto mb-6" style={{ mixBlendMode: 'screen', opacity: 0.9 }} />
-            <span className="font-sans text-xs tracking-[0.4em] uppercase mb-4 block" style={{ color: BRAND.GOLD }}>Respostas Honestas</span>
-            <h2 className="font-serif text-4xl font-light" style={{ color: BRAND.CREAM }}>Sem floreio. Sem hype.</h2>
-          </div>
-          <div className="space-y-3">
-            {objections.map((o, i) => (
-              <div key={i} className="rounded-xl overflow-hidden" style={{ backgroundColor: BRAND.WINE_DEEP }}>
-                <button
-                  onClick={() => setOpenObj(openObj === i ? null : i)}
-                  className="w-full px-6 py-5 flex justify-between items-center text-left"
-                >
-                  <span className="font-serif text-lg italic" style={{ color: BRAND.CREAM }}>{o.q}</span>
-                  <ChevronDown size={18} style={{ color: BRAND.GOLD, transform: openObj === i ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
-                </button>
-                {openObj === i && (
-                  <div className="px-6 pb-5 font-sans text-sm leading-relaxed animate-fade-in" style={{ color: BRAND.CREAM, opacity: 0.85 }}>
-                    {o.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 rounded-2xl p-8 text-center flex flex-col items-center gap-4" style={{ backgroundColor: BRAND.WINE_DEEP }}>
-            <ShieldCheck size={22} style={{ color: BRAND.GOLD }} />
-            <p className="font-serif text-xl italic" style={{ color: BRAND.CREAM }}>
-              Ainda com dúvida?
-            </p>
-            <p className="font-sans text-sm max-w-md" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
-              Compre agora com garantia de troca — se não sentir a diferença, resolvemos.
-            </p>
-            <button
-              onClick={handleAdd}
-              className="font-sans text-xs tracking-[0.25em] uppercase px-8 py-3 rounded-full transition-opacity hover:opacity-90"
-              style={{ backgroundColor: BRAND.GOLD, color: BRAND.WINE_NIGHT }}
-            >
-              Comprar o Pulse
-            </button>
-          </div>
+      {/* Provocação — convite para o mundo Pulse */}
+      <section className="py-32 md:py-40 px-6 md:px-10" style={{ backgroundColor: BRAND.WINE_NIGHT }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="font-sans text-xs tracking-[0.4em] uppercase mb-8 block" style={{ color: BRAND.GOLD }}>
+            Você está pronto?
+          </span>
+          <h2 className="font-serif text-4xl md:text-6xl font-light leading-tight mb-8" style={{ color: BRAND.CREAM }}>
+            Bem-vindo a um mundo de <em className="italic" style={{ color: BRAND.GOLD }}>performance duradoura</em>.
+          </h2>
+          <p className="font-sans text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12" style={{ color: BRAND.CREAM, opacity: 0.75 }}>
+            Não é sobre o próximo treino. É sobre os próximos trinta anos. Aqui, energia não é tomada emprestada —
+            é construída, sessão após sessão, com ingredientes reais e ciência de verdade.
+          </p>
+          <button
+            onClick={handleAdd}
+            className="inline-flex items-center gap-3 font-sans text-xs tracking-[0.3em] uppercase px-12 py-5 rounded-full transition-all hover:gap-5"
+            style={{ backgroundColor: BRAND.GOLD, color: BRAND.WINE_NIGHT }}
+          >
+            Comprar o Pulse <ArrowRight size={14} />
+          </button>
         </div>
       </section>
     </SiteLayout>

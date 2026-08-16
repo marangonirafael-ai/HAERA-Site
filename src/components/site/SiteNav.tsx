@@ -3,21 +3,30 @@ import { Link, useLocation } from 'react-router-dom';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
 import { useCart } from '@/contexts/CartContext';
-import logoSymbol from '@/assets/haera-logo-symbol.jpeg';
+import logoSymbol from '@/assets/haera-simbolo-gold.png';
 import pulsePouch from '@/assets/pulse-pouch.jpeg';
 
 const links = [
   { to: '/', label: 'Início' },
   { to: '/pulse-produto', label: 'Pulse' },
-  { to: '/ciencia', label: 'Ciência' },
+  { to: '/ciencia', label: 'Ciência Pulse' },
   { to: '/manifesto', label: 'Manifesto' },
+  { to: '/origem', label: 'Origem' },
 ];
+
+// Páginas cujo topo é escuro (fundo Graphite) — o header precisa da versão
+// negativa do lockup (texto/ícones em Cream) enquanto não rolar a página,
+// senão fica ilegível sobre o próprio fundo escuro.
+const darkHeroRoutes = ['/ciencia', '/origem'];
 
 const SiteNav: React.FC = () => {
   const { totalItems, setIsOpen, addItem } = useCart();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isDarkHero = darkHeroRoutes.includes(location.pathname) && !scrolled;
+  const wordmarkColor = isDarkHero ? BRAND.CREAM : BRAND.WINE;
+  const linkColor = isDarkHero ? BRAND.CREAM : BRAND.GRAPHITE;
 
   const handleQuickAdd = () => addItem({
     id: PULSE_PRODUCT.id,
@@ -50,9 +59,8 @@ const SiteNav: React.FC = () => {
             src={logoSymbol}
             alt="Haëra"
             className="h-12 md:h-16 w-auto object-contain"
-            style={{ mixBlendMode: 'multiply' }}
           />
-          <span className="font-serif text-2xl md:text-3xl tracking-wide" style={{ color: BRAND.GRAPHITE }}>Haëra</span>
+          <span className="font-serif text-2xl md:text-3xl tracking-wide transition-colors duration-500" style={{ color: wordmarkColor }}>Haëra</span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-10">
@@ -60,9 +68,9 @@ const SiteNav: React.FC = () => {
             <li key={link.to}>
               <Link
                 to={link.to}
-                className="font-sans text-xs tracking-[0.25em] uppercase transition-opacity hover:opacity-60"
+                className="font-sans text-xs tracking-[0.25em] uppercase transition-all duration-500 hover:opacity-60"
                 style={{
-                  color: BRAND.GRAPHITE,
+                  color: linkColor,
                   opacity: location.pathname === link.to ? 1 : 0.7,
                   fontWeight: location.pathname === link.to ? 500 : 400,
                 }}
@@ -88,7 +96,7 @@ const SiteNav: React.FC = () => {
             className="relative p-2 transition-opacity hover:opacity-70"
             aria-label="Abrir carrinho"
           >
-            <ShoppingBag size={20} style={{ color: BRAND.GRAPHITE }} />
+            <ShoppingBag size={20} style={{ color: linkColor }} />
             {totalItems > 0 && (
               <span
                 className="absolute -top-0.5 -right-0.5 w-5 h-5 rounded-full flex items-center justify-center font-sans text-[10px] font-medium"
@@ -103,7 +111,7 @@ const SiteNav: React.FC = () => {
             className="md:hidden p-2"
             aria-label="Menu"
           >
-            {mobileOpen ? <X size={20} style={{ color: BRAND.GRAPHITE }} /> : <Menu size={20} style={{ color: BRAND.GRAPHITE }} />}
+            {mobileOpen ? <X size={20} style={{ color: linkColor }} /> : <Menu size={20} style={{ color: linkColor }} />}
           </button>
         </div>
       </nav>
