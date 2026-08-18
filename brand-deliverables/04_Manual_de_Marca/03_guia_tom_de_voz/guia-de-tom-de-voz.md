@@ -2,7 +2,7 @@
 
 **Nota de escopo:** este documento define como a marca *escreve* (tom de
 voz, vocabulário, taglines). É um conceito distinto dos **Pilares da
-Marca** (Ciência, Sensibilidade, Constância, Elegância, Leveza,
+Marca** (Ciência, Sensibilidade, Constância, Intencionalidade, Leveza,
 Longevidade), definidos no brand book final e documentados em
 `06_Documentos_Legais/04_racional_criativo/racional-criativo.md` — os
 pilares descrevem o que a marca *representa e comunica* como valores,

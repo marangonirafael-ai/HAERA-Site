@@ -457,7 +457,7 @@ const BrandPresentation: React.FC = () => {
             {[
               {
                 title: 'Ciência',
-                desc: 'Fundamentação sem arrogância. Evidência com elegância.',
+                desc: 'Fundamentação sem excessos. Evidência aplicada à vida real.',
               },
               {
                 title: 'Sensibilidade',
@@ -468,8 +468,8 @@ const BrandPresentation: React.FC = () => {
                 desc: 'Construção sustentável. Performance como consequência.',
               },
               {
-                title: 'Elegância',
-                desc: 'Sofisticação silenciosa. Luxo que não precisa gritar.',
+                title: 'Intencionalidade',
+                desc: 'Cada escolha tem um porquê. Nada está ali por acaso.',
               },
               {
                 title: 'Leveza',

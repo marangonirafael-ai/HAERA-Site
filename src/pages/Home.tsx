@@ -10,7 +10,7 @@ import pulsePouch from '@/assets/pulse-pouch.jpeg';
 import pulseSachets from '@/assets/pulse-sachets.jpeg';
 import nucleusLoop from '@/assets/nucleus-loop.mp4.asset.json';
 
-const pillars = ['Ciência', 'Sensibilidade', 'Constância', 'Elegância', 'Leveza', 'Longevidade'];
+const pillars = ['Ciência', 'Sensibilidade', 'Constância', 'Intencionalidade', 'Leveza', 'Longevidade'];
 
 const Home: React.FC = () => {
   const heroProductRef = useScrollParallax<HTMLImageElement>({ translateY: -90, scale: 0.08, rotate: -2 });
@@ -238,7 +238,7 @@ const Home: React.FC = () => {
           </h2>
           <p className="font-sans text-base md:text-lg mt-10 leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.8 }}>
             É essa pergunta que guia cada decisão da Haëra. Ciência sem arrogância. Sensibilidade pelo ritmo de cada corpo.
-            Constância em vez de picos isolados. Elegância que não precisa gritar. Leveza no conhecimento. Longevidade como patrimônio.
+            Constância em vez de picos isolados. Intencionalidade em cada escolha. Leveza no conhecimento. Longevidade como patrimônio.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mt-8">
             {pillars.map((p, i) => (

@@ -6,10 +6,10 @@ import { BRAND } from '@/lib/brand';
 import logoSymbol from '@/assets/haera-simbolo-gold-animado.gif';
 
 const pillars = [
-  { name: 'Ciência', desc: 'Fundamentação sem arrogância. Evidência com elegância.' },
+  { name: 'Ciência', desc: 'Fundamentação sem excessos. Evidência aplicada à vida real.' },
   { name: 'Sensibilidade', desc: 'Escuta profunda. Respeito pelo ritmo de cada corpo.' },
   { name: 'Constância', desc: 'Construção sustentável. Performance como consequência.' },
-  { name: 'Elegância', desc: 'Sofisticação silenciosa. Luxo que não precisa gritar.' },
+  { name: 'Intencionalidade', desc: 'Cada escolha tem um porquê. Nada está ali por acaso.' },
   { name: 'Leveza', desc: 'Profundidade sem peso. Conhecimento sem sobrecarregar.' },
   { name: 'Longevidade', desc: 'Visão de longo prazo. Saúde como patrimônio.' },
 ];
