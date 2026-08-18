@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import SiteLayout from '@/components/site/SiteLayout';
-import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
+import { BRAND, PULSE_PRODUCT, SALES_LIVE, YAMPI_CHECKOUT_URL } from '@/lib/brand';
 import pulsePouch from '@/assets/pulse-pouch.jpeg';
 import pulseSachets from '@/assets/pulse-sachets.jpeg';
 import limeCore from '@/assets/lime-core.jpg';
+
+const vipHref = SALES_LIVE ? YAMPI_CHECKOUT_URL : 'mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse';
+const vipLinkProps = SALES_LIVE ? { target: '_blank' as const, rel: 'noopener noreferrer' } : {};
 
 const tabs = ['Descrição', 'Ingredientes', 'Como tomar', 'Nutricional'] as const;
 type Tab = typeof tabs[number];
@@ -137,11 +140,12 @@ const PulseProduct: React.FC = () => {
                   <p className="font-serif text-base sm:text-2xl" style={{ color: BRAND.WINE }}>{PULSE_PRODUCT.priceVipFormatted}</p>
                   <p className="font-sans text-[9px] sm:text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.6 }}>{PULSE_PRODUCT.pricePerDoseVip}</p>
                   <a
-                    href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+                    href={vipHref}
+                    {...vipLinkProps}
                     className="inline-flex items-center gap-1 font-sans text-[8px] sm:text-[9px] tracking-[0.1em] sm:tracking-[0.2em] uppercase mt-1 transition-opacity hover:opacity-80"
                     style={{ color: BRAND.WINE }}
                   >
-                    Entrar na Lista VIP →
+                    {SALES_LIVE ? 'Comprar' : 'Entrar na Lista VIP'} →
                   </a>
                 </div>
               </div>
@@ -161,11 +165,12 @@ const PulseProduct: React.FC = () => {
 
             <div className="flex flex-col gap-3 mb-10">
               <a
-                href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+                href={vipHref}
+                {...vipLinkProps}
                 className="font-sans text-xs tracking-[0.3em] uppercase px-9 py-4 rounded-full transition-opacity hover:opacity-90 inline-flex items-center justify-center gap-2"
                 style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
               >
-                Entrar na Lista VIP <ArrowRight size={14} />
+                {SALES_LIVE ? 'Comprar o Pulse' : 'Entrar na Lista VIP'} <ArrowRight size={14} />
               </a>
               <p className="font-sans text-[11px] text-center" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
                 Seja avisado em primeira mão no lançamento
@@ -277,11 +282,12 @@ const PulseProduct: React.FC = () => {
             é construída, sessão após sessão, com ingredientes reais e ciência de verdade.
           </p>
           <a
-            href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+            href={vipHref}
+            {...vipLinkProps}
             className="inline-flex items-center gap-3 font-sans text-xs tracking-[0.3em] uppercase px-12 py-5 rounded-full transition-all hover:gap-5"
             style={{ backgroundColor: BRAND.GOLD, color: BRAND.WINE_NIGHT }}
           >
-            Entrar na Lista VIP <ArrowRight size={14} />
+            {SALES_LIVE ? 'Comprar o Pulse' : 'Entrar na Lista VIP'} <ArrowRight size={14} />
           </a>
         </div>
       </section>

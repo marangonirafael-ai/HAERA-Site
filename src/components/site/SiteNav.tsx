@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { BRAND } from '@/lib/brand';
+import { BRAND, SALES_LIVE, YAMPI_CHECKOUT_URL } from '@/lib/brand';
 import logoSymbol from '@/assets/haera-simbolo-gold.png';
 
 const links = [
@@ -73,11 +73,13 @@ const SiteNav: React.FC = () => {
 
         <div className="flex items-center gap-3">
           <a
-            href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+            href={SALES_LIVE ? YAMPI_CHECKOUT_URL : 'mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse'}
+            target={SALES_LIVE ? '_blank' : undefined}
+            rel={SALES_LIVE ? 'noopener noreferrer' : undefined}
             className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full transition-opacity hover:opacity-90"
             style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
           >
-            Lista VIP
+            {SALES_LIVE ? 'Comprar' : 'Lista VIP'}
           </a>
           <button
             onClick={() => setMobileOpen(v => !v)}
@@ -105,11 +107,13 @@ const SiteNav: React.FC = () => {
             ))}
             <li>
               <a
-                href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+                href={SALES_LIVE ? YAMPI_CHECKOUT_URL : 'mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse'}
+                target={SALES_LIVE ? '_blank' : undefined}
+                rel={SALES_LIVE ? 'noopener noreferrer' : undefined}
                 className="inline-flex items-center font-sans text-sm tracking-[0.2em] uppercase px-5 py-3 rounded-full mt-2"
                 style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
               >
-                Lista VIP
+                {SALES_LIVE ? 'Comprar o Pulse' : 'Lista VIP'}
               </a>
             </li>
           </ul>

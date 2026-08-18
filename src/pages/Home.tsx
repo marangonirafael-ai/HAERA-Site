@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import SiteLayout from '@/components/site/SiteLayout';
-import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
+import { BRAND, PULSE_PRODUCT, SALES_LIVE, YAMPI_CHECKOUT_URL } from '@/lib/brand';
 import { useScrollParallax } from '@/hooks/useScrollParallax';
 import logoSymbol from '@/assets/haera-simbolo-gold.png';
 import logoSymbolAnimated from '@/assets/haera-simbolo-gold-animado.gif';
@@ -11,6 +11,9 @@ import pulseSachets from '@/assets/pulse-sachets.jpeg';
 import nucleusLoop from '@/assets/nucleus-loop.mp4.asset.json';
 
 const pillars = ['Ciência', 'Sensibilidade', 'Constância', 'Intencionalidade', 'Leveza', 'Longevidade'];
+
+const vipHref = SALES_LIVE ? YAMPI_CHECKOUT_URL : 'mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse';
+const vipLinkProps = SALES_LIVE ? { target: '_blank' as const, rel: 'noopener noreferrer' } : {};
 
 const Home: React.FC = () => {
   const heroProductRef = useScrollParallax<HTMLImageElement>({ translateY: -90, scale: 0.08, rotate: -2 });
@@ -48,11 +51,12 @@ const Home: React.FC = () => {
               Conhecer o Pulse <ArrowRight size={14} />
             </Link>
             <a
-              href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+              href={vipHref}
+              {...vipLinkProps}
               className="inline-flex items-center justify-center gap-2 font-sans text-xs tracking-[0.25em] uppercase px-9 py-4 rounded-full border transition-all hover:bg-black/5 min-h-[52px] whitespace-nowrap"
               style={{ borderColor: BRAND.GRAPHITE, color: BRAND.GRAPHITE }}
             >
-              Entrar na Lista VIP
+              {SALES_LIVE ? 'Comprar o Pulse' : 'Entrar na Lista VIP'}
             </a>
             </div>
             <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
@@ -166,21 +170,23 @@ const Home: React.FC = () => {
                 ou 3x de R$ 49,97 sem juros · {PULSE_PRODUCT.pricePerDose}
               </p>
               <a
-                href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+                href={vipHref}
+                {...vipLinkProps}
                 className="inline-flex items-center gap-2 font-sans text-[10px] tracking-[0.25em] uppercase px-4 py-2 rounded-full mt-3 transition-opacity hover:opacity-80"
                 style={{ backgroundColor: `${BRAND.GOLD}20`, color: BRAND.WINE }}
               >
-                Lista VIP · {PULSE_PRODUCT.priceVipFormatted}
+                {SALES_LIVE ? `Comprar · ${PULSE_PRODUCT.priceFormatted}` : `Lista VIP · ${PULSE_PRODUCT.priceVipFormatted}`}
               </a>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+                href={vipHref}
+                {...vipLinkProps}
                 className="font-sans text-xs tracking-[0.25em] uppercase px-9 py-4 rounded-full transition-opacity hover:opacity-90 text-center"
                 style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
               >
-                Entrar na Lista VIP
+                {SALES_LIVE ? 'Comprar o Pulse' : 'Entrar na Lista VIP'}
               </a>
               <Link
                 to="/pulse-produto"
@@ -269,11 +275,12 @@ const Home: React.FC = () => {
             150g · 30 doses · entrega em todo o Brasil. <span className="line-through opacity-50">{PULSE_PRODUCT.priceOriginalFormatted}</span> {PULSE_PRODUCT.priceFormatted}.
           </p>
           <a
-            href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+            href={vipHref}
+            {...vipLinkProps}
             className="inline-flex items-center gap-3 font-sans text-xs tracking-[0.3em] uppercase px-12 py-5 rounded-full transition-all hover:gap-5"
             style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
           >
-            Entrar na Lista VIP <ArrowRight size={14} />
+            {SALES_LIVE ? 'Comprar o Pulse' : 'Entrar na Lista VIP'} <ArrowRight size={14} />
           </a>
           <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
             Seja avisado em primeira mão no lançamento
