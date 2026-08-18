@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { ArrowRight, Check, Minus, Plus } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import SiteLayout from '@/components/site/SiteLayout';
 import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
-import { useCart } from '@/contexts/CartContext';
 import pulsePouch from '@/assets/pulse-pouch.jpeg';
 import pulseSachets from '@/assets/pulse-sachets.jpeg';
 import limeCore from '@/assets/lime-core.jpg';
@@ -80,19 +79,10 @@ const tabContent: Record<Tab, React.ReactNode> = {
 };
 
 const PulseProduct: React.FC = () => {
-  const { addItem } = useCart();
-  const [qty, setQty] = useState(1);
   const [tab, setTab] = useState<Tab>('Descrição');
   const [activeImg, setActiveImg] = useState(0);
 
   const images = [pulseSachets, pulsePouch];
-
-  const handleAdd = () => addItem({
-    id: PULSE_PRODUCT.id,
-    name: `Haëra ${PULSE_PRODUCT.name} ${PULSE_PRODUCT.weight}`,
-    price: PULSE_PRODUCT.price,
-    image: pulsePouch,
-  }, qty);
 
   return (
     <SiteLayout>
@@ -169,25 +159,16 @@ const PulseProduct: React.FC = () => {
               ))}
             </div>
 
-            <div className="flex items-center gap-4 mb-6">
-              <span className="font-sans text-xs tracking-[0.2em] uppercase" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>Quantidade</span>
-              <div className="flex items-center gap-3 border rounded-full px-2 py-1" style={{ borderColor: `${BRAND.GRAPHITE}30` }}>
-                <button onClick={() => setQty(q => Math.max(1, q - 1))} className="p-2 hover:opacity-60"><Minus size={14} /></button>
-                <span className="font-sans text-sm w-6 text-center">{qty}</span>
-                <button onClick={() => setQty(q => q + 1)} className="p-2 hover:opacity-60"><Plus size={14} /></button>
-              </div>
-            </div>
-
             <div className="flex flex-col gap-3 mb-10">
-              <button
-                onClick={handleAdd}
+              <a
+                href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
                 className="font-sans text-xs tracking-[0.3em] uppercase px-9 py-4 rounded-full transition-opacity hover:opacity-90 inline-flex items-center justify-center gap-2"
                 style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
               >
-                Comprar o Pulse <ArrowRight size={14} />
-              </button>
+                Entrar na Lista VIP <ArrowRight size={14} />
+              </a>
               <p className="font-sans text-[11px] text-center" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
-                Pix, cartão ou boleto · Frete calculado no checkout
+                Seja avisado em primeira mão no lançamento
               </p>
             </div>
 
@@ -295,13 +276,13 @@ const PulseProduct: React.FC = () => {
             Não é sobre o próximo treino. É sobre os próximos trinta anos. Aqui, energia não é tomada emprestada —
             é construída, sessão após sessão, com ingredientes reais e ciência de verdade.
           </p>
-          <button
-            onClick={handleAdd}
+          <a
+            href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
             className="inline-flex items-center gap-3 font-sans text-xs tracking-[0.3em] uppercase px-12 py-5 rounded-full transition-all hover:gap-5"
             style={{ backgroundColor: BRAND.GOLD, color: BRAND.WINE_NIGHT }}
           >
-            Comprar o Pulse <ArrowRight size={14} />
-          </button>
+            Entrar na Lista VIP <ArrowRight size={14} />
+          </a>
         </div>
       </section>
     </SiteLayout>

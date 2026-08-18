@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import SiteLayout from '@/components/site/SiteLayout';
 import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
-import { useCart } from '@/contexts/CartContext';
 import { useScrollParallax } from '@/hooks/useScrollParallax';
 import logoSymbol from '@/assets/haera-simbolo-gold.png';
 import logoSymbolAnimated from '@/assets/haera-simbolo-gold-animado.gif';
@@ -14,18 +13,10 @@ import nucleusLoop from '@/assets/nucleus-loop.mp4.asset.json';
 const pillars = ['Ciência', 'Sensibilidade', 'Constância', 'Elegância', 'Leveza', 'Longevidade'];
 
 const Home: React.FC = () => {
-  const { addItem } = useCart();
   const heroProductRef = useScrollParallax<HTMLImageElement>({ translateY: -90, scale: 0.08, rotate: -2 });
   const heroVideoRef = useScrollParallax<HTMLDivElement>({ translateY: 70 });
   const showcaseRef = useScrollParallax<HTMLImageElement>({ translateY: -80, scale: 0.07, rotate: 2 });
   const ctaSymbolRef = useScrollParallax<HTMLImageElement>({ translateY: -20, scale: 0.04 });
-
-  const handleAdd = () => addItem({
-    id: PULSE_PRODUCT.id,
-    name: `Haëra ${PULSE_PRODUCT.name} ${PULSE_PRODUCT.weight}`,
-    price: PULSE_PRODUCT.price,
-    image: pulsePouch,
-  });
 
   return (
     <SiteLayout>
@@ -56,24 +47,17 @@ const Home: React.FC = () => {
             >
               Conhecer o Pulse <ArrowRight size={14} />
             </Link>
-            <button
-              onClick={handleAdd}
+            <a
+              href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
               className="inline-flex items-center justify-center gap-2 font-sans text-xs tracking-[0.25em] uppercase px-9 py-4 rounded-full border transition-all hover:bg-black/5 min-h-[52px] whitespace-nowrap"
               style={{ borderColor: BRAND.GRAPHITE, color: BRAND.GRAPHITE }}
             >
-              Comprar o Pulse · <span className="line-through opacity-50">{PULSE_PRODUCT.priceOriginalFormatted}</span> {PULSE_PRODUCT.priceFormatted}
-            </button>
+              Entrar na Lista VIP
+            </a>
             </div>
             <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
-              Pix, cartão ou boleto · Frete calculado no checkout
+              Seja avisado em primeira mão no lançamento
             </p>
-            <a
-              href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
-              className="inline-flex items-center gap-2 font-sans text-[10px] tracking-[0.25em] uppercase px-4 py-2 rounded-full mt-4 transition-opacity hover:opacity-80"
-              style={{ backgroundColor: `${BRAND.GOLD}20`, color: BRAND.WINE }}
-            >
-              Lista VIP · {PULSE_PRODUCT.priceVipFormatted}
-            </a>
             <div className="flex items-center gap-6 mt-8 pt-8 border-t" style={{ borderColor: `${BRAND.GRAPHITE}15` }}>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full animate-pulse-slow" style={{ backgroundColor: BRAND.GOLD }} />
@@ -191,13 +175,13 @@ const Home: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={handleAdd}
+              <a
+                href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
                 className="font-sans text-xs tracking-[0.25em] uppercase px-9 py-4 rounded-full transition-opacity hover:opacity-90 text-center"
                 style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
               >
-                Comprar o Pulse
-              </button>
+                Entrar na Lista VIP
+              </a>
               <Link
                 to="/pulse-produto"
                 className="font-sans text-xs tracking-[0.25em] uppercase px-9 py-4 rounded-full border text-center"
@@ -207,7 +191,7 @@ const Home: React.FC = () => {
               </Link>
             </div>
             <p className="font-sans text-[11px] mt-3" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
-              Pix, cartão ou boleto · Frete calculado no checkout
+              Seja avisado em primeira mão no lançamento
             </p>
           </div>
           <div className="order-1 md:order-2 overflow-hidden">
@@ -284,15 +268,15 @@ const Home: React.FC = () => {
           <p className="font-sans text-base md:text-lg max-w-xl mx-auto mb-10" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
             150g · 30 doses · entrega em todo o Brasil. <span className="line-through opacity-50">{PULSE_PRODUCT.priceOriginalFormatted}</span> {PULSE_PRODUCT.priceFormatted}.
           </p>
-          <button
-            onClick={handleAdd}
+          <a
+            href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
             className="inline-flex items-center gap-3 font-sans text-xs tracking-[0.3em] uppercase px-12 py-5 rounded-full transition-all hover:gap-5"
             style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
           >
-            Comprar o Pulse <ArrowRight size={14} />
-          </button>
+            Entrar na Lista VIP <ArrowRight size={14} />
+          </a>
           <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
-            Pix, cartão ou boleto · Frete calculado no checkout
+            Seja avisado em primeira mão no lançamento
           </p>
         </div>
       </section>

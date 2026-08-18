@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Menu, X } from 'lucide-react';
-import { BRAND, PULSE_PRODUCT } from '@/lib/brand';
-import { useCart } from '@/contexts/CartContext';
+import { Menu, X } from 'lucide-react';
+import { BRAND } from '@/lib/brand';
 import logoSymbol from '@/assets/haera-simbolo-gold.png';
-import pulsePouch from '@/assets/pulse-pouch.jpeg';
 
 const links = [
   { to: '/', label: 'Início' },
@@ -20,20 +18,12 @@ const links = [
 const darkHeroRoutes = ['/ciencia', '/origem'];
 
 const SiteNav: React.FC = () => {
-  const { totalItems, setIsOpen, addItem } = useCart();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const isDarkHero = darkHeroRoutes.includes(location.pathname) && !scrolled;
   const wordmarkColor = isDarkHero ? BRAND.CREAM : BRAND.WINE;
   const linkColor = isDarkHero ? BRAND.CREAM : BRAND.GRAPHITE;
-
-  const handleQuickAdd = () => addItem({
-    id: PULSE_PRODUCT.id,
-    name: `Haëra ${PULSE_PRODUCT.name} ${PULSE_PRODUCT.weight}`,
-    price: PULSE_PRODUCT.price,
-    image: pulsePouch,
-  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -82,30 +72,13 @@ const SiteNav: React.FC = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-          {scrolled && (
-            <button
-              onClick={handleQuickAdd}
-              className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full transition-opacity hover:opacity-90 animate-fade-in"
-              style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
-            >
-              Comprar · {PULSE_PRODUCT.priceFormatted}
-            </button>
-          )}
-          <button
-            onClick={() => setIsOpen(true)}
-            className="relative p-2 transition-opacity hover:opacity-70"
-            aria-label="Abrir carrinho"
+          <a
+            href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+            className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full transition-opacity hover:opacity-90"
+            style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
           >
-            <ShoppingBag size={20} style={{ color: linkColor }} />
-            {totalItems > 0 && (
-              <span
-                className="absolute -top-0.5 -right-0.5 w-5 h-5 rounded-full flex items-center justify-center font-sans text-[10px] font-medium"
-                style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
-              >
-                {totalItems}
-              </span>
-            )}
-          </button>
+            Lista VIP
+          </a>
           <button
             onClick={() => setMobileOpen(v => !v)}
             className="md:hidden p-2"
@@ -130,6 +103,15 @@ const SiteNav: React.FC = () => {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
+                className="inline-flex items-center font-sans text-sm tracking-[0.2em] uppercase px-5 py-3 rounded-full mt-2"
+                style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
+              >
+                Lista VIP
+              </a>
+            </li>
           </ul>
         </div>
       )}
