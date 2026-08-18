@@ -87,7 +87,7 @@ const PulseProduct: React.FC = () => {
   return (
     <SiteLayout>
       <section className="pt-32 pb-20 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
           {/* Gallery */}
           <div>
             <div className="rounded-3xl overflow-hidden mb-4 aspect-square flex items-center justify-center" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
@@ -120,25 +120,25 @@ const PulseProduct: React.FC = () => {
                 Lançamento · Edição Limitada
               </span>
             </div>
-            <div className="rounded-2xl p-5 mb-3" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
-              <div className="grid grid-cols-3 gap-3 mb-4">
+            <div className="rounded-2xl p-3 sm:p-5 mb-3" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
                 <div>
-                  <p className="font-sans text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>De</p>
-                  <p className="font-serif text-base line-through" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>{PULSE_PRODUCT.priceOriginalFormatted}</p>
-                  <p className="font-sans text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>{PULSE_PRODUCT.pricePerDoseOriginal}</p>
+                  <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>De</p>
+                  <p className="font-serif text-sm sm:text-base line-through" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>{PULSE_PRODUCT.priceOriginalFormatted}</p>
+                  <p className="font-sans text-[9px] sm:text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>{PULSE_PRODUCT.pricePerDoseOriginal}</p>
                 </div>
                 <div>
-                  <p className="font-sans text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.WINE }}>Lançamento</p>
-                  <p className="font-serif text-3xl" style={{ color: BRAND.WINE }}>{PULSE_PRODUCT.priceFormatted}</p>
-                  <p className="font-sans text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.6 }}>{PULSE_PRODUCT.pricePerDose}</p>
+                  <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.WINE }}>Lançamento</p>
+                  <p className="font-serif text-lg sm:text-3xl" style={{ color: BRAND.WINE }}>{PULSE_PRODUCT.priceFormatted}</p>
+                  <p className="font-sans text-[9px] sm:text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.6 }}>{PULSE_PRODUCT.pricePerDose}</p>
                 </div>
                 <div className="rounded-lg px-2 py-1 -m-1" style={{ backgroundColor: `${BRAND.GOLD}20` }}>
-                  <p className="font-sans text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.WINE }}>Lista VIP</p>
-                  <p className="font-serif text-2xl" style={{ color: BRAND.WINE }}>{PULSE_PRODUCT.priceVipFormatted}</p>
-                  <p className="font-sans text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.6 }}>{PULSE_PRODUCT.pricePerDoseVip}</p>
+                  <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.WINE }}>Lista VIP</p>
+                  <p className="font-serif text-base sm:text-2xl" style={{ color: BRAND.WINE }}>{PULSE_PRODUCT.priceVipFormatted}</p>
+                  <p className="font-sans text-[9px] sm:text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.6 }}>{PULSE_PRODUCT.pricePerDoseVip}</p>
                   <a
                     href="mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse"
-                    className="inline-flex items-center gap-1 font-sans text-[9px] tracking-[0.2em] uppercase mt-1 transition-opacity hover:opacity-80"
+                    className="inline-flex items-center gap-1 font-sans text-[8px] sm:text-[9px] tracking-[0.1em] sm:tracking-[0.2em] uppercase mt-1 transition-opacity hover:opacity-80"
                     style={{ color: BRAND.WINE }}
                   >
                     Entrar na Lista VIP →
@@ -216,7 +216,7 @@ const PulseProduct: React.FC = () => {
       {/* Highlights — formato Apple */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { eyebrow: 'Foco', title: 'Clareza mental sem ansiedade.', text: 'L-Teanina + cafeína natural + Complexo B trabalham em conjunto para sustentar atenção sem agitação.', natural: false },
               { eyebrow: 'Oxigenação', title: 'Mais sangue. Mais oxigênio.', text: 'Beterraba e uva elevam óxido nítrico naturalmente — promovendo fluxo sanguíneo e oxigenação de forma equilibrada.', natural: true },
@@ -241,7 +241,7 @@ const PulseProduct: React.FC = () => {
 
       {/* Sabor — limão */}
       <section className="py-28 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
           <img
             src={limeCore}
             alt="Limão taiti cortado ao meio"

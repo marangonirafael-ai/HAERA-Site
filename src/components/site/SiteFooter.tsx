@@ -8,7 +8,7 @@ const SiteFooter: React.FC = () => {
   return (
     <footer style={{ backgroundColor: BRAND.WINE_NIGHT }} className="pt-20 pb-10 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img src={nucleusGold} alt="" className="w-10 h-10 object-contain" />

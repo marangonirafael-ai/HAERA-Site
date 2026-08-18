@@ -54,7 +54,7 @@ const Ciencia: React.FC = () => {
 
       <section className="py-24 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM }}>
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {bioactives.map(b => (
               <div key={b.name} className="p-8 rounded-2xl" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
                 <p className="font-sans text-[11px] tracking-[0.3em] uppercase mb-3" style={{ color: BRAND.GOLD }}>{b.role}</p>

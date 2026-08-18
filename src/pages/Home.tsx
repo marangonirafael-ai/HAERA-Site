@@ -26,7 +26,7 @@ const Home: React.FC = () => {
           className="absolute inset-0 opacity-40"
           style={{ background: `radial-gradient(ellipse at 70% 50%, ${BRAND.GOLD}30 0%, transparent 60%)` }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-20 grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">
             <span className="font-sans text-[11px] tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>
               Ativador Corporal · Clean Label
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
 
       {/* 4. VITRINE DO PRODUTO */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
             <span className="font-sans text-xs tracking-[0.4em] uppercase mb-6 block" style={{ color: BRAND.WINE, opacity: 0.7 }}>O Produto</span>
             <h2 className="font-serif text-5xl md:text-6xl font-light mb-2" style={{ color: BRAND.GRAPHITE }}>Pulse</h2>
@@ -208,7 +208,7 @@ const Home: React.FC = () => {
 
       {/* 5. SÍMBOLO — SIGNIFICADO */}
       <section className="py-32 px-6 md:px-10" style={{ backgroundColor: BRAND.GRAPHITE }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
           <img
             src={logoSymbolAnimated}
             alt="Símbolo Haëra: núcleo de anéis concêntricos"
@@ -292,7 +292,7 @@ const Home: React.FC = () => {
               <em className="italic" style={{ color: BRAND.GOLD }}>Nada que sobra.</em>
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-px" style={{ backgroundColor: `${BRAND.CREAM}15` }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: `${BRAND.CREAM}15` }}>
             {[
               { k: '21', label: 'Ingredientes\nem sinergia' },
               { k: '0', label: 'Cafeína\nsintética' },

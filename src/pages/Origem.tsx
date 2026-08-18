@@ -70,7 +70,7 @@ const Origem: React.FC = () => {
               Seis princípios, <em className="italic" style={{ color: BRAND.WINE }}>uma direção</em>.
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map(p => (
               <div key={p.name} className="p-8 rounded-2xl" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
                 <h3 className="font-serif text-2xl mb-3" style={{ color: BRAND.WINE }}>{p.name}</h3>
