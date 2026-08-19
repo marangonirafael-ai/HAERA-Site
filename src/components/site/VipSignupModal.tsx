@@ -8,7 +8,6 @@ const VipSignupModal: React.FC = () => {
   const { isOpen, closeVipSignup } = useVipSignup();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
 
@@ -17,7 +16,6 @@ const VipSignupModal: React.FC = () => {
     setTimeout(() => {
       setName('');
       setEmail('');
-      setWhatsapp('');
       setDone(false);
     }, 300);
   };
@@ -29,7 +27,7 @@ const VipSignupModal: React.FC = () => {
       const res = await fetch('/api/vip-signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, whatsapp }),
+        body: JSON.stringify({ name, email }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -69,7 +67,7 @@ const VipSignupModal: React.FC = () => {
               <p className="font-sans text-xs tracking-[0.4em] uppercase mb-4" style={{ color: BRAND.WINE, opacity: 0.7 }}>Tudo certo</p>
               <h2 className="font-serif text-3xl font-light mb-4" style={{ color: BRAND.GRAPHITE }}>Você está na lista.</h2>
               <p className="font-sans text-sm leading-relaxed mb-8" style={{ color: BRAND.GRAPHITE, opacity: 0.7 }}>
-                Fique de olho no seu e-mail e WhatsApp — é por lá que você vai saber, em primeira mão, o dia do lançamento, o preço especial e o brinde exclusivo.
+                Fique de olho no seu e-mail — é por lá que você vai saber, em primeira mão, o dia do lançamento, o preço especial e o brinde exclusivo.
               </p>
               <button
                 onClick={resetAndClose}
@@ -102,15 +100,6 @@ const VipSignupModal: React.FC = () => {
                   placeholder="E-mail"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  className="w-full px-5 py-4 rounded-xl border bg-transparent font-sans text-sm"
-                  style={{ borderColor: `${BRAND.GRAPHITE}25`, color: BRAND.GRAPHITE }}
-                />
-                <input
-                  required
-                  type="tel"
-                  placeholder="WhatsApp (com DDD)"
-                  value={whatsapp}
-                  onChange={e => setWhatsapp(e.target.value)}
                   className="w-full px-5 py-4 rounded-xl border bg-transparent font-sans text-sm"
                   style={{ borderColor: `${BRAND.GRAPHITE}25`, color: BRAND.GRAPHITE }}
                 />
