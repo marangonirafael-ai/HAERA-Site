@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
+import { VipSignupProvider } from "@/contexts/VipSignupContext";
 import Home from "./pages/Home";
 import PulseProduct from "./pages/PulseProduct";
 import Ciencia from "./pages/Ciencia";
@@ -22,6 +23,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <CartProvider>
+        <VipSignupProvider>
           <Routes>
             {/* Site comercial */}
             <Route path="/" element={<Home />} />
@@ -39,6 +41,7 @@ const App = () => (
 
             <Route path="*" element={<NotFound />} />
           </Routes>
+        </VipSignupProvider>
         </CartProvider>
       </BrowserRouter>
     </TooltipProvider>

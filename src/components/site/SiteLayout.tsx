@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import SiteNav from './SiteNav';
 import SiteFooter from './SiteFooter';
+import VipSignupModal from './VipSignupModal';
 import { BRAND } from '@/lib/brand';
 
 const SiteLayout: React.FC<{ children: ReactNode; bg?: string }> = ({ children, bg = BRAND.CREAM }) => {
@@ -9,6 +10,7 @@ const SiteLayout: React.FC<{ children: ReactNode; bg?: string }> = ({ children, 
       <SiteNav />
       <main className="flex-1">{children}</main>
       <SiteFooter />
+      <VipSignupModal />
     </div>
   );
 };

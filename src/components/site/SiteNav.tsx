@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { BRAND, SALES_LIVE, YAMPI_CHECKOUT_URL } from '@/lib/brand';
+import { useVipSignup } from '@/contexts/VipSignupContext';
 import logoSymbol from '@/assets/haera-simbolo-gold.png';
 
 const links = [
@@ -18,6 +19,7 @@ const links = [
 const darkHeroRoutes = ['/ciencia', '/origem'];
 
 const SiteNav: React.FC = () => {
+  const { openVipSignup } = useVipSignup();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -72,15 +74,25 @@ const SiteNav: React.FC = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-          <a
-            href={SALES_LIVE ? YAMPI_CHECKOUT_URL : 'mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse'}
-            target={SALES_LIVE ? '_blank' : undefined}
-            rel={SALES_LIVE ? 'noopener noreferrer' : undefined}
-            className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full transition-opacity hover:opacity-90"
-            style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
-          >
-            {SALES_LIVE ? 'Comprar' : 'Lista VIP'}
-          </a>
+          {SALES_LIVE ? (
+            <a
+              href={YAMPI_CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full transition-opacity hover:opacity-90"
+              style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
+            >
+              Comprar
+            </a>
+          ) : (
+            <button
+              onClick={openVipSignup}
+              className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full transition-opacity hover:opacity-90"
+              style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
+            >
+              Lista VIP
+            </button>
+          )}
           <button
             onClick={() => setMobileOpen(v => !v)}
             className="md:hidden p-2"
@@ -106,15 +118,25 @@ const SiteNav: React.FC = () => {
               </li>
             ))}
             <li>
-              <a
-                href={SALES_LIVE ? YAMPI_CHECKOUT_URL : 'mailto:contato.haera@gmail.com?subject=Quero%20entrar%20na%20Lista%20VIP%20-%20Pulse'}
-                target={SALES_LIVE ? '_blank' : undefined}
-                rel={SALES_LIVE ? 'noopener noreferrer' : undefined}
-                className="inline-flex items-center font-sans text-sm tracking-[0.2em] uppercase px-5 py-3 rounded-full mt-2"
-                style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
-              >
-                {SALES_LIVE ? 'Comprar o Pulse' : 'Lista VIP'}
-              </a>
+              {SALES_LIVE ? (
+                <a
+                  href={YAMPI_CHECKOUT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center font-sans text-sm tracking-[0.2em] uppercase px-5 py-3 rounded-full mt-2"
+                  style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
+                >
+                  Comprar o Pulse
+                </a>
+              ) : (
+                <button
+                  onClick={openVipSignup}
+                  className="inline-flex items-center font-sans text-sm tracking-[0.2em] uppercase px-5 py-3 rounded-full mt-2"
+                  style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
+                >
+                  Lista VIP
+                </button>
+              )}
             </li>
           </ul>
         </div>
