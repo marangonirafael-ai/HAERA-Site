@@ -9,6 +9,16 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+// O Brevo espera telefone em formato internacional (E.164) pro campo SMS.
+// Assume Brasil quando não vier o código do país: 10-11 dígitos locais
+// (DDD + número) viram +55DDDNÚMERO; se já vier com 55 na frente, só
+// adiciona o "+".
+function toE164BR(rawDigits: string) {
+  if (rawDigits.startsWith('55') && rawDigits.length >= 12) return `+${rawDigits}`;
+  if (rawDigits.length >= 10 && rawDigits.length <= 11) return `+55${rawDigits}`;
+  return `+${rawDigits}`;
+}
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Método não permitido' });
@@ -49,7 +59,7 @@ export default async function handler(req: any, res: any) {
         email: email.trim(),
         attributes: {
           FIRSTNAME: name.trim(),
-          SMS: whatsapp.replace(/\D/g, ''),
+          SMS: toE164BR(whatsapp.replace(/\D/g, '')),
         },
         listIds: [BREVO_LIST_ID],
         updateEnabled: true,
