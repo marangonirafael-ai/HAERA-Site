@@ -74,7 +74,7 @@ const SiteNav: React.FC = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-          {SALES_LIVE ? (
+          {SALES_LIVE && (
             <a
               href={YAMPI_CHECKOUT_URL}
               target="_blank"
@@ -84,15 +84,14 @@ const SiteNav: React.FC = () => {
             >
               Comprar
             </a>
-          ) : (
-            <button
-              onClick={openVipSignup}
-              className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full transition-opacity hover:opacity-90"
-              style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
-            >
-              Lista VIP
-            </button>
           )}
+          <button
+            onClick={openVipSignup}
+            className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full border transition-opacity hover:opacity-90"
+            style={{ borderColor: BRAND.WINE, color: BRAND.WINE }}
+          >
+            Lista VIP
+          </button>
           <button
             onClick={() => setMobileOpen(v => !v)}
             className="md:hidden p-2"
@@ -117,8 +116,8 @@ const SiteNav: React.FC = () => {
                 </Link>
               </li>
             ))}
-            <li>
-              {SALES_LIVE ? (
+            {SALES_LIVE && (
+              <li>
                 <a
                   href={YAMPI_CHECKOUT_URL}
                   target="_blank"
@@ -128,15 +127,16 @@ const SiteNav: React.FC = () => {
                 >
                   Comprar o Pulse
                 </a>
-              ) : (
-                <button
-                  onClick={openVipSignup}
-                  className="inline-flex items-center font-sans text-sm tracking-[0.2em] uppercase px-5 py-3 rounded-full mt-2"
-                  style={{ backgroundColor: BRAND.WINE, color: BRAND.CREAM }}
-                >
-                  Lista VIP
-                </button>
-              )}
+              </li>
+            )}
+            <li>
+              <button
+                onClick={() => { openVipSignup(); setMobileOpen(false); }}
+                className="inline-flex items-center font-sans text-sm tracking-[0.2em] uppercase px-5 py-3 rounded-full border mt-2"
+                style={{ borderColor: BRAND.WINE, color: BRAND.WINE }}
+              >
+                Lista VIP
+              </button>
             </li>
           </ul>
         </div>
