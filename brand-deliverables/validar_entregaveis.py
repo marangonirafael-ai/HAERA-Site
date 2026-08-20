@@ -81,7 +81,7 @@ def main():
     pendencias_essenciais = [r for r in pendencias if r[1]["prioridade"] == "essencial"]
 
     # ---- terminal ----
-    print(f"Validacao de entregaveis Haera -- {agora}")
+    print(f"Validacao de entregaveis Haëra -- {agora}")
     print("=" * 60)
     categoria_atual = None
     for categoria, item, status, arquivos in resultados:

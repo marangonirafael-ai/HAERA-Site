@@ -41,11 +41,11 @@ const SiteFooter: React.FC = () => {
               <Instagram size={16} /> @viva.haera
             </a>
             <a
-              href="mailto:contato.haera@gmail.com"
+              href="mailto:contato@haera.life"
               className="block font-sans text-sm mt-2"
               style={{ color: BRAND.CREAM, opacity: 0.7 }}
             >
-              contato.haera@gmail.com
+              contato@haera.life
             </a>
           </div>
         </div>

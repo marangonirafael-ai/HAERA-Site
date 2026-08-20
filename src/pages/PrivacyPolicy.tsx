@@ -14,7 +14,7 @@ const PrivacyPolicy: React.FC = () => (
           <section><h2 className="font-serif text-2xl mb-3" style={{ color: BRAND.WINE }}>Uso e armazenamento</h2><p>Os dados são tratados para administrar a Lista VIP e enviar as comunicações autorizadas. Os contatos são armazenados na plataforma Brevo, usada pela Haëra para gestão de e-mails.</p></section>
           <section><h2 className="font-serif text-2xl mb-3" style={{ color: BRAND.WINE }}>Compartilhamento</h2><p>Não vendemos dados pessoais. Compartilhamos os dados estritamente com fornecedores necessários para operar o site e as comunicações, como a Vercel e o Brevo.</p></section>
           <section><h2 className="font-serif text-2xl mb-3" style={{ color: BRAND.WINE }}>Seus direitos</h2><p>Você pode solicitar acesso, correção, exclusão ou informações sobre o tratamento dos seus dados, além de cancelar comunicações a qualquer momento pelo link de descadastro nos e-mails ou pelo contato abaixo.</p></section>
-          <section><h2 className="font-serif text-2xl mb-3" style={{ color: BRAND.WINE }}>Contato</h2><p>Para dúvidas sobre privacidade ou exercer seus direitos, escreva para <a className="underline" href="mailto:contato.haera@gmail.com">contato.haera@gmail.com</a>.</p></section>
+          <section><h2 className="font-serif text-2xl mb-3" style={{ color: BRAND.WINE }}>Contato</h2><p>Para dúvidas sobre privacidade ou exercer seus direitos, escreva para <a className="underline" href="mailto:contato@haera.life">contato@haera.life</a>.</p></section>
         </div>
       </div>
     </section>
