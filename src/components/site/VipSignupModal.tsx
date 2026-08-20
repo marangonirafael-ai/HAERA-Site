@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { toast } from 'sonner';
 import { BRAND } from '@/lib/brand';
@@ -8,6 +9,8 @@ const VipSignupModal: React.FC = () => {
   const { isOpen, closeVipSignup } = useVipSignup();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [consent, setConsent] = useState(false);
+  const [company, setCompany] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
 
@@ -16,6 +19,8 @@ const VipSignupModal: React.FC = () => {
     setTimeout(() => {
       setName('');
       setEmail('');
+      setConsent(false);
+      setCompany('');
       setDone(false);
     }, 300);
   };
@@ -27,7 +32,7 @@ const VipSignupModal: React.FC = () => {
       const res = await fetch('/api/vip-signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, consent, company }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -36,7 +41,7 @@ const VipSignupModal: React.FC = () => {
         return;
       }
       setDone(true);
-      toast.success('Cadastro recebido!', { description: 'Você vai receber um e-mail de confirmação em instantes.' });
+      toast.success('Cadastro concluído!', { description: 'Acompanhe seu e-mail para novidades da Lista VIP.' });
     } catch {
       toast.error('Não foi possível concluir o cadastro', { description: 'Verifique sua conexão e tente novamente.' });
     } finally {
@@ -86,6 +91,16 @@ const VipSignupModal: React.FC = () => {
               </p>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
+                  type="text"
+                  name="company"
+                  value={company}
+                  onChange={e => setCompany(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
+                <input
                   required
                   type="text"
                   placeholder="Nome"
@@ -103,6 +118,20 @@ const VipSignupModal: React.FC = () => {
                   className="w-full px-5 py-4 rounded-xl border bg-transparent font-sans text-sm"
                   style={{ borderColor: `${BRAND.GRAPHITE}25`, color: BRAND.GRAPHITE }}
                 />
+                <div className="flex items-start gap-3 text-left">
+                  <input
+                    id="vip-consent"
+                    required
+                    type="checkbox"
+                    checked={consent}
+                    onChange={e => setConsent(e.target.checked)}
+                    className="mt-1"
+                  />
+                  <label htmlFor="vip-consent" className="font-sans text-xs leading-relaxed" style={{ color: BRAND.GRAPHITE, opacity: 0.75 }}>
+                    Autorizo receber comunicações da Haëra por e-mail e declaro ter lido a{' '}
+                    <Link to="/politica-de-privacidade" className="underline" target="_blank">Política de Privacidade</Link>.
+                  </label>
+                </div>
                 <button
                   type="submit"
                   disabled={submitting}
