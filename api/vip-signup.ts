@@ -1,6 +1,17 @@
 const DEFAULT_BREVO_LIST_ID = 3;
 const BREVO_TIMEOUT_MS = 8_000;
 
+interface VercelRequest {
+  method?: string;
+  body?: { name?: unknown; email?: unknown; consent?: unknown; company?: unknown };
+}
+
+interface VercelResponse {
+  setHeader(name: string, value: string): void;
+  status(code: number): VercelResponse;
+  json(body: Record<string, unknown>): void;
+}
+
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -13,7 +24,7 @@ function getBrevoListId() {
   return Number.isInteger(listId) && listId > 0 ? listId : null;
 }
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     res.status(405).json({ error: 'Método não permitido' });
@@ -77,8 +88,8 @@ export default async function handler(req: any, res: any) {
     }
 
     res.status(200).json({ ok: true });
-  } catch (err: any) {
-    if (err?.name === 'AbortError') {
+  } catch (err) {
+    if (err instanceof Error && err.name === 'AbortError') {
       console.error('A API do Brevo excedeu o tempo limite');
       res.status(504).json({ error: 'O serviço de cadastro demorou para responder. Tente novamente.' });
       return;
