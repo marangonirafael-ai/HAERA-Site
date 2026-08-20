@@ -58,6 +58,9 @@ const SiteFooter: React.FC = () => {
             <Link to="/trocas-devolucoes" className="font-sans text-xs transition-opacity hover:opacity-100" style={{ color: BRAND.CREAM, opacity: 0.4 }}>
               Trocas e Devoluções
             </Link>
+            <Link to="/politica-de-privacidade" className="font-sans text-xs transition-opacity hover:opacity-100" style={{ color: BRAND.CREAM, opacity: 0.4 }}>
+              Política de Privacidade
+            </Link>
           </div>
           <p className="font-serif text-xs tracking-[0.2em] uppercase" style={{ color: BRAND.GOLD, opacity: 0.7 }}>
             Nutrir antes de estimular
