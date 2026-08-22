@@ -235,7 +235,7 @@ const Home: React.FC = () => {
             "Você treina pensando nos próximos 30 dias — ou nos próximos 30 anos?"
           </h2>
           <p className="font-sans text-base md:text-lg mt-10 leading-relaxed" style={{ color: BRAND.CREAM, opacity: 0.8 }}>
-            É essa pergunta que guia cada decisão da Haëra. Ciência sem arrogância. Sensibilidade pelo ritmo de cada corpo.
+            É essa pergunta que guia cada decisão da Haëra. Ciência e sensibilidade pelo ritmo de cada corpo.
             Constância em vez de picos isolados. Intencionalidade em cada escolha. Leveza no conhecimento. Longevidade como patrimônio.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mt-8">
