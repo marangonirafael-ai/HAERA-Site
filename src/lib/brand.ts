@@ -39,5 +39,5 @@ export const VIP_COUPON = 'VIPHAERA';
 // visíveis ao público quando SALES_LIVE virar true. Até lá, os CTAs de
 // compra do site continuam mostrando "Entrar na Lista VIP".
 export const SALES_LIVE = false;
-export const YAMPI_CHECKOUT_URL = 'https://haera.pay.yampi.com.br/checkout?skipToCheckout=1&tokenReference=7YPV0ZVVWT';
+export const YAMPI_CHECKOUT_URL = 'https://seguro.haera.life/r/7YPV0ZVVWT';
 
