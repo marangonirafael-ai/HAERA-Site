@@ -56,7 +56,9 @@ const Home: React.FC = () => {
             </VipCta>
             </div>
             <p className="font-sans text-[11px] mt-4" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>
-              Seja avisado em primeira mão no lançamento
+              {SALES_LIVE
+                ? 'Pagamento com cartão: preencha a validade com o ano em 4 dígitos (ex: 12/2028)'
+                : 'Seja avisado em primeira mão no lançamento'}
             </p>
             <div className="flex items-center gap-6 mt-8 pt-8 border-t" style={{ borderColor: `${BRAND.GRAPHITE}15` }}>
               <div className="flex items-center gap-3">
@@ -189,7 +191,9 @@ const Home: React.FC = () => {
               </Link>
             </div>
             <p className="font-sans text-[11px] mt-3" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
-              Seja avisado em primeira mão no lançamento
+              {SALES_LIVE
+                ? 'Pagamento com cartão: preencha a validade com o ano em 4 dígitos (ex: 12/2028)'
+                : 'Seja avisado em primeira mão no lançamento'}
             </p>
           </div>
           <div className="order-1 md:order-2 overflow-hidden">
