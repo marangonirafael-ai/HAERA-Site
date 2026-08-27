@@ -155,11 +155,6 @@ const PulseProduct: React.FC = () => {
               >
                 {SALES_LIVE ? 'Comprar o Pulse' : 'Entrar na Lista VIP'} <ArrowRight size={14} />
               </VipCta>
-              <p className="font-sans text-[11px] text-center" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>
-                {SALES_LIVE
-                  ? 'Pagamento com cartão: preencha a validade com o ano em 4 dígitos (ex: 12/2028)'
-                  : 'Seja avisado em primeira mão no lançamento'}
-              </p>
             </div>
 
             {/* Tabs */}
