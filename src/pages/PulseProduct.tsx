@@ -122,7 +122,7 @@ const PulseProduct: React.FC = () => {
               </span>
             </div>
             <div className="rounded-2xl p-3 sm:p-5 mb-3" style={{ backgroundColor: BRAND.CREAM_SOFT }}>
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
                 <div>
                   <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.GRAPHITE, opacity: 0.55 }}>De</p>
                   <p className="font-serif text-sm sm:text-base line-through" style={{ color: BRAND.GRAPHITE, opacity: 0.5 }}>{PULSE_PRODUCT.priceOriginalFormatted}</p>
@@ -132,17 +132,6 @@ const PulseProduct: React.FC = () => {
                   <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.WINE }}>Lançamento</p>
                   <p className="font-serif text-lg sm:text-3xl" style={{ color: BRAND.WINE }}>{PULSE_PRODUCT.priceFormatted}</p>
                   <p className="font-sans text-[9px] sm:text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.6 }}>{PULSE_PRODUCT.pricePerDose}</p>
-                </div>
-                <div className="rounded-lg px-2 py-1 -m-1" style={{ backgroundColor: `${BRAND.GOLD}20` }}>
-                  <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.WINE }}>Lista VIP</p>
-                  <p className="font-serif text-base sm:text-2xl" style={{ color: BRAND.WINE }}>{PULSE_PRODUCT.priceVipFormatted}</p>
-                  <p className="font-sans text-[9px] sm:text-[10px] mt-1" style={{ color: BRAND.GRAPHITE, opacity: 0.6 }}>{PULSE_PRODUCT.pricePerDoseVip}</p>
-                  <VipCta
-                    className="inline-flex items-center gap-1 font-sans text-[8px] sm:text-[9px] tracking-[0.1em] sm:tracking-[0.2em] uppercase mt-1 transition-opacity hover:opacity-80"
-                    style={{ color: BRAND.WINE }}
-                  >
-                    {SALES_LIVE ? 'Comprar' : 'Entrar na Lista VIP'} →
-                  </VipCta>
                 </div>
               </div>
               <p className="font-sans text-xs" style={{ color: BRAND.GRAPHITE, opacity: 0.65 }}>
